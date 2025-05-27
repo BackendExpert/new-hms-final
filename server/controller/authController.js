@@ -7,7 +7,6 @@ const crypto = require('crypto');
 
 
 const authController = {
-
 };
 
 module.exports = authController;
