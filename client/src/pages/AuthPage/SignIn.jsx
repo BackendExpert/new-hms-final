@@ -62,6 +62,13 @@ const SignIn = () => {
                 <h1 className="text-lg text-center font-medium text-gray-800">
                     Welcome to Hostel Management System
                 </h1>
+                <h1 className="">Read Student SignUp Guide</h1>
+                <a href="">
+                    <DefaultBtn
+                        type='button'
+                        label='Read Student Guide'
+                    />
+                </a>
             </div>
 
             <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md">
@@ -106,6 +113,9 @@ const SignIn = () => {
                     </p>
                     <p className="text-gray-800 hover:underline transition">
                         Student? <a href="#">Create Account</a>
+                    </p>
+                    <p className="text-gray-800 hover:underline transition">
+                        <a href="#">Verify Student Email Address</a>
                     </p>
                 </div>
             </div>
