@@ -29,7 +29,7 @@ const checkPermission = (requiredPermission) => {
 
         } catch (err) {
             console.error(err);
-            return res.status(500).json({ Error: "Internal Server Error" });
+            return res.json({ Error: "Internal Server Error" });
         }
     };
 };
