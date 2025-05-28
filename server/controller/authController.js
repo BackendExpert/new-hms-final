@@ -157,8 +157,8 @@ const authController = {
         }
     },
 
-    signin: async(req, res) => {
-        try{
+    signin: async (req, res) => {
+        try {
             const {
                 email,
                 password
@@ -167,34 +167,97 @@ const authController = {
 
             const checkuser = await User.findOne({ email: email })
 
-            if(!checkuser){
-                return res.json({ Error: "The User not Found by Given Email Address"})
+            if (!checkuser) {
+                return res.json({ Error: "The User not Found by Given Email Address" })
             }
 
-            if(checkuser.emailVerified === false){
-                return res.json({ Error: "The Email Not Verified"})
+            if (checkuser.emailVerified === false) {
+                return res.json({ Error: "The Email Not Verified" })
             }
 
-            if(checkuser.active === false){
-                return res.json({ Error: "The Account is not Active, wait for admin to active the account"})
+            if (checkuser.active === false) {
+                return res.json({ Error: "The Account is not Active, wait for admin to active the account" })
             }
 
             const checkpass = await bcrypt.compare(password, checkuser.password)
 
-            if(!checkpass){
-                return res.json({ Error: "The Password is Not Match"})
+            if (!checkpass) {
+                return res.json({ Error: "The Password is Not Match" })
             }
 
             const token = jwt.sign({ id: checkuser._id, role: checkuser.roles, user: checkuser }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            
-            if(token){
+
+            if (token) {
                 return res.json({ Status: "Success", Message: "Login Success", Token: token })
             }
-            else{
-                return res.json({ Error: "Internal Server Error while signin"})
-            }            
+            else {
+                return res.json({ Error: "Internal Server Error while signin" })
+            }
         }
-        catch(err){
+        catch (err) {
+            console.log(err)
+        }
+    },
+
+
+    // forgetpass and send opt
+
+    forgetpass: async (req, res) => {
+        try {
+            const { email } = req.body
+
+            const checkuser = await User.findOne({ email: email })
+
+            if (!checkuser) {
+                return res.json({ Error: "User Cannot Find In System" })
+            }
+
+            const generateRandomCode = (length = 10) => {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}';
+                let code = '';
+                for (let i = 0; i < length; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return code;
+            };
+
+            const verificationCode = generateRandomCode();
+
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: email,
+                subject: 'Pdn Account Verification Code',
+                html: `
+                            <p>Dear ${username},</p>
+                            <p>The OTP for Password Reset</p>
+                            <p>Your Password Resest verification code is:</p>
+                            <h2 style="color:#7c340c;">${verificationCode}</h2>
+                            <br>
+                            <p style="color:gray;">Do not share this code with anyone.</p>
+                        `,
+            };
+
+
+            const hashotp = await bcrypt.hash(verificationCode, 10)
+
+            const storeOTP = new UserOTP({
+                email: email,
+                otp: hashotp
+            })
+            
+            const deleteallotpsforemail = await UserOTP.findOneAndDelete({ email: email })
+
+            const resultStoreOTP = await storeOTP.save()
+
+            if(resultStoreOTP){
+                return res.json({ Status: "Success", Message: "Password Reset OTP has been send to your Email"})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+
+        }
+        catch (err) {
             console.log(err)
         }
     },
