@@ -1,79 +1,81 @@
 import React, { useEffect, useState } from 'react';
-import { dashsidedata } from './DashSideData';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import secureLocalStorage from 'react-secure-storage';
-import uoplogo from '../../assets/uoplogo.png'
+import { dashsidedata } from './DashSideData';
+import uoplogo from '../../assets/uoplogo.png';
 
 const DashSide = () => {
-    const [activeMenu, setActiveMenu] = useState(1);
-    const username = secureLocalStorage.getItem('loginU');
-    const role = secureLocalStorage.getItem('loginR');
+    const [activeMenu, setActiveMenu] = useState(null);
+    const username = secureLocalStorage.getItem('loginU') || 'User';
+    const role = secureLocalStorage.getItem('loginR') || 'guest';
+    const location = useLocation();
 
     useEffect(() => {
-        const savedMenu = localStorage.getItem('dashmenuID');
-        if (savedMenu) {
-            setActiveMenu(savedMenu);
+        // Set active menu based on current pathname
+        const currentItem = dashsidedata.find((item) => item.link === location.pathname);
+        if (currentItem) {
+            setActiveMenu(currentItem.id);
+            localStorage.setItem('dashmenuID', currentItem.id);
+        } else {
+            const saved = localStorage.getItem('dashmenuID');
+            setActiveMenu(saved ? Number(saved) : null);
         }
-    }, []);
+    }, [location]);
 
-    const handleMenuClick = (id) => {
-        localStorage.setItem('dashmenuID', id);
-        setActiveMenu(id);
-    };
+    // Filter menu items based on role
+    const filteredMenu = dashsidedata.filter((item) => {
+        if (role === 'admin' || role === 'director') return item.id !== 3;
+        if (role === 'warden') return ![2, 7].includes(item.id);
+        return false;
+    });
 
     return (
-        <div className="bg-white text-slate-800 min-h-screen p-6 shadow-md xl:rounded-r-3xl border-r border-gray-200
-            overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-blue-100 hover:scrollbar-thumb-blue-600 transition-all duration-300">
-
-            {/* Header */}
-
-            <img src={uoplogo} alt="" />
-
-            <div className="text-center mb-6">
-                <h1 className="text-sm mt-2 font-extrabold text-sky-500 tracking-wide">Hostel Management System</h1>
+        <aside className="bg-white shadow-lg border-r border-gray-200 min-h-screen p-6 flex flex-col xl:rounded-r-3xl
+      overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400 scrollbar-track-emerald-100 hover:scrollbar-thumb-emerald-500 transition-all duration-300">
+            {/* Logo */}
+            <div className="mb-6 flex justify-center">
+                <img src={uoplogo} alt="University of Peradeniya Logo" className="h-14 object-contain" />
             </div>
 
-            {/* User Profile */}
-            <div className="flex items-center mb-6 p-4 bg-sky-100 text-sky-700 rounded-2xl shadow-inner">
+            <h2 className="text-center text-sm font-extrabold text-emerald-600 tracking-widest mb-6 select-none">
+                HOSTEL MANAGEMENT SYSTEM
+            </h2>
+
+            {/* User Info */}
+            <div className="flex items-center gap-4 bg-emerald-100 text-emerald-700 rounded-2xl p-4 shadow-inner mb-8 select-none">
                 <img
                     src="https://avatars.githubusercontent.com/u/138636749?v=4"
-                    alt="User"
-                    className="h-12 w-12 rounded-full border-2 border-sky-400 shadow"
+                    alt={`${username} avatar`}
+                    className="h-12 w-12 rounded-full border-2 border-emerald-400 shadow"
                 />
-                <div className="ml-4">
-                    <h1 className="text-base font-semibold uppercase">{username}</h1>
-                    <p className="text-xs uppercase text-sky-500">{role}</p>
+                <div>
+                    <h3 className="font-semibold uppercase tracking-wide">{username}</h3>
+                    <p className="text-xs uppercase font-medium tracking-wider">{role}</p>
                 </div>
             </div>
 
             {/* Menu Items */}
-            <div className="space-y-2">
-                {dashsidedata
-                    .filter((data) => {
-                        if (role === "admin" || role === "director") {
-                            return data.id !== 3;
-                        }
-                        if (role === "warden") {
-                            return ![2, 7].includes(data.id);
-                        }
-                        return false;
-                    })
-                    .map((data, index) => (
-                        <Link to={data.link} key={index} className="block">
-                            <div
-                                className={`flex items-center space-x-4 px-4 py-3 rounded-xl transition-all duration-200 ease-in-out cursor-pointer
-                                ${activeMenu === data.id
-                                        ? 'bg-sky-400 text-white font-semibold shadow-md'
-                                        : 'hover:bg-sky-100 hover:text-sky-700 text-slate-700'}`}
-                                onClick={() => handleMenuClick(data.id)}
-                            >
-                                <data.icon className="h-5 w-5" />
-                                <span className="text-sm">{data.name}</span>
-                            </div>
-                        </Link>
-                    ))}
-            </div>
-        </div>
+            <nav className="flex flex-col space-y-2 flex-grow">
+                {filteredMenu.length === 0 && (
+                    <p className="text-center text-gray-400 mt-8">No menu items available</p>
+                )}
+
+                {filteredMenu.map(({ id, name, icon: Icon, link }) => (
+                    <Link to={link} key={id} onClick={() => setActiveMenu(id)}>
+                        <div
+                            className={`flex items-center gap-4 px-5 py-3 rounded-xl cursor-pointer select-none
+              transition-colors duration-200 ease-in-out
+              ${activeMenu === id
+                                    ? 'bg-emerald-500 text-white shadow-lg'
+                                    : 'text-gray-700 hover:bg-emerald-100 hover:text-emerald-700'}`}
+                        >
+                            <Icon className="h-6 w-6" />
+                            <span className="font-medium">{name}</span>
+                        </div>
+                    </Link>
+                ))}
+            </nav>
+        </aside>
     );
 };
 

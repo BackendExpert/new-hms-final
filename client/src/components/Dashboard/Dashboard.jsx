@@ -1,71 +1,92 @@
-import React, { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
-import DashSide from './DashSide'
-import DashNav from './DashNav'
-import DashFooter from './DashFooter'
-import { FaArrowCircleRight, FaChevronCircleLeft } from "react-icons/fa";
-import { TiThMenu } from "react-icons/ti";
-import { MdOutlineClose } from "react-icons/md";
-import '../../App.css'
+import React, { useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import secureLocalStorage from 'react-secure-storage';
+import DashSide from './DashSide';
+import DashNav from './DashNav';
+import DashFooter from './DashFooter';
 
+const Dashboard = () => {
+    const navigate = useNavigate();
+    const RoleUser = secureLocalStorage.getItem('loginR');
+    const EmailUser = secureLocalStorage.getItem('loginE');
+    const Username = secureLocalStorage.getItem('loginU');
 
-const Dashbaord = () => {
-    const navigate = useNavigate()
-    const RoleUser = secureLocalStorage.getItem('loginR')
-    const EmailUser = secureLocalStorage.getItem('loginE')
-    const Username = secureLocalStorage.getItem('loginU')
+    const [sideOpen, setSideOpen] = useState(false);
 
-    const [openside, setopenside] = useState(false);
+    useEffect(() => {
+        if (!RoleUser || !EmailUser || !Username) {
+            localStorage.clear();
+            navigate('/');
+        }
+    }, [RoleUser, EmailUser, Username, navigate]);
 
-    const headlemenuopen = () => {
-        setopenside(!openside)
+    const toggleSide = () => setSideOpen((prev) => !prev);
+
+    if (!RoleUser || !EmailUser || !Username) {
+        return null; // or loading spinner if you want
     }
 
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
+            <div className="xl:flex">
+                {/* Sidebar */}
+                <aside
+                    className={`fixed top-0 left-0 h-full bg-white shadow-lg z-50 w-3/4 max-w-xs
+            transform transition-transform duration-300 ease-in-out
+            xl:translate-x-0
+            ${sideOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                >
+                    <DashSide />
+                </aside>
 
-    if (RoleUser !== "" || EmailUser !== "" || Username !== "") {
-        return (
-            <div className='w-full bg-gray-200 min-h-screen'>
-                <div className="xl:flex">
-                    <div
-                        className={`shadow-[5px_0_15px_-5px_rgba(0,0,0,0.1)] p-0 xl:block fixed top-0 left-0 h-full bg-white shadow-custom z-50 xl:w-[19%] w-[75%] overflow-y-auto transform duration-500 scrollbar-thin ${openside ? "translate-x-0" : "-translate-x-full xl:translate-x-0"
-                            }`}
-                    >
-                        <DashSide />
-                    </div>
+                {/* Sidebar toggle button */}
+                <button
+                    aria-label={sideOpen ? 'Close menu' : 'Open menu'}
+                    className="fixed top-6 left-3 z-60 p-2 rounded-md bg-emerald-600 text-white xl:hidden shadow-lg hover:bg-emerald-700 transition"
+                    onClick={toggleSide}
+                >
+                    {sideOpen ? (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    ) : (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    )}
+                </button>
 
-                    <button
-                        className="xl:hidden fixed top-6 left-1 z-50 bg-orange-500 p-1 rounded font-semibold"
-                        onClick={headlemenuopen}
-                    >
-                        {openside ? (
-                            <MdOutlineClose className="fill-white h-4 w-auto" />
-                        ) : (
-                            <TiThMenu className="fill-white h-4 w-auto" />
-                        )}
-                    </button>
+                {/* Main content */}
+                <main className="flex-1 xl:ml-[19%] min-h-screen flex flex-col">
+                    <header className="shadow-md bg-white sticky top-0 z-40">
+                        <DashNav />
+                    </header>
 
-                    <div className="xl:ml-[19%] w-full">
-                        <div className="xl:-ml-4 ">
-                            <DashNav />
-                        </div>
-                        <div className="xl:ml-4 ml-6 py-4 mr-4">
-                            <Outlet />
-                        </div>
-                        <div className="xl:ml-0">
-                            <DashFooter />
-                        </div>
-                    </div>
-                </div>
+                    <section className="flex-grow p-6 bg-gray-50 overflow-auto">
+                        <Outlet />
+                    </section>
+
+                    <footer className="bg-white border-t border-gray-200">
+                        <DashFooter />
+                    </footer>
+                </main>
             </div>
-        )
-    }
-    else {
-        useEffect(() => {
-            localStorage.clear()
-            navigate('/')
-        }, [])
-    }
-}
+        </div>
+    );
+};
 
-export default Dashbaord
+export default Dashboard;

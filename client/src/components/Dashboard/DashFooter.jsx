@@ -1,19 +1,24 @@
-import React from 'react'
+import React from 'react';
 
 const DashFooter = () => {
-    const currentyear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear();
     return (
-        <div className='pl-4 py-4 border-t border-gray-100 bg-white md:flex justify-between items-center pr-4 text-sm text-slate-500'>
-            <h1>
-                <span className='font-semibold text-slate-700'>© {currentyear}</span>. All Rights Reserved. |
-                Engineered by
-                <a href="https://blackalphalabs.com" target='_blank' className='text-emerald-500 font-medium ml-1 hover:underline'>BLACK ALPHA LABS</a>
-            </h1>
-            <p className="text-gray-400 mt-2 md:mt-0">version 1.0</p>
-        </div>
+        <footer className="flex flex-col md:flex-row justify-between items-center py-4 px-6 text-gray-500 text-sm select-none">
+            <p>
+                <span className="font-semibold text-gray-700">© {currentYear}</span> All rights reserved. |
+                Engineered by{' '}
+                <a
+                    href="https://blackalphalabs.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-600 font-medium hover:underline"
+                >
+                    BLACK ALPHA LABS
+                </a>
+            </p>
+            <p className="mt-2 md:mt-0 text-gray-400 font-mono tracking-wide">version 1.0</p>
+        </footer>
+    );
+};
 
-
-    )
-}
-
-export default DashFooter
+export default DashFooter;

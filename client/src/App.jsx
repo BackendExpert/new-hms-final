@@ -10,6 +10,9 @@ import ForgetPass from './pages/AuthPage/ForgetPass'
 import VerifyOTP from './pages/AuthPage/VerifyOTP'
 import UpdateNewPass from './pages/AuthPage/UpdateNewPass'
 import VerifyEmail from './pages/AuthPage/VerifyEmail'
+import PrivateRoute from './components/Auth/PrivateRoute'
+import Dashbaord from './components/Dashboard/Dashboard'
+import DashHome from './pages/DashHome/DashHome'
 
 function App() {
     return (
@@ -23,6 +26,10 @@ function App() {
                     <Route path='/verify-otp' element={<VerifyOTP /> } />
                     <Route path='/update-new-pass' element={<UpdateNewPass /> } />
                     <Route path='/verify-email' element={<VerifyEmail /> } />
+
+                    <Route path='/Dashboard/' element={<PrivateRoute element={<Dashbaord /> } /> } >
+                        <Route path='Home' element={<PrivateRoute element={<DashHome /> } /> } />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </>
