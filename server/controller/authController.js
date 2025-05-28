@@ -95,8 +95,11 @@ const authController = {
                     if (err) {
                         return res.json({ Error: "Registration succeeded, but failed to send verification email." });
                     } else {
+                        const tokenemailVerify = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '5min' });
+
                         return res.json({
                             Status: "Success",
+                            verifyToken: tokenemailVerify,
                             Message: "Registration successful. Verification code sent to your email. Verify Email Please wait and wait for activation."
                         });
                     }
@@ -112,6 +115,47 @@ const authController = {
         }
     },
 
+
+    // verify otp for email verify
+    otpverifyforemail: async (req, res) => {
+        try {
+            const { otp } = req.body;
+
+            // 1. Get token from Authorization header
+            const token = req.header('Authorization');
+            if (!token || !token.startsWith('Bearer ')) {
+                return res.json({ Error: "Missing or invalid token" });
+            }
+
+            // 2. Verify token and extract email
+            const decoded = jwt.verify(token.replace('Bearer ', ''), process.env.JWT_SECRET);
+            const email = decoded.email;
+
+            // 3. Check for OTP record in DB
+            const userOtpRecord = await UserOTP.findOne({ email });
+            if (!userOtpRecord) {
+                return res.json({ Error: "No OTP found for this email" });
+            }
+
+            // 4. Compare provided OTP with hashed OTP in DB
+            const isMatch = await bcrypt.compare(otp, userOtpRecord.otp);
+            if (!isMatch) {
+                return res.json({ Error: "Invalid OTP" });
+            }
+
+            // 5. Mark email as verified & remove OTP from DB
+            await User.updateOne({ email }, { emailVerified: true });
+            await UserOTP.deleteOne({ email });
+
+            res.json({ Status: "Success", Message: "Email verified successfully" });
+        } catch (err) {
+            if (err.name === 'TokenExpiredError') {
+                return res.json({ Error: "Verification token expired" });
+            }
+            console.error(err);
+            res.status(500).json({ Error: "Server error during email verification" });
+        }
+    },
 
     // create new permissions
     createPermissions: async (req, res) => {
