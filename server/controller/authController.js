@@ -266,6 +266,33 @@ const authController = {
         }
     },
 
+    // check and verify otp
+
+    checkotpforforgetpass: async (req, res) => {
+        try {
+            const { email, otp } = req.body
+
+            const checkotp = await UserOTP.findOne({ email: email })
+
+            if (checkotp) {
+                return res.json({ Error: 'OTP Cannot Found' })
+            }
+
+            // if found
+
+            const deleterecode = await UserOTP.findOneAndDelete({ email: email })
+
+            if (deleterecode) {
+                const tokenforgetpass = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '5min' });
+
+                return res.json({ Status: "Success", Token: tokenforgetpass,  Message: "OTP Verify Success, Update your Password within 5min"})
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
     // create new permissions
     createPermissions: async (req, res) => {
         try {
