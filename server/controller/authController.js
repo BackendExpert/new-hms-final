@@ -270,28 +270,85 @@ const authController = {
 
     checkotpforforgetpass: async (req, res) => {
         try {
-            const { email, otp } = req.body
+            const { email, otp } = req.body;
 
-            const checkotp = await UserOTP.findOne({ email: email })
+            const checkotp = await UserOTP.findOne({ email: email });
 
-            if (checkotp) {
-                return res.json({ Error: 'OTP Cannot Found' })
+            // If OTP record not found
+            if (!checkotp) {
+                return res.json({ Error: 'OTP Not Found for this Email' });
             }
 
-            // if found
+            // Compare OTP
+            const isMatch = await bcrypt.compare(otp, checkotp.otp);
+            if (!isMatch) {
+                return res.json({ Error: 'OTP does not match' });
+            }
 
-            const deleterecode = await UserOTP.findOneAndDelete({ email: email })
+            // Delete OTP record after successful verification
+            const deleterecode = await UserOTP.findOneAndDelete({ email: email });
 
             if (deleterecode) {
                 const tokenforgetpass = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '5min' });
 
-                return res.json({ Status: "Success", Token: tokenforgetpass,  Message: "OTP Verify Success, Update your Password within 5min"})
+                return res.json({
+                    Status: "Success",
+                    Token: tokenforgetpass,
+                    Message: "OTP Verified. You can now update your password within 5 minutes."
+                });
+            } else {
+                return res.json({ Error: "Failed to delete OTP record" });
             }
-        }
-        catch (err) {
-            console.log(err)
+        } catch (err) {
+            console.error("OTP verification error:", err);
+            return res.json({ Error: 'Server Error' });
         }
     },
+
+    updatepasswordviaforgetpass: async (req, res) => {
+        try {
+            // 1. Get token from Authorization header
+            const token = req.header('Authorization');
+            if (!token || !token.startsWith('Bearer ')) {
+                return res.json({ Error: "Missing or invalid token" });
+            }
+
+            // 2. Verify token and extract email
+            const decoded = jwt.verify(token.replace('Bearer ', ''), process.env.JWT_SECRET);
+            const tokenEmail = decoded.email;
+
+            // 3. Extract email and newPassword from body
+            const { newPassword, email } = req.body;
+
+            // 4. Check if email from body matches token email
+            if (!email || email !== tokenEmail) {
+                return res.json({ Error: "Email mismatch" });
+            }
+
+            // 5. Find user
+            const checkuser = await User.findOne({ email: email });
+            if (!checkuser) {
+                return res.json({ Error: "User not found" });
+            }
+
+            // 6. Validate newPassword presence
+            if (!newPassword) {
+                return res.json({ Error: "New password is required" });
+            }
+
+            // 7. Hash new password and update
+            const hashedPassword = await bcrypt.hash(newPassword, 10);
+            checkuser.password = hashedPassword;
+            await checkuser.save();
+
+            return res.json({ Status: "Success", Message: "Password updated successfully" });
+        } catch (err) {
+            console.log("Password update error:", err);
+            return res.json({ Error: "Something went wrong" });
+        }
+    },
+
+
 
     // create new permissions
     createPermissions: async (req, res) => {
