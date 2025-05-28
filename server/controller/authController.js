@@ -228,7 +228,7 @@ const authController = {
                 to: email,
                 subject: 'Pdn Account Verification Code',
                 html: `
-                            <p>Dear ${username},</p>
+                            <p>Dear ${checkuser.username},</p>
                             <p>The OTP for Password Reset</p>
                             <p>Your Password Resest verification code is:</p>
                             <h2 style="color:#7c340c;">${verificationCode}</h2>
@@ -244,17 +244,21 @@ const authController = {
                 email: email,
                 otp: hashotp
             })
-            
+
             const deleteallotpsforemail = await UserOTP.findOneAndDelete({ email: email })
 
             const resultStoreOTP = await storeOTP.save()
 
-            if(resultStoreOTP){
-                return res.json({ Status: "Success", Message: "Password Reset OTP has been send to your Email"})
-            }
-            else{
-                return res.json({ Error: "Internal Server Error"})
-            }
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    return res.json({ Error: "Registration succeeded, but failed to send verification email." });
+                } else {
+                    return res.json({
+                        Status: "Success",
+                        Message: "Password Reset OTP has been send to your email Address, check emails"
+                    });
+                }
+            });
 
         }
         catch (err) {
