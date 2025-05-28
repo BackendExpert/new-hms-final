@@ -10,6 +10,7 @@ router.post('/signin', authController.signin)
 
 router.post('/forgot-password', authController.forgetpass)
 
+router.post('/verify-otp', authController.checkotpforforgetpass)
 
 // admin, director access only
 router.post('/create-permission', authController.createPermissions)
