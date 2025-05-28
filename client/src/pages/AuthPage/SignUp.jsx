@@ -9,7 +9,7 @@ import uopLogo from '../../assets/uoplogo.png';
 
 const SignUp = () => {
     const [signUpData, setSignUpData] = useState({
-        staffNo: '',
+        username: '',
         email: '',
         password: '',
     });
@@ -66,12 +66,12 @@ const SignUp = () => {
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Sign Up</h2>
                     <form onSubmit={handleSubmit}>
                         <DefaultInput
-                            label="Staff Number"
+                            label="Username"
                             type="text"
-                            name="staffNo"
-                            value={signUpData.staffNo}
+                            name="username"
+                            value={signUpData.username}
                             onChange={handleInputChange}
-                            placeholder="Enter your staff number"
+                            placeholder="Username"
                             required
                         />
 
