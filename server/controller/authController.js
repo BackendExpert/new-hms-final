@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const crypto = require('crypto');
 const Role = require('../model/Role');
 const User = require('../model/User');
-const { transporter } = require('../utils/emailTransporter');
+const transporter = require('../utils/emailTransporter');
 const UserOTP = require('../model/UserOTP');
 
 const authController = {
@@ -21,10 +21,10 @@ const authController = {
                 return res.json({ Error: "Password must be at least 6 characters long" });
             }
 
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@pdn\.ac\.lk$/;
-            if (!emailRegex.test(email)) {
-                return res.json({ Error: "Email must end with '@pdn.ac.lk'" });
-            }
+            // const emailRegex = /^[a-zA-Z0-9._%+-]+@pdn\.ac\.lk$/;
+            // if (!emailRegex.test(email)) {
+            //     return res.json({ Error: "Email must end with '@pdn.ac.lk'" });
+            // }
 
             const checkUser = await User.findOne({
                 $or: [
