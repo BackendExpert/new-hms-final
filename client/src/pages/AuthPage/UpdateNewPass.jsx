@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
@@ -6,10 +6,22 @@ import { useNavigate } from 'react-router-dom';
 import uopLogo from '../../assets/uoplogo.png';
 
 const UpdateNewPass = () => {
-    const [newPassData, setNewPassData] = useState({ email: '', newpass: '', confirmpass: '' });
+    const [newPassData, setNewPassData] = useState({
+        email: '',
+        newPassword: '',
+        confirmpass: ''
+    });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    const token = localStorage.getItem("updatepass");
+
+    useEffect(() => {
+        if (!token) {
+            navigate('/', { replace: true });
+        }
+    }, [token, navigate]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -21,17 +33,23 @@ const UpdateNewPass = () => {
         setLoading(true);
         setError('');
 
-        if (newPassData.newpass !== newPassData.confirmpass) {
+        if (newPassData.newPassword !== newPassData.confirmpass) {
             setError('Passwords do not match');
             setLoading(false);
             return;
         }
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_APP_API}/auth/update-password`, newPassData);
+            const res = await axios.post(`${import.meta.env.VITE_APP_API}/auth/update-password`, newPassData, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
-                navigate('/signin');
+                localStorage.clear();
+                navigate('/');
             } else {
                 setError(res.data.Error || 'Failed to update password');
             }
@@ -62,8 +80,8 @@ const UpdateNewPass = () => {
                         <DefaultInput
                             label="New Password"
                             type="password"
-                            name="newpass"
-                            value={newPassData.newpass}
+                            name="newPassword"
+                            value={newPassData.newPassword}
                             onChange={handleInputChange}
                             placeholder="Enter new password"
                             required

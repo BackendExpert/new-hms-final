@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
@@ -6,13 +6,22 @@ import { useNavigate } from 'react-router-dom';
 import uopLogo from '../../assets/uoplogo.png';
 
 const VerifyEmail = () => {
-    const [emailData, setEmailData] = useState({ email: '' });
+    const [emailData, setEmailData] = useState({ otp: '' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const token = localStorage.getItem("emailVerify");
+
+    // Redirect if no token found
+    useEffect(() => {
+        if (!token) {
+            navigate('/', { replace: true });
+        }
+    }, [token, navigate]);
+
     const handleInputChange = (e) => {
-        setEmailData({ email: e.target.value });
+        setEmailData({ otp: e.target.value });
     };
 
     const handleSubmit = async (e) => {
@@ -21,10 +30,15 @@ const VerifyEmail = () => {
         setError('');
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_APP_API}/auth/verify-email`, emailData);
+            const res = await axios.post(`${import.meta.env.VITE_APP_API}/auth/verify-email`, emailData, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
-                navigate('/signin');
+                navigate('/', { replace: true });
+                localStorage.clear();
             } else {
                 setError(res.data.Error || 'Email verification failed. You cannot verify later.');
             }
@@ -49,12 +63,12 @@ const VerifyEmail = () => {
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Verify Email</h2>
                     <form onSubmit={handleSubmit}>
                         <DefaultInput
-                            label="Email"
-                            type="email"
-                            name="email"
-                            value={emailData.email}
+                            label="OTP"
+                            type="text"
+                            name="otp"
+                            value={emailData.otp}
                             onChange={handleInputChange}
-                            placeholder="you@example.com"
+                            placeholder="Enter OTP"
                             required
                         />
                         {error && <div className="mb-4 text-sm text-red-600">{error}</div>}

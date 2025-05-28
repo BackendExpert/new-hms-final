@@ -24,6 +24,7 @@ const VerifyOTP = () => {
             const res = await axios.post(`${import.meta.env.VITE_APP_API}/auth/verify-otp`, otpData);
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
+                localStorage.setItem("updatepass", res.data.Token)
                 navigate('/update-new-pass');
             } else {
                 setError(res.data.Error || 'OTP verification failed');

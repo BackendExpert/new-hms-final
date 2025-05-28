@@ -38,9 +38,8 @@ const SignUp = () => {
 
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
-                // Optionally store info or navigate
-                navigate('/Dashboard/Home');
-                window.location.reload();
+                localStorage.setItem('emailVerify', res.data.verifyToken)
+                navigate('/verify-email', {replace: true});
             } else {
                 setError(res.data.Error || 'Sign-up failed');
             }
