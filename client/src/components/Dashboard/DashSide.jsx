@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import { getUserInfoFromToken } from '../../utils/auth'; // updated import
 import { dashsidedata } from './DashSideData';
 import uoplogo from '../../assets/uoplogo.png';
 
 const DashSide = () => {
     const [activeMenu, setActiveMenu] = useState(null);
-    const username = secureLocalStorage.getItem('loginU') || 'User';
-    const role = secureLocalStorage.getItem('loginR') || 'guest';
     const location = useLocation();
+
+    const user = getUserInfoFromToken() || { username: 'User', role: 'guest' };
+    const { username, role } = user;
 
     useEffect(() => {
         // Set active menu based on current pathname
@@ -30,9 +31,10 @@ const DashSide = () => {
     });
 
     return (
-        <aside className="bg-white shadow-lg border-r border-gray-200 min-h-screen p-6 flex flex-col xl:rounded-r-3xl
-      overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400 scrollbar-track-emerald-100 hover:scrollbar-thumb-emerald-500 transition-all duration-300">
-            {/* Logo */}
+        <aside
+            className="bg-white shadow-lg border-r border-gray-200 min-h-screen p-6 flex flex-col xl:rounded-r-3xl
+      overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400 scrollbar-track-emerald-100 hover:scrollbar-thumb-emerald-500 transition-all duration-300"
+        >
             <div className="mb-6 flex justify-center">
                 <img src={uoplogo} alt="University of Peradeniya Logo" className="h-14 object-contain" />
             </div>
@@ -41,7 +43,6 @@ const DashSide = () => {
                 HOSTEL MANAGEMENT SYSTEM
             </h2>
 
-            {/* User Info */}
             <div className="flex items-center gap-4 bg-emerald-100 text-emerald-700 rounded-2xl p-4 shadow-inner mb-8 select-none">
                 <img
                     src="https://avatars.githubusercontent.com/u/138636749?v=4"
@@ -54,24 +55,25 @@ const DashSide = () => {
                 </div>
             </div>
 
-            {/* Menu Items */}
-            <nav className="flex flex-col space-y-2 flex-grow">
-                {filteredMenu.length === 0 && (
-                    <p className="text-center text-gray-400 mt-8">No menu items available</p>
-                )}
-
-                {filteredMenu.map(({ id, name, icon: Icon, link }) => (
-                    <Link to={link} key={id} onClick={() => setActiveMenu(id)}>
-                        <div
-                            className={`flex items-center gap-4 px-5 py-3 rounded-xl cursor-pointer select-none
-              transition-colors duration-200 ease-in-out
+            <nav className="flex flex-col space-y-3 flex-grow">
+                {filteredMenu.map(({ id, icon, title, link }) => (
+                    <Link
+                        to={link}
+                        key={id}
+                        className={`flex items-center gap-3 px-5 py-3 rounded-xl transition-colors
               ${activeMenu === id
-                                    ? 'bg-emerald-500 text-white shadow-lg'
-                                    : 'text-gray-700 hover:bg-emerald-100 hover:text-emerald-700'}`}
-                        >
-                            <Icon className="h-6 w-6" />
-                            <span className="font-medium">{name}</span>
-                        </div>
+                                ? 'bg-emerald-500 text-white shadow-lg'
+                                : 'text-emerald-700 hover:bg-emerald-200 hover:text-emerald-600'
+                            }`}
+                        onClick={() => {
+                            setActiveMenu(id);
+                            localStorage.setItem('dashmenuID', id);
+                        }}
+                        tabIndex={0}
+                        aria-current={activeMenu === id ? 'page' : undefined}
+                    >
+                        <span className="text-lg">{icon}</span>
+                        <span className="font-semibold tracking-wide">{title}</span>
                     </Link>
                 ))}
             </nav>

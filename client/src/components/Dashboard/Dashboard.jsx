@@ -1,35 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import { getUserInfoFromToken } from '../../utils/auth'; // updated import
 import DashSide from './DashSide';
 import DashNav from './DashNav';
 import DashFooter from './DashFooter';
 
 const Dashboard = () => {
     const navigate = useNavigate();
-    const RoleUser = secureLocalStorage.getItem('loginR');
-    const EmailUser = secureLocalStorage.getItem('loginE');
-    const Username = secureLocalStorage.getItem('loginU');
-
+    const [user, setUser] = useState(null);
     const [sideOpen, setSideOpen] = useState(false);
 
     useEffect(() => {
-        if (!RoleUser || !EmailUser || !Username) {
+        const userInfo = getUserInfoFromToken();
+        if (!userInfo) {
             localStorage.clear();
             navigate('/');
+        } else {
+            setUser(userInfo);
         }
-    }, [RoleUser, EmailUser, Username, navigate]);
+    }, [navigate]);
 
     const toggleSide = () => setSideOpen((prev) => !prev);
 
-    if (!RoleUser || !EmailUser || !Username) {
-        return null; // or loading spinner if you want
-    }
+    if (!user) return null; // or loading spinner
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
             <div className="xl:flex">
-                {/* Sidebar */}
                 <aside
                     className={`fixed top-0 left-0 h-full bg-white shadow-lg z-50 w-3/4 max-w-xs
             transform transition-transform duration-300 ease-in-out
@@ -39,7 +36,6 @@ const Dashboard = () => {
                     <DashSide />
                 </aside>
 
-                {/* Sidebar toggle button */}
                 <button
                     aria-label={sideOpen ? 'Close menu' : 'Open menu'}
                     className="fixed top-6 left-3 z-60 p-2 rounded-md bg-emerald-600 text-white xl:hidden shadow-lg hover:bg-emerald-700 transition"
@@ -70,7 +66,6 @@ const Dashboard = () => {
                     )}
                 </button>
 
-                {/* Main content */}
                 <main className="flex-1 xl:ml-[19%] min-h-screen flex flex-col">
                     <header className="shadow-md bg-white sticky top-0 z-40">
                         <DashNav />

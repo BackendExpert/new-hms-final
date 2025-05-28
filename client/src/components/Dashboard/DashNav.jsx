@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FaUserCog } from 'react-icons/fa';
 import { FaGear, FaPowerOff } from 'react-icons/fa6';
-import secureLocalStorage from 'react-secure-storage';
+import { getUserInfoFromToken } from '../../utils/auth'; // updated import
 
 const DashNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
-    const username = secureLocalStorage.getItem('loginU') || 'User';
-    const role = secureLocalStorage.getItem('loginR') || 'Role';
+    const user = getUserInfoFromToken() || { username: 'User', role: 'Role' };
+    const { username, role } = user;
 
     const toggleMenu = () => setMenuOpen((open) => !open);
 
@@ -17,7 +17,6 @@ const DashNav = () => {
         window.location.reload();
     };
 
-    // Close dropdown on outside click or ESC
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -42,7 +41,9 @@ const DashNav = () => {
 
     return (
         <nav className="relative bg-white border-b border-gray-200 shadow-sm py-4 px-6 rounded-b-2xl flex justify-between items-center">
-            <h1 className="text-2xl font-extrabold tracking-tight text-emerald-600 select-none">Dashboard</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight text-emerald-600 select-none">
+                Dashboard
+            </h1>
 
             <div className="relative">
                 <button
@@ -63,7 +64,6 @@ const DashNav = () => {
                     <span className="absolute bottom-1 right-0 h-3 w-3 bg-emerald-400 border-2 border-white rounded-full animate-pulse" />
                 </button>
 
-                {/* Dropdown menu */}
                 <div
                     ref={menuRef}
                     className={`origin-top-right absolute right-0 mt-3 w-72 rounded-3xl bg-white border border-gray-100 shadow-xl
