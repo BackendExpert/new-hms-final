@@ -8,11 +8,19 @@ const authMiddleware = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token.replace('Bearer ', ''), process.env.JWT_SECRET);
-        req.user = decoded;
+
+        // Ensure 'id' exists in token payload
+        if (!decoded.id) {
+            return res.status(400).json({ message: 'Invalid token payload: missing user ID' });
+        }
+
+        req.user = { id: decoded.id };
         next();
+
     } catch (error) {
+        console.error(error);
         res.status(400).json({ message: 'Invalid token.' });
     }
 };
 
-export  { authMiddleware }
+export { authMiddleware };
