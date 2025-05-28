@@ -165,7 +165,8 @@ const authController = {
             } = req.body
 
 
-            const checkuser = await User.findOne({ email: email })
+            const checkuser = await User.findOne({ email }).populate('roles');
+
 
             if (!checkuser) {
                 return res.json({ Error: "The User not Found by Given Email Address" })

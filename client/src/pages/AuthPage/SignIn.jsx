@@ -33,10 +33,10 @@ const SignIn = () => {
 
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
-                localStorage.setItem('login', res.data.Token);
+                secureLocalStorage.setItem('login', res.data.Token);
                 localStorage.setItem('dashmenuID', 1);
                 navigate('/Dashboard/Home');
-                window.location.reload();
+                // window.location.reload();
             } else {
                 setError(res.data.Error || 'Sign-in failed');
             }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getUserInfoFromToken } from '../../utils/auth'; // updated import
+import { getUserInfoFromToken } from '../../utils/auth';
 import { dashsidedata } from './DashSideData';
 import uoplogo from '../../assets/uoplogo.png';
 
@@ -8,23 +8,20 @@ const DashSide = () => {
     const [activeMenu, setActiveMenu] = useState(null);
     const location = useLocation();
 
-    const user = getUserInfoFromToken() || { username: 'User', role: 'guest' };
-    const { username, role } = user;
+    const { username, role } = getUserInfoFromToken();
 
     useEffect(() => {
-        // Set active menu based on current pathname
-        const currentItem = dashsidedata.find((item) => item.link === location.pathname);
+        const currentItem = dashsidedata.find(item => item.link === location.pathname);
         if (currentItem) {
             setActiveMenu(currentItem.id);
             localStorage.setItem('dashmenuID', currentItem.id);
         } else {
-            const saved = localStorage.getItem('dashmenuID');
-            setActiveMenu(saved ? Number(saved) : null);
+            const savedId = localStorage.getItem('dashmenuID');
+            setActiveMenu(savedId ? Number(savedId) : null);
         }
     }, [location]);
 
-    // Filter menu items based on role
-    const filteredMenu = dashsidedata.filter((item) => {
+    const filteredMenu = dashsidedata.filter(item => {
         if (role === 'admin' || role === 'director') return item.id !== 3;
         if (role === 'warden') return ![2, 7].includes(item.id);
         return false;
@@ -33,7 +30,7 @@ const DashSide = () => {
     return (
         <aside
             className="bg-white shadow-lg border-r border-gray-200 min-h-screen p-6 flex flex-col xl:rounded-r-3xl
-      overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400 scrollbar-track-emerald-100 hover:scrollbar-thumb-emerald-500 transition-all duration-300"
+                overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400 scrollbar-track-emerald-100 hover:scrollbar-thumb-emerald-500 transition-all duration-300"
         >
             <div className="mb-6 flex justify-center">
                 <img src={uoplogo} alt="University of Peradeniya Logo" className="h-14 object-contain" />
@@ -61,7 +58,7 @@ const DashSide = () => {
                         to={link}
                         key={id}
                         className={`flex items-center gap-3 px-5 py-3 rounded-xl transition-colors
-              ${activeMenu === id
+                            ${activeMenu === id
                                 ? 'bg-emerald-500 text-white shadow-lg'
                                 : 'text-emerald-700 hover:bg-emerald-200 hover:text-emerald-600'
                             }`}

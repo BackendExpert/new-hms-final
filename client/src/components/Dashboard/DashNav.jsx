@@ -1,20 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaUserCog } from 'react-icons/fa';
 import { FaGear, FaPowerOff } from 'react-icons/fa6';
-import { getUserInfoFromToken } from '../../utils/auth'; // updated import
+import { getUserInfoFromToken } from '../../utils/auth';
 
 const DashNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
-    const user = getUserInfoFromToken() || { username: 'User', role: 'Role' };
-    const { username, role } = user;
+    const { username, roles } = getUserInfoFromToken();
+    const role = roles[0]?.name || '';
 
-    const toggleMenu = () => setMenuOpen((open) => !open);
+
+    const toggleMenu = () => setMenuOpen(prev => !prev);
 
     const handleLogout = () => {
         localStorage.clear();
-        window.location.reload();
+        window.location.href = '/'; // reload + redirect to login
     };
 
     useEffect(() => {
@@ -32,7 +33,6 @@ const DashNav = () => {
 
         document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('keydown', handleEscape);
-
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleEscape);
@@ -41,9 +41,7 @@ const DashNav = () => {
 
     return (
         <nav className="relative bg-white border-b border-gray-200 shadow-sm py-4 px-6 rounded-b-2xl flex justify-between items-center">
-            <h1 className="text-2xl font-extrabold tracking-tight text-emerald-600 select-none">
-                Dashboard
-            </h1>
+            <h1 className="text-2xl font-extrabold tracking-tight text-emerald-600 select-none">Dashboard</h1>
 
             <div className="relative">
                 <button
@@ -66,10 +64,9 @@ const DashNav = () => {
 
                 <div
                     ref={menuRef}
-                    className={`origin-top-right absolute right-0 mt-3 w-72 rounded-3xl bg-white border border-gray-100 shadow-xl
-            transition-transform transform
-            ${menuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}
-          `}
+                    className={`origin-top-right absolute right-0 mt-3 w-72 rounded-3xl bg-white border border-gray-100 shadow-xl transition-transform transform
+                        ${menuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}
+                    `}
                     role="menu"
                     aria-label="User menu options"
                 >
