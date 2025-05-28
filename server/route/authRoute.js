@@ -8,6 +8,7 @@ router.post('/verify-email', authController.otpverifyforemail)
 
 router.post('/signin', authController.signin)
 
+router.post('/forgot-password', authController.forgetpass)
 
 
 // admin, director access only
