@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post('/signup', authController.signup)
 router.post('/verify-email', authController.otpverifyforemail)
+router.post('/signin', authController.signin)
 router.post('/create-permission', authController.createPermissions)
 
 module.exports = router;

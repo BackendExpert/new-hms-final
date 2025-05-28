@@ -157,6 +157,48 @@ const authController = {
         }
     },
 
+    signin: async(req, res) => {
+        try{
+            const {
+                email,
+                password
+            } = req.body
+
+
+            const checkuser = await User.findOne({ email: email })
+
+            if(!checkuser){
+                return res.json({ Error: "The User not Found by Given Email Address"})
+            }
+
+            if(checkuser.emailVerified === false){
+                return res.json({ Error: "The Email Not Verified"})
+            }
+
+            if(checkuser.active === false){
+                return res.json({ Error: "The Account is not Active, wait for admin to active the account"})
+            }
+
+            const checkpass = await bcrypt.compare(password, checkuser.password)
+
+            if(!checkpass){
+                return res.json({ Error: "The Password is Not Match"})
+            }
+
+            const token = jwt.sign({ id: checkuser._id, role: checkuser.roles, user: checkuser }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            
+            if(token){
+                return res.json({ Status: "Success", Message: "Login Success", Token: token })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error while signin"})
+            }            
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
+
     // create new permissions
     createPermissions: async (req, res) => {
         try {
