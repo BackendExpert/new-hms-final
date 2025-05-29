@@ -3,6 +3,8 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link, useNavigate } from 'react-router-dom'
 import secureLocalStorage from 'react-secure-storage'
 import axios from 'axios'
+import DefaultInput from '../../components/Form/DefaultInput'
+
 
 const CreateRolePermissions = () => {
     const navigate = useNavigate()
@@ -25,11 +27,11 @@ const CreateRolePermissions = () => {
                     'Authorization': `Bearer ${token}`,
                 },
             })
-            if(res.data.Status === "Success"){
+            if (res.data.Status === "Success") {
                 alert(res.data.Message)
-                navigate('/Dashboard/Permissions', {replace: true })
+                navigate('/Dashboard/Permissions', { replace: true })
             }
-            else{
+            else {
                 alert(res.data.Error)
             }
         }
@@ -50,6 +52,37 @@ const CreateRolePermissions = () => {
                 />
             </Link>
 
+
+            <div className="mt-8">
+                <form onSubmit={headleCreatePermission} method="post">
+                    <DefaultInput
+                        label="Role"
+                        type="text"
+                        name="role"
+                        value={permissiondata.role}
+                        onChange={handleInputChange}
+                        placeholder="admin, student..."
+                        required
+                    />
+
+                    <DefaultInput
+                        label="Permission"
+                        type="text"
+                        name="permission"
+                        value={permissiondata.permission}
+                        onChange={handleInputChange}
+                        placeholder="create-new-student"
+                        required
+                    />
+
+                    <div className="">
+                        <DefaultBtn 
+                            type='submit'
+                            label='Create Role and Permission'
+                        />
+                    </div>
+                </form>
+            </div>
 
         </div>
     )
