@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import { FaUserLock } from "react-icons/fa";
+import axios from 'axios';
+import secureLocalStorage from 'react-secure-storage';
 
 const RolePermissions = () => {
+
+    const [getreols, setgetroles] = useState([])
+    const token = secureLocalStorage.getItem('login')
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/auth/view-all-role', {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        })
+            .then(res => setgetroles(res.data.Result))
+            .catch(err => console.log(err))
+    }, [])
+
     return (
         <div>
             <h1 className="font-bold text-emerald-600 text-xl">Role and Permissions</h1>
@@ -20,7 +35,7 @@ const RolePermissions = () => {
                         <div className="text-sm font-medium uppercase tracking-wide text-emerald-100">
                             Roles (User Types)
                         </div>
-                        <div className="mt-2 text-3xl font-bold">4</div>
+                        <div className="mt-2 text-3xl font-bold">{getreols.length}</div>
                     </div>
                 </div>
             </div>
@@ -44,15 +59,22 @@ const RolePermissions = () => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
-                            <tr className="hover:bg-emerald-50 transition-all duration-150">
-                                <td className="px-6 py-4 font-medium text-gray-800">1</td>
-                                <td className="px-6 py-4">Admin</td>
-                                <td className="px-6 py-4">
-                                    <Link to="#" className="text-emerald-600 font-medium hover:underline">
-                                        View
-                                    </Link>
-                                </td>
-                            </tr>
+                            {
+                                getreols.map((role, index) => {
+                                    return (
+                                        <tr className="hover:bg-emerald-50 transition-all duration-150" key={index}>
+                                            <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
+                                            <td className="px-6 py-4">{role.name}</td>
+                                            <td className="px-6 py-4">
+                                                <Link to="#" className="text-emerald-600 font-medium hover:underline">
+                                                    View
+                                                </Link>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
+
                         </tbody>
                     </table>
                 </div>

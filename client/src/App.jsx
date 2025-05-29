@@ -16,6 +16,7 @@ import DashHome from './pages/DashHome/DashHome'
 import DashError from './components/Errors/DashError'
 import RolePermissions from './pages/Permissions/RolePermissions'
 import CreateRolePermissions from './pages/Permissions/CreateRolePermissions'
+import ViewOneRole from './pages/Permissions/ViewOneRole'
 
 function App() {
     return (
@@ -35,7 +36,7 @@ function App() {
                         <Route path='Home' element={<PrivateRoute element={<DashHome />} />} />
                         <Route path='Permissions' element={<PrivateRoute element={<RolePermissions /> } /> } />
                         <Route path='Create-Permissions' element={<PrivateRoute element={<CreateRolePermissions /> } /> } />
-                        
+                        <Route path='View-One-Role/id' element={<PrivateRoute element={<ViewOneRole /> } />} />
                     </Route>
 
                 </Routes>
