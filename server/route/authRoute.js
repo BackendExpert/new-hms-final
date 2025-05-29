@@ -22,7 +22,8 @@ router.post('/create-permission', authMiddleware, checkPermission(['create-role-
 
 router.post('/view-all-role', authMiddleware, checkPermission(['view-role-permission']), authController.getallrolesWithPermissions)
 
-router.post('/view-one-role', authMiddleware, checkPermission(['view-one-role-permission']), authController.viewoneROleWithPermissions)
+router.post('/view-one-role/:id', authMiddleware, checkPermission(['view-one-role-permission']), authController.viewoneROleWithPermissions)
 
+router.post('/update-role/:id', authMiddleware, checkPermission(['update-role-permission']), authController.updateRole)
 
 module.exports = router;

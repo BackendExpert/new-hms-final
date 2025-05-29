@@ -421,6 +421,15 @@ const authController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    updateRole: async(req, res) => {
+        try{
+            
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
