@@ -399,35 +399,54 @@ const authController = {
         }
     },
 
-    getallrolesWithPermissions: async(req, res) => {
-        try{
+    getallrolesWithPermissions: async (req, res) => {
+        try {
             const getalldata = await Role.find()
 
             return res.json({ Result: getalldata })
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     },
 
-    viewoneROleWithPermissions: async(req, res) => {
-        try{
+    viewoneROleWithPermissions: async (req, res) => {
+        try {
             const { id } = req.params.id
 
             const getdataone = await Role.findById(id)
 
             return res.json({ Result: getdataone })
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     },
 
-    deleteRolePermission: async(req, res) => {
-        try{
+    deleteRolePermission: async (req, res) => {
+        try {
+            const { roleId, permission } = req.body;
 
+            if (!roleId || !permission) {
+                return res.json({ message: 'Role ID and permission are required' });
+            }
+
+            const updatedRole = await Role.findByIdAndUpdate(
+                roleId,
+                { $pull: { permissions: permission } },
+                { new: true }
+            );
+
+            if (!updatedRole) {
+                return res.json({ message: 'Role not found' });
+            }
+
+            res.json({
+                message: 'Permission removed successfully',
+                role: updatedRole,
+            });
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     }
