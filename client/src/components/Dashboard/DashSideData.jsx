@@ -1,6 +1,6 @@
 import { MdBedroomParent, MdDashboard, MdAdminPanelSettings } from "react-icons/md";
 import { FaSchool, FaUserGraduate, FaGear } from "react-icons/fa6";
-import { FaUserCog, FaUsers } from "react-icons/fa";
+import { FaUserCog, FaUsers, FaUserLock } from "react-icons/fa";
 
 
 const dashsidedata = [
@@ -33,6 +33,12 @@ const dashsidedata = [
         name: 'Profile',
         link: '/Dashboard/Profile',
         icon: FaUserCog,
+    },
+    {
+        id: 6,
+        name: 'Permission',
+        link: '/Dashboard/Permissions',
+        icon: FaUserLock
     },
     {
         id: 7,

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { getUserInfoFromToken } from '../../utils/auth';
 import { dashsidedata } from './DashSideData';
 import uoplogo from '../../assets/uoplogo.png';
+import DashUser from '../../assets/DashUser.png'
 
 const DashSide = () => {
     const [activeMenu, setActiveMenu] = useState(null);
@@ -52,7 +53,7 @@ const DashSide = () => {
 
             <div className="flex items-center gap-4 bg-emerald-100 text-emerald-700 rounded-2xl p-4 shadow-inner mb-8 select-none">
                 <img
-                    src="https://avatars.githubusercontent.com/u/138636749?v=4"
+                    src={DashUser}
                     alt={`${username} avatar`}
                     className="h-12 w-12 rounded-full border-2 border-emerald-400 shadow"
                 />

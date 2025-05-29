@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { FaUserCog } from 'react-icons/fa';
 import { FaGear, FaPowerOff } from 'react-icons/fa6';
 import { getUserInfoFromToken } from '../../utils/auth';
+import DashUser from '../../assets/DashUser.png'
 
 const DashNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ const DashNav = () => {
                     className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
                 >
                     <img
-                        src="https://avatars.githubusercontent.com/u/138636749?s=48&v=4"
+                        src={DashUser}
                         alt={`${username} avatar`}
                         className="h-11 w-11 rounded-full border-2 border-emerald-400 shadow-sm"
                     />
@@ -72,7 +73,7 @@ const DashNav = () => {
                 >
                     <div className="p-5 border-b border-gray-100 text-center">
                         <img
-                            src="https://avatars.githubusercontent.com/u/138636749?s=48&v=4"
+                            src={DashUser}
                             alt={`${username} profile`}
                             className="h-20 w-20 mx-auto rounded-full border shadow-md"
                         />
