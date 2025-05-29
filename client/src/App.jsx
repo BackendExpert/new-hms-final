@@ -14,6 +14,8 @@ import PrivateRoute from './components/Auth/PrivateRoute'
 import Dashbaord from './components/Dashboard/Dashboard'
 import DashHome from './pages/DashHome/DashHome'
 import DashError from './components/Errors/DashError'
+import RolePermissions from './pages/Permissions/RolePermissions'
+import CreateRolePermissions from './pages/Permissions/CreateRolePermissions'
 
 function App() {
     return (
@@ -31,6 +33,9 @@ function App() {
                     <Route path='/Dashboard/' element={<PrivateRoute element={<Dashbaord />} />} >
                         <Route path='*' element={<DashError /> } />
                         <Route path='Home' element={<PrivateRoute element={<DashHome />} />} />
+                        <Route path='Permissions' element={<PrivateRoute element={<RolePermissions /> } /> } />
+                        <Route path='Create-Permissions' element={<PrivateRoute element={<CreateRolePermissions /> } /> } />
+                        
                     </Route>
 
                 </Routes>
