@@ -24,6 +24,6 @@ router.post('/view-all-role', authMiddleware, checkPermission(['view-role-permis
 
 router.post('/view-one-role/:id', authMiddleware, checkPermission(['view-one-role-permission']), authController.viewoneROleWithPermissions)
 
-router.post('/update-role/:id', authMiddleware, checkPermission(['update-role-permission']), authController.updateRole)
+router.post('/delete-role-permission/:id', authMiddleware, checkPermission(['delete-role-permission']), authController.deleteRolePermission)
 
 module.exports = router;

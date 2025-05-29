@@ -423,9 +423,9 @@ const authController = {
         }
     },
 
-    updateRole: async(req, res) => {
+    deleteRolePermission: async(req, res) => {
         try{
-            
+
         }
         catch(err){
             console.log(err)
