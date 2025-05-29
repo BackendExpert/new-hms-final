@@ -397,6 +397,30 @@ const authController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    getallrolesWithPermissions: async(req, res) => {
+        try{
+            const getalldata = await Role.find()
+
+            return res.json({ Result: getalldata })
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
+
+    viewoneROleWithPermissions: async(req, res) => {
+        try{
+            const { id } = req.params.id
+
+            const getdataone = await Role.findById(id)
+
+            return res.json({ Result: getdataone })
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
