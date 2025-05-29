@@ -35,13 +35,13 @@ const dashsidedata = [
         icon: FaUserCog,
     },
     {
-        id: 6,
+        id: 7,
         name: 'Permission',
         link: '/Dashboard/Permissions',
         icon: FaUserLock
     },
     {
-        id: 7,
+        id: 8,
         name: 'Users',
         link: '/Dashboard/Users',
         icon: FaUsers

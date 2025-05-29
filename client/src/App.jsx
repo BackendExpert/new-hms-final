@@ -13,6 +13,7 @@ import VerifyEmail from './pages/AuthPage/VerifyEmail'
 import PrivateRoute from './components/Auth/PrivateRoute'
 import Dashbaord from './components/Dashboard/Dashboard'
 import DashHome from './pages/DashHome/DashHome'
+import DashError from './components/Errors/DashError'
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path='/verify-email' element={<VerifyEmail />} />
 
                     <Route path='/Dashboard/' element={<PrivateRoute element={<Dashbaord />} />} >
+                        <Route path='*' element={<DashError /> } />
                         <Route path='Home' element={<PrivateRoute element={<DashHome />} />} />
                     </Route>
 
