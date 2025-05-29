@@ -442,7 +442,8 @@ const authController = {
             }
 
             res.json({
-                message: 'Permission removed successfully',
+                Status: "Success",
+                Message: 'Permission removed successfully',
                 role: updatedRole,
             });
         }
