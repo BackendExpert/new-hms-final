@@ -8,7 +8,7 @@ const DashSide = () => {
     const [activeMenu, setActiveMenu] = useState(null);
     const location = useLocation();
 
-    const { username, role } = getUserInfoFromToken();
+    const { username, roles } = getUserInfoFromToken() || {};
 
     useEffect(() => {
         const currentItem = dashsidedata.find(item => item.link === location.pathname);
@@ -21,10 +21,20 @@ const DashSide = () => {
         }
     }, [location]);
 
+    // ✅ Normalize role names
+    const roleNames = Array.isArray(roles)
+        ? roles.map(r => (typeof r === 'string' ? r : r.name))
+        : [typeof roles === 'string' ? roles : roles?.name];
+
+    // ✅ Filter menu based on role
     const filteredMenu = dashsidedata.filter(item => {
-        if (role === 'admin' || role === 'director') return item.id !== 3;
-        if (role === 'warden') return ![2, 7].includes(item.id);
-        return false;
+        if (roleNames.includes('admin') || roleNames.includes('director')) {
+            return item.id !== 3; // Hide item with id 3
+        }
+        if (roleNames.includes('warden')) {
+            return ![2, 7].includes(item.id); // Hide items 2 and 7
+        }
+        return false; // All others get no menu
     });
 
     return (
@@ -48,12 +58,14 @@ const DashSide = () => {
                 />
                 <div>
                     <h3 className="font-semibold uppercase tracking-wide">{username}</h3>
-                    <p className="text-xs uppercase font-medium tracking-wider">{role}</p>
+                    <p className="text-xs uppercase font-medium tracking-wider">
+                        {roleNames.join(', ')}
+                    </p>
                 </div>
             </div>
 
             <nav className="flex flex-col space-y-3 flex-grow">
-                {filteredMenu.map(({ id, icon, title, link }) => (
+                {filteredMenu.map(({ id, icon: Icon, name, link }) => (
                     <Link
                         to={link}
                         key={id}
@@ -69,8 +81,8 @@ const DashSide = () => {
                         tabIndex={0}
                         aria-current={activeMenu === id ? 'page' : undefined}
                     >
-                        <span className="text-lg">{icon}</span>
-                        <span className="font-semibold tracking-wide">{title}</span>
+                        <span className="text-lg"><Icon /></span>
+                        <span className="font-semibold tracking-wide">{name}</span>
                     </Link>
                 ))}
             </nav>

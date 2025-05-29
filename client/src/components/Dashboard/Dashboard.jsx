@@ -69,6 +69,11 @@ const Dashboard = () => {
                         <DashNav />
                     </header>
 
+                    {/* Optional: Show role/username */}
+                    <div className="p-4 text-sm text-gray-500 bg-white border-b">
+                        Logged in as <strong>{username}</strong> ({roles.map(r => r.name).join(', ')})
+                    </div>
+
                     {/* Page Content */}
                     <section className="flex-grow p-6 bg-gray-50 overflow-auto">
                         <Outlet />
