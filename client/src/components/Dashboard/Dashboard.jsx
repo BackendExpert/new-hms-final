@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { getUserInfoFromToken } from '../../utils/auth';
 import DashSide from './DashSide';
 import DashNav from './DashNav';
 import DashFooter from './DashFooter';
 
+
 const Dashboard = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [sideOpen, setSideOpen] = useState(false);
+
+    const location = useLocation();
+    const currentPath = location.pathname;
 
     useEffect(() => {
         const userInfo = getUserInfoFromToken();
@@ -69,10 +73,10 @@ const Dashboard = () => {
                         <DashNav />
                     </header>
 
-                    {/* Optional: Show role/username
-                    <div className="p-4 text-sm text-gray-500 bg-white border-b">
-                        Logged in as <strong>{username}</strong> ({roles.map(r => r.name).join(', ')})
-                    </div> */}
+                    {/* Optional: Show role/username */}
+                    <div className="p-4 text-sm text-gray-200 bg-white border-b">
+                        <code className="text-emerald-600">{currentPath}</code>
+                    </div>
 
                     {/* Page Content */}
                     <section className="flex-grow p-6 bg-gray-50 overflow-auto">
