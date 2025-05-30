@@ -1,4 +1,6 @@
+const Role = require("../model/Role");
 const User = require("../model/User");
+
 
 const UserController = {
     getallusers: async (req, res) => {
@@ -83,49 +85,30 @@ const UserController = {
 
     updateUserRole: async (req, res) => {
         try {
-            const { userID, roleID, action } = req.body;
+            const { userID, roleID } = req.body;
 
             const user = await User.findById(userID);
             if (!user) {
                 return res.json({ error: "User not found" });
             }
 
-
             const roleExists = await Role.findById(roleID);
             if (!roleExists) {
                 return res.json({ error: "Role not found" });
             }
 
-            let updatedUser;
+            const updatedUser = await User.findByIdAndUpdate(
+                userID,
+                { $set: { roles: [roleID] } }, 
+                { new: true }
+            );
 
-            if (action === 'add') {
-                if (user.roles.includes(roleID)) {
-                    return res.json({ error: "Role already assigned to user" });
-                }
-
-                updatedUser = await User.findByIdAndUpdate(
-                    userID,
-                    { $addToSet: { roles: roleID } },
-                    { new: true }
-                );
-            } else if (action === 'remove') {
-                updatedUser = await User.findByIdAndUpdate(
-                    userID,
-                    { $pull: { roles: roleID } },
-                    { new: true }
-                );
-            } else {
-                return res.json({ error: "Invalid action. Use 'add' or 'remove'." });
-            }
-
-            return res.json({ message: "User roles updated", user: updatedUser });
-
+            return res.json({ message: "User role updated successfully", user: updatedUser });
         } catch (err) {
             console.error(err);
             return res.json({ error: "Server error" });
         }
     }
-
 
 };
 

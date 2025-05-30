@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import secureLocalStorage from 'react-secure-storage'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
+import Dropdown from '../../components/Form/Dropdown'
 
 
 const ViewUser = () => {
@@ -24,11 +25,25 @@ const ViewUser = () => {
     }, [])
 
 
+    const [getuserroles, setgetuserroles] = useState([])
+
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/auth/view-all-role', {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        })
+            .then(res => {
+                setgetuserroles(res.data.Result);
+            })
+            .catch(err => console.log(err))
+    }, [])
+
     const headleVerifyuerEmail = async (userID) => {
         try {
             const res = await axios.post(
                 `${import.meta.env.VITE_APP_API}/user/verify-user-email/${userID}`,
-                null, // no body needed
+                null,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -45,6 +60,40 @@ const ViewUser = () => {
             console.log(err);
         }
     };
+
+    const [updateuserrole, setupdateuserrole] = useState({
+        userID: id,
+        roleID: '',
+    })
+
+    const handleRoleChange = (e) => {
+        setupdateuserrole(prev => ({ ...prev, roleID: e.target.value }));
+    };
+
+    const handleUpdateUserRole = async () => {
+        try {
+            const res = await axios.post(
+                `${import.meta.env.VITE_APP_API}/user/update-user-role`,
+                updateuserrole,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                }
+            );
+
+            if (res.data.message) {
+                alert(res.data.message);
+                window.location.reload();
+            } else {
+                alert(res.data.error || "Something went wrong.");
+            }
+        } catch (err) {
+            console.log(err);
+            alert("Server error.");
+        }
+    };
+
 
     return (
         <div className="bg-gray-100 py-10 px-4">
@@ -166,16 +215,49 @@ const ViewUser = () => {
                             ⚠️ You cannot update your own account while logged in.
                         </div>
                     ) : (
-                        <div className="mt-2">
-                            <DefaultBtn
-                                label={
-                                    getoneuser?.emailVerified
-                                        ? 'Un-Verify User Email Address'
-                                        : 'Verify User Email Address'
-                                }
-                                onClick={() => headleVerifyuerEmail(getoneuser?._id)}
-                            />
+                        <div className="-mt-2">
+                            <div className="">
+                                <DefaultBtn
+                                    label={
+                                        getoneuser?.emailVerified
+                                            ? 'Un-Verify User Email Address'
+                                            : 'Verify User Email Address'
+                                    }
+                                    onClick={() => headleVerifyuerEmail(getoneuser?._id)}
+                                />
+                            </div>
+
+                            <div className="mt-4">
+                                <h1 className="text-xl font-bold text-emerald-600 mb-4">Update User Role</h1>
+                                <div className="">
+                                    <div className="mt-6">
+                                        <Dropdown
+                                            label="Select New Role"
+                                            name="roleID"
+                                            required={true}
+                                            onChange={(e) =>
+                                                setupdateuserrole(prev => ({ ...prev, roleID: e.target.value }))
+                                            }
+                                            options={getuserroles.map(role => ({
+                                                label: role.name,
+                                                value: role._id
+                                            }))}
+                                        />
+
+
+                                        <div className="-mt-4">
+                                            <DefaultBtn
+                                                label="Update User Role"
+                                                onClick={handleUpdateUserRole}
+                                            />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
+
                     )
                 }
 
