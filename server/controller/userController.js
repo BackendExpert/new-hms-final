@@ -36,21 +36,67 @@ const UserController = {
 
             const updatedUser = await User.findByIdAndUpdate(
                 id,
-                { $set: { active : !user.active } },
+                { $set: { active: !user.active } },
                 { new: true }
             );
 
-            if(updatedUser){
-                return res.json({ Status: "Success", Message: "User Updated Success"})
+            if (updatedUser) {
+                return res.json({ Status: "Success", Message: "User Updated Success" })
             }
-            else{
-                return res.json({ Error: "Internal Server Error while Updating User"})
+            else {
+                return res.json({ Error: "Internal Server Error while Updating User" })
             }
         }
         catch (err) {
             console.log(err)
         }
+    },
+
+    updateUserRole: async (req, res) => {
+        try {
+            const { userID, roleID, action } = req.body; 
+
+            const user = await User.findById(userID);
+            if (!user) {
+                return res.json({ error: "User not found" });
+            }
+
+
+            const roleExists = await Role.findById(roleID);
+            if (!roleExists) {
+                return res.json({ error: "Role not found" });
+            }
+
+            let updatedUser;
+
+            if (action === 'add') {
+                if (user.roles.includes(roleID)) {
+                    return res.json({ error: "Role already assigned to user" });
+                }
+
+                updatedUser = await User.findByIdAndUpdate(
+                    userID,
+                    { $addToSet: { roles: roleID } }, 
+                    { new: true }
+                );
+            } else if (action === 'remove') {
+                updatedUser = await User.findByIdAndUpdate(
+                    userID,
+                    { $pull: { roles: roleID } },
+                    { new: true }
+                );
+            } else {
+                return res.json({ error: "Invalid action. Use 'add' or 'remove'." });
+            }
+
+            return res.json({ message: "User roles updated", user: updatedUser });
+
+        } catch (err) {
+            console.error(err);
+            return res.json({ error: "Server error" });
+        }
     }
+
 
 };
 
