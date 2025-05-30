@@ -66,7 +66,7 @@ const RolePermissions = () => {
                                             <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
                                             <td className="px-6 py-4">{role.name}</td>
                                             <td className="px-6 py-4">
-                                                <Link to="#" className="text-emerald-600 font-medium hover:underline">
+                                                <Link to={`/Dashboard/View-One-Role/${role._id}`} className="text-emerald-600 font-medium hover:underline">
                                                     View
                                                 </Link>
                                             </td>

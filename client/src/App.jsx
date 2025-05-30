@@ -36,7 +36,7 @@ function App() {
                         <Route path='Home' element={<PrivateRoute element={<DashHome />} />} />
                         <Route path='Permissions' element={<PrivateRoute element={<RolePermissions /> } /> } />
                         <Route path='Create-Permissions' element={<PrivateRoute element={<CreateRolePermissions /> } /> } />
-                        <Route path='View-One-Role/id' element={<PrivateRoute element={<ViewOneRole /> } />} />
+                        <Route path='View-One-Role/:id' element={<PrivateRoute element={<ViewOneRole /> } />} />
                     </Route>
 
                 </Routes>
