@@ -118,6 +118,54 @@ const StudentController = {
         catch (err) {
             console(err)
         }
+    },
+
+    createStudentManually: async (req, res) => {
+        try {
+            const {
+                enrolmentNo,
+                indexNo,
+                name,
+                title,
+                lastName,
+                initials,
+                fullName,
+                alDistrict,
+                sex,
+                zScore,
+                medium,
+                nic,
+                address1,
+                address2,
+                address3,
+                fullAddress,
+                email,
+                phone1,
+                phone2,
+                genEnglishMarks,
+                intake,
+                dateOfEnrolment,
+                distance
+            } = req.body
+
+            const checkstudent = await Student.findOne({
+                $or: [
+                    { enrolmentNo: enrolmentNo },
+                    { indexNo: indexNo },
+                    { nic: nic },
+                    { email: email }
+                ]
+            })
+
+            if(checkstudent){
+                return res.json({ Error: "Student Already Exists" })
+            }
+
+            
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 };
 
