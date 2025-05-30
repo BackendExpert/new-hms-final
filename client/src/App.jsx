@@ -21,6 +21,7 @@ import UserManage from './pages/Users/UserManage'
 import ViewUser from './pages/Users/ViewUser'
 import Profile from './pages/Profile/Profile'
 import Students from './pages/Students/Students'
+import StdCreateManually from './pages/Students/StdCreateManually'
 
 function App() {
     return (
@@ -49,6 +50,7 @@ function App() {
                         <Route path='Profile' element={<PrivateRoute element={<Profile /> } /> } />
 
                         <Route path='Students' element={<PrivateRoute element={<Students /> } /> } />
+                        <Route path='Student-create-manually' element={<PrivateRoute element={<StdCreateManually /> } /> } />
                         
                     </Route>
 

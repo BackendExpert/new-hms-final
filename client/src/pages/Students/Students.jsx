@@ -26,7 +26,7 @@ const Students = () => {
                         </Link>
                     </div>
                     <div className="md:ml-4">
-                        <Link >
+                        <Link to={'/Dashboard/Student-create-manually'}>
                             <DefaultBtn 
                                 type='button'
                                 label='Create Student (Manually)'
