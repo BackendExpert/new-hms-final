@@ -11,4 +11,6 @@ router.get('/view-one-user/:id', authMiddleware, checkPermission('view-one-user'
 
 router.post('/update-user-status/:id', authMiddleware, checkPermission('update-user-status'), UserController.avtiveAnddactiveUser)
 
+router.post('/update-user-role', authMiddleware, checkPermission('update-user-role'), UserController.updateUserRole)
+
 module.exports = router;
