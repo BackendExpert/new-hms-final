@@ -11,7 +11,6 @@ const Students = () => {
     return (
         <div>
             <h1 className="font-bold text-emerald-600 text-xl">Manage Students</h1>
-            {token}
             <div className="">
                 <StdData />
             </div>
