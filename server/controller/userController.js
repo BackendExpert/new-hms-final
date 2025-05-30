@@ -25,6 +25,35 @@ const UserController = {
         }
     },
 
+    verifyEmailBydir: async (req, res) => {
+        try {
+            const { id } = req.params
+
+            const user = await User.findById(id);
+            if (!user) {
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            const updatedUser = await User.findByIdAndUpdate(
+                id,
+                { $set: { emailVerified: !user.emailVerified } },
+                { new: true }
+            );
+
+            if (updatedUser) {
+                return res.json({ Status: "Success", Message: "User Updated Success" })
+            }
+            else {
+                return res.json({ Error: "Internal Server Error while Updating User" })
+            }
+
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
     avtiveAnddactiveUser: async (req, res) => {
         try {
             const { id } = req.params
@@ -54,7 +83,7 @@ const UserController = {
 
     updateUserRole: async (req, res) => {
         try {
-            const { userID, roleID, action } = req.body; 
+            const { userID, roleID, action } = req.body;
 
             const user = await User.findById(userID);
             if (!user) {
@@ -76,7 +105,7 @@ const UserController = {
 
                 updatedUser = await User.findByIdAndUpdate(
                     userID,
-                    { $addToSet: { roles: roleID } }, 
+                    { $addToSet: { roles: roleID } },
                     { new: true }
                 );
             } else if (action === 'remove') {
