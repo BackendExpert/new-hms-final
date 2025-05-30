@@ -18,6 +18,7 @@ import RolePermissions from './pages/Permissions/RolePermissions'
 import CreateRolePermissions from './pages/Permissions/CreateRolePermissions'
 import ViewOneRole from './pages/Permissions/ViewOneRole'
 import UserManage from './pages/Users/UserManage'
+import ViewUser from './pages/Users/ViewUser'
 
 function App() {
     return (
@@ -41,6 +42,7 @@ function App() {
                         <Route path='View-One-Role/:id' element={<PrivateRoute element={<ViewOneRole /> } />} />
                     
                         <Route path='Users' element={<PrivateRoute element={<UserManage /> } /> } />
+                        <Route path='View-user/:id' element={<PrivateRoute element={<ViewUser /> } /> } />
                         
                     </Route>
 

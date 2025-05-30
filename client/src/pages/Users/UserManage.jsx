@@ -125,7 +125,7 @@ const UserManage = () => {
                                                 }
                                             </td>
                                             <td className="px-6 py-4">
-                                                <Link to={`/Dashboard/View-One-Role/${user._id}`} className="text-emerald-600 font-medium hover:underline">
+                                                <Link to={`/Dashboard/View-user/${user._id}`} className="text-emerald-600 font-medium hover:underline">
                                                     View
                                                 </Link>
                                             </td>

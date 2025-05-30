@@ -14,7 +14,7 @@ const UserController = {
 
     getoneuser: async (req, res) => {
         try {
-            const { id } = req.parms
+            const { id } = req.params
 
             const getoneuserdata = await User.findById(id).populate('roles');
 

@@ -18,7 +18,6 @@ const ViewOneRole = () => {
             }
         })
             .then(res => {
-                console.log("API Response:", res.data);
                 setgetonerole(res.data.Result);
             })
             .catch(err => console.log(err))
