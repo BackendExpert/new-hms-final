@@ -61,6 +61,28 @@ const ViewUser = () => {
         }
     };
 
+    const headleActiveDeactiveAccount = async (userID) => {
+        try {
+            const res = await axios.post(
+                `${import.meta.env.VITE_APP_API}/user/update-user-status/${userID}`,
+                null,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                }
+            );
+            if (res.data.Status === "Success") {
+                alert(res.data.Message);
+                window.location.reload();
+            } else {
+                alert(res.data.Error);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const [updateuserrole, setupdateuserrole] = useState({
         userID: id,
         roleID: '',
@@ -224,6 +246,17 @@ const ViewUser = () => {
                                             : 'Verify User Email Address'
                                     }
                                     onClick={() => headleVerifyuerEmail(getoneuser?._id)}
+                                />
+                            </div>
+
+                            <div className="">
+                                <DefaultBtn
+                                    label={
+                                        getoneuser?.active
+                                            ? 'Deactive Account'
+                                            : 'Active Account'
+                                    }
+                                    onClick={() => headleActiveDeactiveAccount(getoneuser?._id)}
                                 />
                             </div>
 
