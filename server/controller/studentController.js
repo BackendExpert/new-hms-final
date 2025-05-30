@@ -146,27 +146,57 @@ const StudentController = {
                 intake,
                 dateOfEnrolment,
                 distance
-            } = req.body
+            } = req.body;
 
-            const checkstudent = await Student.findOne({
+
+            const existingStudent = await Student.findOne({
                 $or: [
-                    { enrolmentNo: enrolmentNo },
-                    { indexNo: indexNo },
-                    { nic: nic },
-                    { email: email }
+                    { enrolmentNo },
+                    { indexNo },
+                    { nic },
+                    { email }
                 ]
-            })
+            });
 
-            if(checkstudent){
-                return res.json({ Error: "Student Already Exists" })
+            if (existingStudent) {
+                return res.json({ error: "Student already exists with the provided enrolment number, index number, NIC, or email." });
             }
 
-            
-        }
-        catch (err) {
-            console.log(err)
+            const newStudent = new Student({
+                enrolmentNo,
+                indexNo,
+                name,
+                title,
+                lastName,
+                initials,
+                fullName,
+                alDistrict,
+                sex,
+                zScore,
+                medium,
+                nic,
+                address1,
+                address2,
+                address3,
+                fullAddress,
+                email,
+                phone1,
+                phone2,
+                genEnglishMarks,
+                intake,
+                dateOfEnrolment,
+                distance
+            });
+
+            await newStudent.save();
+
+            return res.json({ Status: "Success", message: "Student created successfully", student: newStudent });
+        } catch (err) {
+            console.error("Error creating student:", err);
+            return res.json({ error: "Internal server error" });
         }
     }
+
 };
 
 module.exports = StudentController;
