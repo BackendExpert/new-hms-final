@@ -24,7 +24,8 @@ const StudentSchema = new mongoose.Schema({
     genEnglishMarks: Number,
     intake: String,
     dateOfEnrolment: Date,
-    distance: Number
+    distance: Number,
+    isAssign: { type: String, default: false }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Student', StudentSchema);
