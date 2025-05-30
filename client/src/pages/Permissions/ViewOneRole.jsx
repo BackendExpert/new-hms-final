@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import secureLocalStorage from 'react-secure-storage'
+import DefaultInput from '../../components/Form/DefaultInput'
+import DefaultBtn from '../../components/Buttons/DefaultBtn'
 
 const ViewOneRole = () => {
     const { id } = useParams()
@@ -32,7 +34,7 @@ const ViewOneRole = () => {
         setdetelepermission(prev => ({ ...prev, [name]: value }));
     };
 
-    headleDeletePermission = async (e) => {
+    const headleDeletePermission = async (e) => {
         e.preventDefault()
         try {
             const res = await axios.post(import.meta.env.VITE_APP_API + '/auth/delete-role-permission', detelepermission, {
@@ -40,11 +42,11 @@ const ViewOneRole = () => {
                     'Authorization': `Bearer ${token}`,
                 }
             })
-            if(res.data.Status === "Success"){
+            if (res.data.Status === "Success") {
                 alert("Permission Deleted Success")
                 window.location.reload()
             }
-            else{
+            else {
                 alert(res.data.Error)
             }
         }
@@ -94,9 +96,24 @@ const ViewOneRole = () => {
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 mt-4">
                 <h1 className="text-xl font-bold text-emerald-600 mb-4">To Delete Permission from Role</h1>
-            
+
                 <form onSubmit={headleDeletePermission} method="post">
-                    
+                    <DefaultInput
+                        label="Permission"
+                        type="text"
+                        name="permission"
+                        value={detelepermission.permission}
+                        onChange={handleInputChange}
+                        placeholder="Enter Permission to Delete"
+                        required
+                    />
+
+                    <div className="-mt-4">
+                        <DefaultBtn 
+                            type='submit'
+                            label='Delete Permission'
+                        />
+                    </div>
                 </form>
             </div>
         </div>
