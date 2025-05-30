@@ -3,9 +3,11 @@ import { MdOutlineEdit } from "react-icons/md";
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import DashUser from '../../assets/DashUser.png'
+import secureLocalStorage from 'react-secure-storage';
 
 const Profile = () => {
     const [btnClick, setBtnClick] = useState(false);
+    const token = secureLocalStorage.getItem('login')
 
     const handleBtnClick = () => {
         setBtnClick(!btnClick);
@@ -45,7 +47,6 @@ const Profile = () => {
                             alt="Profile"
                             className="h-36 w-36 rounded-full border-4 border-emerald-600 shadow-md object-cover"
                         />
-
                         <div className="space-y-2">
                             <h2 className="text-2xl font-extrabold text-emerald-600 uppercase">Jehan</h2>
                             <p className="text-gray-600 text-base">jehnaa@123.com</p>
