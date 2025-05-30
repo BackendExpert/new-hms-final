@@ -22,6 +22,30 @@ const ViewUser = () => {
             })
             .catch(err => console.log(err))
     }, [])
+
+
+    const headleVerifyuerEmail = async (userID) => {
+        try {
+            const res = await axios.post(
+                `${import.meta.env.VITE_APP_API}/user/verify-user-email/${userID}`,
+                null, // no body needed
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                }
+            );
+            if (res.data.Status === "Success") {
+                alert(res.data.Message);
+                window.location.reload();
+            } else {
+                alert(res.data.Error);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <div className="bg-gray-100 py-10 px-4">
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
@@ -33,12 +57,12 @@ const ViewUser = () => {
                         />
                     </Link>
                 </div>
-                <h1 className="text-3xl font-bold text-emerald-600 mb-4">
+                <h1 className="xl:text-3xl font-bold text-emerald-600 mb-4">
                     Current User: <span className="">{getoneuser?.email}</span>
                 </h1>
 
                 <div className="mt-6 space-y-4">
-                    <div className="flex">
+                    <div className="md:flex">
                         <div className="">
                             <div className="">
                                 <h1 className="block text-gray-700 font-medium">Username</h1>
@@ -81,11 +105,11 @@ const ViewUser = () => {
                             </div>
                         </div>
 
-                        <div className="ml-4">
+                        <div className="md:ml-4">
                             <div className="">
                                 <h1 className="block text-gray-700 font-medium">Email Verify</h1>
                                 {
-                                    getoneuser.emailVerified === true ?
+                                    getoneuser?.emailVerified === true ?
                                         <div className="">
                                             <span
                                                 className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"
@@ -107,7 +131,7 @@ const ViewUser = () => {
 
                             <div className="">
                                 <h1 className="block text-gray-700 font-medium">Acocunt Status</h1>                               {
-                                    getoneuser.active === true ?
+                                    getoneuser?.active === true ?
                                         <div className="">
                                             <span
                                                 className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"
@@ -137,17 +161,24 @@ const ViewUser = () => {
                 </h1>
 
                 {
-                    getoneuser?.email === loginemail ?
-                        <div className="">
-                            <span
-                                className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full"
-                            >
-                                Current login user cannot be Update
-                            </span>
+                    getoneuser?.email === loginemail ? (
+                        <div className="bg-red-50 border border-red-200 text-red-700 text-sm font-medium px-4 py-2 rounded-lg shadow-sm">
+                            ⚠️ You cannot update your own account while logged in.
                         </div>
-                        :
-                        <div className=""></div>
+                    ) : (
+                        <div className="mt-2">
+                            <DefaultBtn
+                                label={
+                                    getoneuser?.emailVerified
+                                        ? 'Un-Verify User Email Address'
+                                        : 'Verify User Email Address'
+                                }
+                                onClick={() => headleVerifyuerEmail(getoneuser?._id)}
+                            />
+                        </div>
+                    )
                 }
+
             </div>
         </div>
     )
