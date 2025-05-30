@@ -35,11 +35,87 @@ async function getRoadDistanceOSRM(start, end) {
 
 
 const StudentController = {
-    createstdviaSheet: async(req, res) => {
-        try{
+    createstdviaSheet: async (req, res) => {
+        try {
+            const filePath = req.file.path;
+            const workbook = XLSX.readFile(filePath);
+            const sheetName = workbook.SheetNames[0];
+            const studentsFromExcel = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
+            const universityAddress = "University of Peradeniya, Peradeniya, Kandy, Sri Lanka";
+            const universityCoords = await geocodeWithOpenCage(universityAddress);
+
+            const insertedStudents = [];
+            const duplicateStudents = [];
+
+            for (const s of studentsFromExcel) {
+                const exists = await Student.findOne({
+                    $or: [
+                        { enrolmentNo: s['Enrolment_No.'] },
+                        { indexNo: s['Index_No'] },
+                        { nic: s['NIC'] },
+                        { email: s['email'] }
+                    ]
+                });
+
+                if (exists) {
+                    duplicateStudents.push(s['Enrolment_No.']);
+                    continue;
+                }
+
+                const studentData = {
+                    no: s['No'],
+                    enrolmentNo: s['Enrolment_No.'],
+                    indexNo: s['Index_No'],
+                    name: s['Name'],
+                    title: s['Title'],
+                    lastName: s['L_Name'],
+                    initials: s['Initials'],
+                    fullName: s['Full_Name'],
+                    alDistrict: s['alDistrict'],
+                    sex: s['Sex'],
+                    zScore: parseFloat(s['Z_Score']),
+                    medium: s['Medium'],
+                    nic: s['NIC'],
+                    address1: s['ADD1'],
+                    address2: s['ADD2'],
+                    address3: s['ADD3'],
+                    fullAddress: s['Address'],
+                    email: s['email'],
+                    phone1: s['Phone_No'],
+                    phone2: s['Phone_No_2'] || '',
+                    genEnglishMarks: s['Gen_English_Marks'] ? parseInt(s['Gen_English_Marks']) : null,
+                    intake: s['Intake'],
+                    dateOfEnrolment: s['Date_of_Enollment'],
+                    distance: null
+                };
+
+                // Use only ADD3 to get distance
+                const add3 = s['ADD3'];
+                if (add3 && universityCoords) {
+                    const studentCoords = await geocodeWithOpenCage(add3);
+                    if (studentCoords) {
+                        const distanceKm = await getRoadDistanceOSRM(studentCoords, universityCoords);
+                        if (distanceKm !== null) {
+                            studentData.distance = parseFloat(distanceKm.toFixed(2));
+                        }
+                    }
+                }
+
+                insertedStudents.push(studentData);
+            }
+
+            await Student.insertMany(insertedStudents);
+
+            res.status(200).json({
+                Status: "Success",
+                message: 'Upload complete',
+                insertedCount: insertedStudents.length,
+                duplicateCount: duplicateStudents.length,
+                duplicates: duplicateStudents
+            });
         }
-        catch(err){
+        catch (err) {
             console(err)
         }
     }
