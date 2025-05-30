@@ -4,6 +4,7 @@ import { getUserInfoFromToken } from '../../utils/auth';
 import DashSide from './DashSide';
 import DashNav from './DashNav';
 import DashFooter from './DashFooter';
+import secureLocalStorage from 'react-secure-storage';
 
 
 const Dashboard = () => {
@@ -23,6 +24,8 @@ const Dashboard = () => {
             setUser(userInfo);
         }
     }, [navigate]);
+
+    const aToken = secureLocalStorage.getItem('login')
 
     const toggleSide = () => setSideOpen(prev => !prev);
 
@@ -75,9 +78,8 @@ const Dashboard = () => {
 
                     {/* Optional: Show role/username */}
                     <div className="p-4 text-sm text-gray-200 bg-white border-b">
-                        <code className="text-emerald-600">{currentPath}</code>
+                        <code className="text-emerald-600">{currentPath}</code>                        
                     </div>
-
                     {/* Page Content */}
                     <section className="flex-grow p-6 bg-gray-50 overflow-auto">
                         <Outlet />

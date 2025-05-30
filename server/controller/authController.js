@@ -397,6 +397,59 @@ const authController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    getallrolesWithPermissions: async (req, res) => {
+        try {
+            const getalldata = await Role.find()
+
+            return res.json({ Result: getalldata })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
+    viewoneROleWithPermissions: async (req, res) => {
+        try {
+            const { id } = req.params
+
+            const getdataone = await Role.findById(id)
+
+            return res.json({ Result: getdataone })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
+
+    deleteRolePermission: async (req, res) => {
+        try {
+            const { roleId, permission } = req.body;
+
+            if (!roleId || !permission) {
+                return res.json({ message: 'Role ID and permission are required' });
+            }
+
+            const updatedRole = await Role.findByIdAndUpdate(
+                roleId,
+                { $pull: { permissions: permission } },
+                { new: true }
+            );
+
+            if (!updatedRole) {
+                return res.json({ message: 'Role not found' });
+            }
+
+            res.json({
+                Status: "Success",
+                Message: 'Permission removed successfully',
+                role: updatedRole,
+            });
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 };
 
