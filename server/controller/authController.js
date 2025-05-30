@@ -349,6 +349,70 @@ const authController = {
         }
     },
 
+    getmebyemail: async(req, res) => {
+        try{
+            const authHeader = req.headers['authorization'];
+            if (!authHeader || !authHeader.startsWith('Bearer ')) {
+                return res.json({ Error: "Unauthorized: Missing or invalid token" });
+            }
+
+            const token = authHeader.split(' ')[1];
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            const email = decoded.user.email;
+
+            const user = await User.findOne({ email }).populate('roles');
+
+            return res.json({ Result: user })
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
+
+    updatepassviaDash: async (req, res) => {
+        try {
+            const { currentpass, newpass } = req.body;
+
+            if (!currentpass || !newpass) {
+                return res.json({ Error: "Current and new password are required" });
+            }
+
+            if (currentpass === newpass) {
+                return res.json({ Error: "Current password and new password cannot be the same" });
+            }
+
+            const authHeader = req.headers['authorization'];
+            if (!authHeader || !authHeader.startsWith('Bearer ')) {
+                return res.json({ Error: "Unauthorized: Missing or invalid token" });
+            }
+
+            const token = authHeader.split(' ')[1];
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            const email = decoded.user.email;
+
+            const user = await User.findOne({ email });
+            if (!user) {
+                return res.json({ Error: "User not found" });
+            }
+
+            const isMatch = await bcrypt.compare(currentpass, user.password);
+            if (!isMatch) {
+                return res.json({ Error: "Current password is incorrect" });
+            }
+
+            const hashedPassword = await bcrypt.hash(newpass, 10);
+
+            user.password = hashedPassword;
+            await user.save();
+
+            return res.json({ Status: "Success", Message: "Password updated successfully" });
+        } catch (err) {
+            console.error(err);
+            return res.json({ Error: "Internal Server Error" });
+        }
+    },
+
 
 
     // create new permissions
@@ -452,5 +516,6 @@ const authController = {
         }
     }
 };
+
 
 module.exports = authController;
