@@ -412,7 +412,7 @@ const authController = {
 
     viewoneROleWithPermissions: async (req, res) => {
         try {
-            const { id } = req.params.id
+            const { id } = req.params
 
             const getdataone = await Role.findById(id)
 
