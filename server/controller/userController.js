@@ -3,7 +3,7 @@ const User = require("../model/User");
 const UserController = {
     getallusers: async (req, res) => {
         try {
-            const getalluserdata = await User.find()
+            const getalluserdata = await User.find().populate('roles');
 
             return res.json({ Result: getalluserdata })
         }
@@ -16,7 +16,7 @@ const UserController = {
         try {
             const { id } = req.parms
 
-            const getoneuserdata = await User.findById(id)
+            const getoneuserdata = await User.findById(id).populate('roles');
 
             return res.json({ Result: getoneuserdata })
         }
