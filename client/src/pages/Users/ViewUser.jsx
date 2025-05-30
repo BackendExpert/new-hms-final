@@ -8,6 +8,7 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn'
 const ViewUser = () => {
     const { id } = useParams()
     const token = secureLocalStorage.getItem('login')
+    const loginemail = secureLocalStorage.getItem('loginE')
     const [getoneuser, setgetoneuser] = useState({})
 
     useEffect(() => {
@@ -128,6 +129,25 @@ const ViewUser = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 mt-8">
+                <h1 className="text-3xl font-bold text-emerald-600 mb-4">
+                    Update User Status
+                </h1>
+
+                {
+                    getoneuser?.email === loginemail ?
+                        <div className="">
+                            <span
+                                className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full"
+                            >
+                                Current login user cannot be Update
+                            </span>
+                        </div>
+                        :
+                        <div className=""></div>
+                }
             </div>
         </div>
     )

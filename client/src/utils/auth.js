@@ -18,6 +18,8 @@ export function getUserInfoFromToken() {
             return null;
         }
 
+        secureLocalStorage.setItem('loginE', email)
+
         return { username, email, roles };
     } catch (error) {
         console.error('Invalid token', error);
