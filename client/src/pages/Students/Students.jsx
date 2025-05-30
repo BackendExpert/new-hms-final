@@ -4,12 +4,14 @@ import StdData from './StdData'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import AllStudents from './AllStudents'
+import secureLocalStorage from 'react-secure-storage'
 
 const Students = () => {
+    const token = secureLocalStorage.getItem('login')
     return (
         <div>
             <h1 className="font-bold text-emerald-600 text-xl">Manage Students</h1>
-
+            {token}
             <div className="">
                 <StdData />
             </div>
