@@ -38,7 +38,7 @@ const UserManage = () => {
                         <div className="text-sm font-medium uppercase tracking-wide text-emerald-100">
                             Total Users
                         </div>
-                        <div className="mt-2 text-3xl font-bold">55</div>
+                        <div className="mt-2 text-3xl font-bold">{getusers.length}</div>
                     </div>
                 </div>
             </div>
@@ -52,6 +52,8 @@ const UserManage = () => {
                                 <th scope='col' className="px-6 py-4 font-semibold tracking-wider">Username</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Roles</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Email</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Email Verify</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Account Status</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Action</th>
                             </tr>
                         </thead>
@@ -80,6 +82,48 @@ const UserManage = () => {
                                             </td>
 
                                             <td className="px-6 py-4">{user.email}</td>
+                                            <td className="px-6 py-4">
+                                                {
+                                                    user.emailVerified === true ?
+                                                        <div className="">
+                                                            <span
+                                                                className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                            >
+                                                                Verified
+                                                            </span>
+                                                        </div>
+                                                        :
+                                                        <div className="">
+                                                            <span
+                                                                className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                            >
+                                                                Not Verified
+                                                            </span>
+                                                        </div>
+
+                                                }
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                {
+                                                    user.active === true ?
+                                                        <div className="">
+                                                            <span
+                                                                className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                            >
+                                                                Active
+                                                            </span>
+                                                        </div>
+                                                        :
+                                                        <div className="">
+                                                            <span
+                                                                className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                            >
+                                                                Deactive
+                                                            </span>
+                                                        </div>
+
+                                                }
+                                            </td>
                                             <td className="px-6 py-4">
                                                 <Link to={`/Dashboard/View-One-Role/${user._id}`} className="text-emerald-600 font-medium hover:underline">
                                                     View
