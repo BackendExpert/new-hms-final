@@ -61,7 +61,6 @@ const AllStudents = () => {
                             <th className="px-6 py-4 font-semibold">Enrolment No</th>
                             <th className="px-6 py-4 font-semibold">Index No</th>
                             <th className="px-6 py-4 font-semibold">NIC</th>
-                            <th className="px-6 py-4 font-semibold">Email</th>
                             <th className="px-6 py-4 font-semibold">Gender</th>
                             <th className="px-6 py-4 font-semibold">Home Town</th>
                             <th className="px-6 py-4 font-semibold">Distance</th>
@@ -78,7 +77,6 @@ const AllStudents = () => {
                                         <td className="px-6 py-4">{data.enrolmentNo}</td>
                                         <td className="px-6 py-4">{data.indexNo}</td>
                                         <td className="px-6 py-4">{data.nic}</td>
-                                        <td className="px-6 py-4">{data.email}</td>
                                         <td className="px-6 py-4">
                                             {
                                                 data.sex === 'Male' ?
