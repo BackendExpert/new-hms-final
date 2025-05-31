@@ -122,7 +122,7 @@ const AllStudents = () => {
                                             }
                                         </td>
                                         <td className="px-6 py-4">
-                                            <Link to={``} className="text-emerald-600 font-medium hover:underline">View</Link>
+                                            <Link to={`/Dashboard/View-Student/${data._id}`} className="text-emerald-600 font-medium hover:underline">View</Link>
                                         </td>
                                     </tr>
                                 ))
