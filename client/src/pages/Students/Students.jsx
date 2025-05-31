@@ -18,7 +18,7 @@ const Students = () => {
             <div className="-mt-6">
                 <div className="md:flex">
                     <div className="">
-                        <Link >
+                        <Link to={'/Dashboard/Stundet-upload-sheet'}>
                             <DefaultBtn 
                                 type='button'
                                 label='Create Students (Upload Excel Sheet)'
