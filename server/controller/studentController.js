@@ -272,13 +272,13 @@ const StudentController = {
             );
 
             if (!updatedStudent) {
-                return res.status(404).json({ message: 'Student not found' });
+                return res.json({ message: 'Student not found' });
             }
 
-            res.status(200).json({ message: 'Student updated successfully', student: updatedStudent });
+            res.json({ Status: "Success", Message: 'Student updated successfully', student: updatedStudent });
         } catch (err) {
             console.error(err);
-            res.status(500).json({ message: 'Internal server error' });
+            res.json({ message: 'Internal server error' });
         }
     }
 
