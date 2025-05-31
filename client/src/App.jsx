@@ -20,6 +20,10 @@ import ViewOneRole from './pages/Permissions/ViewOneRole'
 import UserManage from './pages/Users/UserManage'
 import ViewUser from './pages/Users/ViewUser'
 import Profile from './pages/Profile/Profile'
+import Students from './pages/Students/Students'
+import StdCreateManually from './pages/Students/StdCreateManually'
+import StdCreateSheet from './pages/Students/StdCreateSheet'
+import ViewStudent from './pages/Students/ViewStudent'
 
 function App() {
     return (
@@ -46,7 +50,12 @@ function App() {
                         <Route path='View-user/:id' element={<PrivateRoute element={<ViewUser /> } /> } />
 
                         <Route path='Profile' element={<PrivateRoute element={<Profile /> } /> } />
-                        
+
+                        <Route path='Students' element={<PrivateRoute element={<Students /> } /> } />
+                        <Route path='Student-create-manually' element={<PrivateRoute element={<StdCreateManually /> } /> } />
+                        <Route path='Stundet-upload-sheet' element={<PrivateRoute element={<StdCreateSheet /> } /> } />
+                        <Route path='View-Student/:id' element={<PrivateRoute element={<ViewStudent /> } /> } />
+        
                     </Route>
 
                 </Routes>
