@@ -197,26 +197,55 @@ const StudentController = {
         }
     },
 
-    studentGetall: async(req, res) => {
-        try{
+    studentGetall: async (req, res) => {
+        try {
             const getAllStudents = await Student.find()
-            
+
             return res.json({ Result: getAllStudents })
-        }   
-        catch(err){
+        }
+        catch (err) {
             console.log(err)
         }
     },
 
-    getStudentById: async(req, res) => {
-        try{
-            const {id} = req.params
+    getStudentById: async (req, res) => {
+        try {
+            const { id } = req.params
 
             const findStudent = await Student.findById(id)
 
             res.json({ Result: findStudent })
         }
-        catch(err){
+        catch (err) {
+            console.log(err)
+        }
+    },
+
+    updateStudent: async (req, res) => {
+        try {
+            const {
+                name,
+                title,
+                lastName,
+                initials,
+                fullName,
+                alDistrict,
+                sex,
+                zScore,
+                medium,
+                address1,
+                address2,
+                address3,
+                fullAddress,
+                phone1,
+                phone2,
+                genEnglishMarks,
+                intake,
+                dateOfEnrolment,
+                distance
+            } = req.body;
+        }
+        catch (err) {
             console.log(err)
         }
     }
