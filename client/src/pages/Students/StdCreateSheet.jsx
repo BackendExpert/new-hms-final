@@ -74,6 +74,14 @@ const StdCreateSheet = () => {
                 </Link>
             </div>
             <h1 className="font-bold text-emerald-600 text-xl mb-4">Upload Student Sheet</h1>
+            <div className="my-8">
+                <p className="uppercase text-red-500 font-bold">important</p>
+                
+                <p className="">Please be Kind to wait when you uploading Student Sheet, </p>
+                <p className="">After you Click Upload Button wait until Get "Upload Complete"</p>
+                <p className="">The Uploading time will depend on your size of Sheet</p>
+                <p className="text-red-500 font-bold">only 2000 recodes can upload via Sheet per Day</p>
+            </div>
             <FileInput
                 label="Select Excel File"
                 name="studentSheet"
