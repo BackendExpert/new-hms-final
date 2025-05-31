@@ -14,4 +14,6 @@ router.get('/get-all-students-auth', authMiddleware, checkPermission('get-all-st
 
 router.get('/get-student-byID/:id', authMiddleware, checkPermission('get-student-byID'), StudentController.getStudentById)
 
+router.post('/update-Student/:id', authMiddleware, checkPermission('update-Student'), StudentController.updateStudent)
+
 module.exports = router;
