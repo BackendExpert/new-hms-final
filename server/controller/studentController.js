@@ -195,6 +195,17 @@ const StudentController = {
             console.error("Error creating student:", err);
             return res.json({ error: "Internal server error" });
         }
+    },
+
+    studentGetall: async(req, res) => {
+        try{
+            const getAllStudents = await Student.find()
+            
+            return res.json({ Result: getAllStudents })
+        }   
+        catch(err){
+            console.log(err)
+        }
     }
 
 };

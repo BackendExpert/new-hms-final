@@ -10,4 +10,7 @@ router.post('/create-student-sheet', authMiddleware, upload.single('file'), chec
 
 router.post('/create-student-manually', authMiddleware, checkPermission('create-student-manually'), StudentController.createStudentManually)
 
+router.get('/get-all-students-auth', authMiddleware, checkPermission('get-all-students-auth'), StudentController.studentGetall)
+
+
 module.exports = router;
