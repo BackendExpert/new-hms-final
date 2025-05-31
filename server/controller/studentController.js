@@ -223,6 +223,7 @@ const StudentController = {
 
     updateStudent: async (req, res) => {
         try {
+            const { id } = req.params;
             const {
                 name,
                 title,
@@ -244,9 +245,40 @@ const StudentController = {
                 dateOfEnrolment,
                 distance
             } = req.body;
-        }
-        catch (err) {
-            console.log(err)
+
+            const updatedStudent = await Student.findByIdAndUpdate(
+                id,
+                {
+                    name,
+                    title,
+                    lastName,
+                    initials,
+                    fullName,
+                    alDistrict,
+                    zScore,
+                    medium,
+                    address1,
+                    address2,
+                    address3,
+                    fullAddress,
+                    phone1,
+                    phone2,
+                    genEnglishMarks,
+                    intake,
+                    dateOfEnrolment,
+                    distance
+                },
+                { new: true } 
+            );
+
+            if (!updatedStudent) {
+                return res.status(404).json({ message: 'Student not found' });
+            }
+
+            res.status(200).json({ message: 'Student updated successfully', student: updatedStudent });
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ message: 'Internal server error' });
         }
     }
 
