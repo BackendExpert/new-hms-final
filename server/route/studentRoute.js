@@ -12,5 +12,6 @@ router.post('/create-student-manually', authMiddleware, checkPermission('create-
 
 router.get('/get-all-students-auth', authMiddleware, checkPermission('get-all-students-auth'), StudentController.studentGetall)
 
+router.get('/get-student-byID/:id', authMiddleware, checkPermission('get-student-byID'), StudentController.getStudentById)
 
 module.exports = router;

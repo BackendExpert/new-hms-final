@@ -206,6 +206,19 @@ const StudentController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    getStudentById: async(req, res) => {
+        try{
+            const {id} = req.params
+
+            const findStudent = await Student.findById(id)
+
+            res.json({ Result: findStudent })
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
 };
