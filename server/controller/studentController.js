@@ -107,9 +107,9 @@ const StudentController = {
 
             await Student.insertMany(insertedStudents);
 
-            res.status(200).json({
+            res.json({
                 Status: "Success",
-                message: 'Upload complete',
+                Message: 'Upload complete',
                 insertedCount: insertedStudents.length,
                 duplicateCount: duplicateStudents.length,
                 duplicates: duplicateStudents
