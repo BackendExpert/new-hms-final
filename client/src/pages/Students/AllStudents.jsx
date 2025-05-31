@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import secureLocalStorage from 'react-secure-storage'
 import DefaultInput from '../../components/Form/DefaultInput'
+import { FaFemale, FaMale } from 'react-icons/fa'
 
 
 const AllStudents = () => {
@@ -61,6 +62,7 @@ const AllStudents = () => {
                             <th className="px-6 py-4 font-semibold">Index No</th>
                             <th className="px-6 py-4 font-semibold">NIC</th>
                             <th className="px-6 py-4 font-semibold">Email</th>
+                            <th className="px-6 py-4 font-semibold">Gender</th>
                             <th className="px-6 py-4 font-semibold">Home Town</th>
                             <th className="px-6 py-4 font-semibold">Distance</th>
                             <th className="px-6 py-4 font-semibold">Hostel Assigned</th>
@@ -77,6 +79,28 @@ const AllStudents = () => {
                                         <td className="px-6 py-4">{data.indexNo}</td>
                                         <td className="px-6 py-4">{data.nic}</td>
                                         <td className="px-6 py-4">{data.email}</td>
+                                        <td className="px-6 py-4">
+                                            {
+                                                data.sex === 'Male' ?
+                                                    <div className="">
+                                                        <span
+                                                            className="flex uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                        >
+                                                            <FaMale className='h-4 w-auto'/>
+                                                            Male
+                                                        </span>
+                                                    </div>
+                                                    :
+                                                    <div className="">
+                                                        <span
+                                                            className="flex uppercase bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                                        >
+                                                            <FaFemale className='h-4 w-auto'/>
+                                                            Female
+                                                        </span>
+                                                    </div>
+                                            }
+                                        </td>
                                         <td className="px-6 py-4">{data.address3}</td>
                                         <td className="px-6 py-4">{data.distance} Km</td>
                                         <td className="px-6 py-4">

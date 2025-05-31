@@ -1,38 +1,60 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import { FaUserGraduate } from 'react-icons/fa6'
 import { FaRoad } from "react-icons/fa6";
+import secureLocalStorage from 'react-secure-storage';
+
 
 const StdData = () => {
+    const token = secureLocalStorage.getItem('login')
+    const [allstds, setAllStds] = useState([])
+
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/student/get-all-students-auth', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                setAllStds(res.data.Result)
+                setFilteredStds(res.data.Result)
+            })
+            .catch(err => console.log(err))
+    }, [])
+
+    const maleStudents = allstds.filter(std => std.sex === 'Male')
+    const femaleStudents = allstds.filter(std => std.sex === 'Female')
+
     const stddata = [
         {
             id: 1,
             name: 'Total Students',
             icon: FaUserGraduate,
-            value: 22,
+            value: allstds.length,
             bgColor: 'bg-emerald-600',
         },
         {
             id: 2,
             name: 'Male Students',
             icon: FaMale,
-            value: 22,
+            value: maleStudents.length,
             bgColor: 'bg-teal-600',
         },
         {
             id: 3,
             name: 'Female Students',
             icon: FaFemale,
-            value: 22,
+            value: femaleStudents.length,
             bgColor: 'bg-cyan-600',
         },
-        {
-            id: 4,
-            name: 'Eligible Students (distance)',
-            icon: FaRoad,
-            value: 22,
-            bgColor: 'bg-sky-600',
-        },
+        // {
+        //     id: 4,
+        //     name: 'Eligible Students (distance)',
+        //     icon: FaRoad,
+        //     value: 22,
+        //     bgColor: 'bg-sky-600',
+        // },
     ]
     return (
         <div>
