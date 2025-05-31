@@ -65,7 +65,7 @@ const StdCreateSheet = () => {
 
     return (
         <div className="p-6 mx-auto bg-white rounded-xl shadow-md">
-            <div className="-mt-4">
+            <div className="-mt-4 mb-4">
                 <Link to={'/Dashboard/Students'}>
                     <DefaultBtn
                         type='button'
