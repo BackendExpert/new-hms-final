@@ -187,12 +187,36 @@ const HostelController = {
         }
     },
 
-    assignNewWarden: async(req, res) => {
-        try{
-            
-        }
-        catch(err){
-            console.log(err)
+    assignNewWarden: async (req, res) => {
+        try {
+            const { hostelId, newWardenId } = req.body;
+
+
+            await Warden.updateMany({ hostelId, active: true }, { $set: { active: false } });
+
+
+            const newWarden = new Warden({
+                userId: newWardenId,
+                hostelId: hostelId,
+                startDate: new Date(),
+                note: "Reassigned as new warden",
+                active: true
+            });
+
+            const savedWarden = await newWarden.save();
+
+
+            await Hostel.findByIdAndUpdate(hostelId, { warden: newWardenId });
+
+            return res.json({
+                Status: "Success",
+                Message: "New warden assigned successfully",
+                newWarden: savedWarden
+            });
+
+        } catch (err) {
+            console.error("Error assigning new warden:", err);
+            res.json({ error: "Internal server error while assigning new warden" });
         }
     }
 
