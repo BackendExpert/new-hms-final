@@ -2,20 +2,32 @@ const Hostel = require("../model/Hostel");
 const Role = require("../model/Role");
 const Room = require("../model/Room");
 const User = require("../model/User");
+const Warden = require("../model/Warden");
+
 
 const HostelController = {
-    GetallWarden: async(req, res) => {
-        try{
-            const getwardenrole = await Role.findOne({ name: 'warden' })
+    GetallWarden: async (req, res) => {
+        try {
+            const wardenRole = await Role.findOne({ name: 'warden' });
 
-            const wardenUsers = await User.find({ roles: getwardenrole._id })
-                .select("-password") 
-                .populate("roles", "name"); 
+            if (!wardenRole) {
+                return res.json({ error: "Warden role not found" });
+            }
 
-            return res.json({ Result: wardenUsers })
-        }
-        catch(err){
-            console.log(err)
+            const allWardenUsers = await User.find({ roles: wardenRole._id })
+                .select("-password")
+                .populate("roles", "name");
+
+            const assignedWardenUserIds = await Warden.find({}).distinct("userId");
+
+            const unassignedWardens = allWardenUsers.filter(user => {
+                return !assignedWardenUserIds.some(id => id.equals(user._id));
+            });
+
+            return res.json({ result: unassignedWardens });
+        } catch (err) {
+            console.error("Error fetching unassigned wardens:", err);
+            return res.status(500).json({ error: "Server error" });
         }
     },
 
@@ -27,20 +39,21 @@ const HostelController = {
                 location,
                 gender,
                 roomCount,
-                warden
-            } = req.body
+                warden 
+            } = req.body;
 
             const checkhostel = await Hostel.findOne({
                 $or: [
-                    { hostelID: hostelID },
-                    { name: name },
+                    { hostelID },
+                    { name },
                 ]
-            })
+            });
 
             if (checkhostel) {
-                res.json({ Error: "The Hostel is Already Exists" })
+                return res.json({ error: "The hostel already exists" });
             }
 
+            // Create and save hostel
             const newHostel = new Hostel({
                 hostelID,
                 name,
@@ -52,33 +65,42 @@ const HostelController = {
 
             const savedHostel = await newHostel.save();
 
-            if (savedHostel) {
-                const roomDocs = [];
-                for (let i = 1; i <= roomCount; i++) {
-                    const room = new Room({
-                        roomID: `${hostelID}/${i}`,
-                        gender: gender,
-                        hostelID: savedHostel._id
-                    });
-                    roomDocs.push(room);
-                }
-
-                await Room.insertMany(roomDocs);
-
-                res.json({
-                    Status: "Success",
-                    Message: "Hostel and rooms created successfully",
-                    hostel: savedHostel,
-                    rooms: roomDocs
+            // Create and save rooms
+            const roomDocs = [];
+            for (let i = 1; i <= roomCount; i++) {
+                const room = new Room({
+                    roomID: `${hostelID}/${i}`,
+                    gender: gender,
+                    hostelID: savedHostel._id
                 });
-            }
-            else {
-                return res.json({ Error: "Internal Server Error While Creating Hostel" })
+                roomDocs.push(room);
             }
 
-        }
-        catch (err) {
-            console.log(err)
+            await Room.insertMany(roomDocs);
+
+            let savedWarden = null;
+            if (warden) {
+                const newWarden = new Warden({
+                    userId: warden,
+                    hostelId: savedHostel._id,
+                    startDate: new Date(),
+                    note: "Assigned during hostel creation",
+                    active: true
+                });
+                savedWarden = await newWarden.save();
+            }
+
+            return res.json({
+                Status: "Success",
+                Message: "Hostel, rooms, and warden assigned successfully",
+                hostel: savedHostel,
+                rooms: roomDocs,
+                warden: savedWarden
+            });
+
+        } catch (err) {
+            console.error("Error creating hostel:", err);
+            return res.json({ error: "Server error while creating hostel" });
         }
     }
 };

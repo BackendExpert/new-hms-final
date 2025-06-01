@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import secureLocalStorage from 'react-secure-storage';
 import DefaultInput from '../../components/Form/DefaultInput';
@@ -9,6 +9,19 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn';
 const CreateHostel = () => {
     const navigate = useNavigate()
     const token = secureLocalStorage.getItem('login')
+
+    const [wardendata, setwardendata] = useState([])
+
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/hostel/get-all-warden', {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        })
+        .then(res => setwardendata(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
     const [hosteldata, sethosteldata] = useState({
         hostelID: '',
         name: '',

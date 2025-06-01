@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get('/get-all-warden', authMiddleware, checkPermission('get-all-warden'), HostelController.GetallWarden)
 
-router.post('/create-hostel', authMiddleware, checkPermission('create-hostel'), HostelController.CreateHostel)
+router.post('/Create-new-hostel', authMiddleware, checkPermission('create-hostel'), HostelController.CreateHostel)
 
 module.exports = router;
