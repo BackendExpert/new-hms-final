@@ -108,7 +108,7 @@ const CreateHostel = () => {
 
                     <div className="-mt-8">
                         <DefaultBtn
-                            type='button'
+                            type='submit'
                             label='Create New Hostel'
                         />
                     </div>
