@@ -107,6 +107,18 @@ const HostelController = {
             console.error("Error creating hostel:", err);
             return res.json({ error: "Server error while creating hostel" });
         }
+    },
+
+    getAllhostel: async(req, res) => {
+        try{
+            const getallhostel = await Hostel.find().populate('warden')
+
+            return res.json({ Result: getallhostel })
+
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
 };

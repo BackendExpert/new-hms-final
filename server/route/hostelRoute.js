@@ -9,4 +9,6 @@ router.get('/get-all-warden', authMiddleware, checkPermission('get-all-warden'),
 
 router.post('/Create-new-hostel', authMiddleware, checkPermission('create-hostel'), HostelController.CreateHostel)
 
+router.get('/get-all-hostels', authMiddleware, checkPermission('get-all-hostels'), HostelController.getAllhostel)
+
 module.exports = router;
