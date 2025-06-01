@@ -57,6 +57,15 @@ const CreateHostel = () => {
             <form onSubmit={headleCreateHostel} method="post">
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-4">
                     <DefaultInput
+                        label={"Hostel ID"}
+                        name={'hostelID'}
+                        value={hosteldata.hostelID}
+                        onChange={handleInputChange}
+                        required
+                        placeholder={"Hostel ID"}
+                    />
+
+                    <DefaultInput
                         label={"Hostel Name"}
                         name={'name'}
                         value={hosteldata.name}
