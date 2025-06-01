@@ -109,30 +109,84 @@ const HostelController = {
         }
     },
 
-    getAllhostel: async(req, res) => {
-        try{
+    getAllhostel: async (req, res) => {
+        try {
             const getallhostel = await Hostel.find().populate('warden')
 
             return res.json({ Result: getallhostel })
 
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     },
 
-    getoneHostel: async(req, res) => {
-        try{
-            const { id} = req.params
+    getoneHostel: async (req, res) => {
+        try {
+            const { id } = req.params
 
             const gethostel = await Hostel.findById(id).populate('warden')
 
             return res.json({ Result: gethostel })
-        }   
-        catch(err){
+        }
+        catch (err) {
             console.log(err)
         }
+    },
+
+    updateRoomCount: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const { newRoomCount } = req.body;
+
+            const hostel = await Hostel.findById(id);
+            if (!hostel) {
+                return res.json({ error: 'Hostel not found' });
+            }
+
+            const currentCount = hostel.roomCount;
+
+            if (newRoomCount === currentCount) {
+                return res.json({ message: 'Room count is already up to date.' });
+            }
+
+            if (newRoomCount > currentCount) {
+                const roomsToAdd = [];
+                for (let i = currentCount + 1; i <= newRoomCount; i++) {
+                    roomsToAdd.push({
+                        roomID: `${hostel.hostelID}/${i}`,
+                        gender: hostel.gender,
+                        hostelID: hostel._id
+                    });
+                }
+
+                await Room.insertMany(roomsToAdd);
+            }
+
+            if (newRoomCount < currentCount) {
+                const roomsToRemove = await Room.find({
+                    hostelID: hostel._id
+                }).sort({ roomID: -1 }).limit(currentCount - newRoomCount);
+
+                const roomIDsToDelete = roomsToRemove.map(room => room._id);
+
+                await Room.deleteMany({ _id: { $in: roomIDsToDelete } });
+            }
+
+            hostel.roomCount = newRoomCount;
+            await hostel.save();
+
+            return res.json({
+                Status: "Success",
+                Message: `Room count updated from ${currentCount} to ${newRoomCount}`
+            });
+
+        } catch (err) {
+            console.error("Error updating room count:", err);
+            return res.status(500).json({ error: "Server error while updating room count" });
+        }
     }
+
 
 };
 
