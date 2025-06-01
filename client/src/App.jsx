@@ -24,6 +24,7 @@ import Students from './pages/Students/Students'
 import StdCreateManually from './pages/Students/StdCreateManually'
 import StdCreateSheet from './pages/Students/StdCreateSheet'
 import ViewStudent from './pages/Students/ViewStudent'
+import Hostels from './pages/Hostels/Hostels'
 
 function App() {
     return (
@@ -56,6 +57,8 @@ function App() {
                         <Route path='Stundet-upload-sheet' element={<PrivateRoute element={<StdCreateSheet /> } /> } />
                         <Route path='View-Student/:id' element={<PrivateRoute element={<ViewStudent /> } /> } />
         
+                        <Route path='Hostels' element={<PrivateRoute element={<Hostels /> } /> } />
+
                     </Route>
 
                 </Routes>
