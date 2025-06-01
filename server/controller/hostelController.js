@@ -183,7 +183,7 @@ const HostelController = {
 
         } catch (err) {
             console.error("Error updating room count:", err);
-            return res.status(500).json({ error: "Server error while updating room count" });
+            return res.json({ error: "Server error while updating room count" });
         }
     },
 

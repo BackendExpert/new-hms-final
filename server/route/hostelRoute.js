@@ -13,4 +13,6 @@ router.get('/get-all-hostels', authMiddleware, checkPermission('get-all-hostels'
 
 router.get('/View-one-hostel/:id', authMiddleware, checkPermission('view-one-hostel'), HostelController.getoneHostel)
 
+router.post('/update-room-count/:id', authMiddleware, checkPermission('update-room-count'), HostelController.updateRoomCount)
+
 module.exports = router;
