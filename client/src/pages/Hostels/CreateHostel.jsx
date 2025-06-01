@@ -10,6 +10,7 @@ const CreateHostel = () => {
     const navigate = useNavigate()
     const token = secureLocalStorage.getItem('login')
     const [hosteldata, sethosteldata] = useState({
+        hostelID: '',
         name: '',
         location: '',
         gender: '',
