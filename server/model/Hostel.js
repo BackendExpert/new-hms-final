@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const hostelSchema = new mongoose.Schema({
+    hostelID: String,
     name: String,
-    type: String,
     location: String,
     gender: String,
-    rooms: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Room' }],
+    roomCount: Number,
     warden: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
