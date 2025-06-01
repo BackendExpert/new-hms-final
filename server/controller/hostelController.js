@@ -119,6 +119,19 @@ const HostelController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    getoneHostel: async(req, res) => {
+        try{
+            const { id} = req.params
+
+            const gethostel = await Hostel.findById(id).populate('warden')
+
+            return res.json({ Result: gethostel })
+        }   
+        catch(err){
+            console.log(err)
+        }
     }
 
 };
