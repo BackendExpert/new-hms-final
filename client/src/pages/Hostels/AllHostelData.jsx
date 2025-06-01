@@ -68,7 +68,7 @@ const AllHostelData = () => {
                                         </td>
                                         <td className="px-6 py-4">
                                             <Link
-                                                to={`/Dashboard/View-Student/${data._id}`}
+                                                to={`/Dashboard/View-Hostel/${data._id}`}
                                                 className="text-emerald-600 font-medium hover:underline"
                                             >
                                                 View
