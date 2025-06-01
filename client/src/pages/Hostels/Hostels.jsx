@@ -2,6 +2,7 @@ import React from 'react'
 import HostelData from './HostelData'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
+import AllHostelData from './AllHostelData'
 
 const Hostels = () => {
     return (
@@ -21,6 +22,10 @@ const Hostels = () => {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-8">
+                <AllHostelData />
             </div>
 
         </div>
