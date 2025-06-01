@@ -25,6 +25,7 @@ import StdCreateManually from './pages/Students/StdCreateManually'
 import StdCreateSheet from './pages/Students/StdCreateSheet'
 import ViewStudent from './pages/Students/ViewStudent'
 import Hostels from './pages/Hostels/Hostels'
+import CreateHostel from './pages/Hostels/CreateHostel'
 
 function App() {
     return (
@@ -58,6 +59,7 @@ function App() {
                         <Route path='View-Student/:id' element={<PrivateRoute element={<ViewStudent /> } /> } />
         
                         <Route path='Hostels' element={<PrivateRoute element={<Hostels /> } /> } />
+                        <Route path='Create-hostel' element={<PrivateRoute element={<CreateHostel /> } /> } />
 
                     </Route>
 

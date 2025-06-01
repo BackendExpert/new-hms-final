@@ -1,5 +1,7 @@
 import React from 'react'
 import HostelData from './HostelData'
+import DefaultBtn from '../../components/Buttons/DefaultBtn'
+import { Link } from 'react-router-dom'
 
 const Hostels = () => {
     return (
@@ -8,6 +10,19 @@ const Hostels = () => {
             <div className="">
                 <HostelData />
             </div>
+            <div className="-mt-6">
+                <div className="md:flex">
+                    <div className="">
+                        <Link to={'/Dashboard/Create-hostel'}>
+                            <DefaultBtn
+                                type='button'
+                                label='Create New Hostel'
+                            />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }
