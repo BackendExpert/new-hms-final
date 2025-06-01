@@ -39,7 +39,7 @@ const HostelController = {
                 location,
                 gender,
                 roomCount,
-                warden 
+                warden
             } = req.body;
 
             const checkhostel = await Hostel.findOne({
@@ -53,13 +53,18 @@ const HostelController = {
                 return res.json({ error: "The hostel already exists" });
             }
 
+            const parsedRoomCount = parseInt(roomCount);
+            if (isNaN(parsedRoomCount) || parsedRoomCount <= 0) {
+                return res.json({ error: "Invalid room count" });
+            }
+
             // Create and save hostel
             const newHostel = new Hostel({
                 hostelID,
                 name,
                 location,
                 gender,
-                roomCount,
+                roomCount: parsedRoomCount,
                 warden
             });
 
@@ -67,7 +72,7 @@ const HostelController = {
 
             // Create and save rooms
             const roomDocs = [];
-            for (let i = 1; i <= roomCount; i++) {
+            for (let i = 1; i <= parsedRoomCount; i++) {
                 const room = new Room({
                     roomID: `${hostelID}/${i}`,
                     gender: gender,
@@ -103,6 +108,7 @@ const HostelController = {
             return res.json({ error: "Server error while creating hostel" });
         }
     }
+
 };
 
 module.exports = HostelController;
