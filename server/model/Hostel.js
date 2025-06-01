@@ -6,7 +6,6 @@ const hostelSchema = new mongoose.Schema({
     location: String,
     gender: String,
     roomCount: Number,
-    rooms: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Room' }],
     warden: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
