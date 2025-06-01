@@ -9,12 +9,13 @@ const ViewHostel = () => {
 
     const [getonehostel, setGetOneHostel] = useState(null)
     const [newRoomCount, setNewRoomCount] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [loadingRoomUpdate, setLoadingRoomUpdate] = useState(false)
+    const [loadingAssignWarden, setLoadingAssignWarden] = useState(false)
     const [message, setMessage] = useState('')
+    const [assignStatus, setAssignStatus] = useState('')
 
     const [availableWardens, setAvailableWardens] = useState([])
     const [selectedWarden, setSelectedWarden] = useState('')
-    const [assignStatus, setAssignStatus] = useState('')
 
     // Fetch hostel details by ID
     const fetchHostel = () => {
@@ -34,7 +35,6 @@ const ViewHostel = () => {
             })
             .then((res) => {
                 console.log('Wardens API response:', res.data)
-                // Make sure you access the right key (lowercase 'result' in your case)
                 setAvailableWardens(res.data.result || [])
             })
             .catch((err) => {
@@ -46,7 +46,7 @@ const ViewHostel = () => {
     useEffect(() => {
         fetchHostel()
         fetchAvailableWardens()
-    }, [id]) // add id dependency in case route param changes
+    }, [id])
 
     // Update room count API call
     const handleRoomCountUpdate = async () => {
@@ -56,7 +56,7 @@ const ViewHostel = () => {
         }
 
         try {
-            setLoading(true)
+            setLoadingRoomUpdate(true)
             const res = await axios.post(
                 `${import.meta.env.VITE_APP_API}/hostel/update-room-count/${id}`,
                 { newRoomCount: parseInt(newRoomCount) },
@@ -69,7 +69,7 @@ const ViewHostel = () => {
             console.error('Error updating room count:', error)
             setMessage('Error updating room count')
         } finally {
-            setLoading(false)
+            setLoadingRoomUpdate(false)
         }
     }
 
@@ -80,10 +80,14 @@ const ViewHostel = () => {
             return
         }
 
+        const url = `${import.meta.env.VITE_APP_API}/hostel/assign-new-warden`
+        console.log('Assign Warden URL:', url)
+        console.log('Payload:', { hostelId: id, newWardenId: selectedWarden })
+
         try {
-            setLoading(true)
+            setLoadingAssignWarden(true)
             const res = await axios.post(
-                `${import.meta.env.VITE_APP_API}/hostel/assign-warden`,
+                url,
                 {
                     hostelId: id,
                     newWardenId: selectedWarden,
@@ -97,7 +101,7 @@ const ViewHostel = () => {
             console.error('Error assigning warden:', err)
             setAssignStatus('Error assigning warden.')
         } finally {
-            setLoading(false)
+            setLoadingAssignWarden(false)
         }
     }
 
@@ -152,10 +156,10 @@ const ViewHostel = () => {
                     />
                     <button
                         onClick={handleRoomCountUpdate}
-                        disabled={loading}
+                        disabled={loadingRoomUpdate}
                         className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 disabled:opacity-50"
                     >
-                        {loading ? 'Updating...' : 'Update'}
+                        {loadingRoomUpdate ? 'Updating...' : 'Update'}
                     </button>
                 </div>
                 {message && <p className="mt-2 text-sm text-emerald-700">{message}</p>}
@@ -182,10 +186,10 @@ const ViewHostel = () => {
                     </select>
                     <button
                         onClick={handleAssignWarden}
-                        disabled={loading}
+                        disabled={loadingAssignWarden}
                         className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 disabled:opacity-50"
                     >
-                        {loading ? 'Assigning...' : 'Assign'}
+                        {loadingAssignWarden ? 'Assigning...' : 'Assign'}
                     </button>
                 </div>
                 {assignStatus && <p className="mt-2 text-sm text-emerald-700">{assignStatus}</p>}

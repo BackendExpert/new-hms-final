@@ -191,35 +191,33 @@ const HostelController = {
         try {
             const { hostelId, newWardenId } = req.body;
 
+            // Remove existing active wardens for this hostel
+            await Warden.deleteMany({ hostelId, active: true });
 
-            await Warden.updateMany({ hostelId, active: true }, { $set: { active: false } });
-
-
+            // Create new active warden
             const newWarden = new Warden({
                 userId: newWardenId,
                 hostelId: hostelId,
                 startDate: new Date(),
                 note: "Reassigned as new warden",
-                active: true
+                active: true,
             });
 
             const savedWarden = await newWarden.save();
 
-
+            // Update Hostel document with new warden reference
             await Hostel.findByIdAndUpdate(hostelId, { warden: newWardenId });
 
             return res.json({
                 Status: "Success",
                 Message: "New warden assigned successfully",
-                newWarden: savedWarden
+                newWarden: savedWarden,
             });
-
         } catch (err) {
             console.error("Error assigning new warden:", err);
             res.json({ error: "Internal server error while assigning new warden" });
         }
     }
-
 
 };
 
