@@ -8,13 +8,11 @@ const AllHostelData = () => {
                     <thead className="text-xs uppercase bg-emerald-100 text-emerald-700">
                         <tr>
                             <th className="px-6 py-4 font-semibold">#</th>
-                            <th className="px-6 py-4 font-semibold">Enrolment No</th>
-                            <th className="px-6 py-4 font-semibold">Index No</th>
-                            <th className="px-6 py-4 font-semibold">NIC</th>
+                            <th className="px-6 py-4 font-semibold">Hostel Name</th>
+                            <th className="px-6 py-4 font-semibold">Location</th>
+                            <th className="px-6 py-4 font-semibold">Warden</th>
+                            <th className="px-6 py-4 font-semibold">Rooms</th>
                             <th className="px-6 py-4 font-semibold">Gender</th>
-                            <th className="px-6 py-4 font-semibold">Home Town</th>
-                            <th className="px-6 py-4 font-semibold">Distance</th>
-                            <th className="px-6 py-4 font-semibold">Hostel Assigned</th>
                             <th className="px-6 py-4 font-semibold">Action</th>
                         </tr>
                     </thead>
