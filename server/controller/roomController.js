@@ -1,14 +1,16 @@
 const Room = require("../model/Room");
 
 const RoomController = {
-    getallrooms: async(req, res) => {
-        try{
-            const getallrooms = await Room.find().populate('student', 'hostelID')
+    getallrooms: async (req, res) => {
+        try {
+            const getAllRooms = await Room.find()
+                .populate('students') 
+                .populate('hostelID');
 
-            return res.json({ Result: getallrooms })
+            return res.json({ Result: getAllRooms })
 
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     }
