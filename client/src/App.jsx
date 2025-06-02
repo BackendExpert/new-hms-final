@@ -27,6 +27,7 @@ import ViewStudent from './pages/Students/ViewStudent'
 import Hostels from './pages/Hostels/Hostels'
 import CreateHostel from './pages/Hostels/CreateHostel'
 import ViewHostel from './pages/Hostels/ViewHostel'
+import Rooms from './pages/Rooms/Rooms'
 
 function App() {
     return (
@@ -62,6 +63,8 @@ function App() {
                         <Route path='Hostels' element={<PrivateRoute element={<Hostels /> } /> } />
                         <Route path='Create-hostel' element={<PrivateRoute element={<CreateHostel /> } /> } />
                         <Route path='View-Hostel/:id' element={<PrivateRoute element={<ViewHostel /> } /> } />
+
+                        <Route path='Rooms' element={<PrivateRoute element={<Rooms /> } /> } />
 
                     </Route>
 
