@@ -17,4 +17,6 @@ router.post('/update-room-count/:id', authMiddleware, checkPermission('update-ro
 
 router.post('/assign-new-warden', authMiddleware, checkPermission('assign-new-warden'), HostelController.assignNewWarden)
 
+router.post('/assign-students', authMiddleware, checkPermission('student-assign-hostel'), HostelController.assignStudents)
+
 module.exports = router;

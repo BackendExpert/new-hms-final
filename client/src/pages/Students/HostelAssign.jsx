@@ -174,14 +174,13 @@ const HostelAssign = () => {
             </div>
 
             {/* Hostel Selection */}
-            <div className="mt-6 max-w-3xl">
+            <div className=" max-w-3xl">
                 <Dropdown
                     label="Select Hostel"
                     name="hostel"
                     value={selectedHostel}
                     onChange={handleHostelChange}
                     options={[
-                        { label: '-- Select Hostel --', value: '' },
                         ...allhostels.map(h => ({ label: h.name, value: h._id }))
                     ]}
                 />
@@ -206,50 +205,46 @@ const HostelAssign = () => {
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                         {
-                            filteredStudents.length > 0 ? (
-                                filteredStudents.map((data, index) => (
-                                    <tr key={data._id} className="hover:bg-emerald-50 transition-all duration-150">
-                                        <td className="px-6 py-4">
-                                            <input
-                                                type="checkbox"
-                                                checked={selectedStudents.has(data._id)}
-                                                onChange={() => handleCheckboxChange(data._id)}
-                                                disabled={data.isAssign} // Disable if already assigned
-                                            />
-                                        </td>
-                                        <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
-                                        <td className="px-6 py-4">{data.enrolmentNo}</td>
-                                        <td className="px-6 py-4">{data.indexNo}</td>
-                                        <td className="px-6 py-4">{data.nic}</td>
-                                        <td className="px-6 py-4">
-                                            {data.sex === 'Male' ? (
-                                                <span className="flex uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                                    <FaMale className='h-4 w-auto mr-1' /> Male
-                                                </span>
-                                            ) : (
-                                                <span className="flex uppercase bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                                    <FaFemale className='h-4 w-auto mr-1' /> Female
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-4">{data.address3}</td>
-                                        <td className="px-6 py-4">{data.distance} Km</td>
-                                        <td className="px-6 py-4">
-                                            {data.isAssign ? (
-                                                <span className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                                    Assigned
-                                                </span>
-                                            ) : (
+                            filteredStudents.filter(student => student.isAssign === false).length > 0 ? (
+                                filteredStudents
+                                    .filter(student => student.isAssign === false)
+                                    .map((data, index) => (
+                                        <tr key={data._id} className="hover:bg-emerald-50 transition-all duration-150">
+                                            <td className="px-6 py-4">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedStudents.has(data._id)}
+                                                    onChange={() => handleCheckboxChange(data._id)}
+                                                    disabled={data.isAssign} // This will always be true here, so checkbox disabled
+                                                />
+                                            </td>
+                                            <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
+                                            <td className="px-6 py-4">{data.enrolmentNo}</td>
+                                            <td className="px-6 py-4">{data.indexNo}</td>
+                                            <td className="px-6 py-4">{data.nic}</td>
+                                            <td className="px-6 py-4">
+                                                {data.sex === 'Male' ? (
+                                                    <span className="flex uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
+                                                        <FaMale className='h-4 w-auto mr-1' /> Male
+                                                    </span>
+                                                ) : (
+                                                    <span className="flex uppercase bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">
+                                                        <FaFemale className='h-4 w-auto mr-1' /> Female
+                                                    </span>
+                                                )}
+                                            </td>
+                                            <td className="px-6 py-4">{data.address3}</td>
+                                            <td className="px-6 py-4">{data.distance} Km</td>
+                                            <td className="px-6 py-4">
                                                 <span className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">
                                                     Not-Assigned
                                                 </span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <Link to={`/Dashboard/View-Student/${data._id}`} className="text-emerald-600 font-medium hover:underline">View</Link>
-                                        </td>
-                                    </tr>
-                                ))
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                <Link to={`/Dashboard/View-Student/${data._id}`} className="text-emerald-600 font-medium hover:underline">View</Link>
+                                            </td>
+                                        </tr>
+                                    ))
                             ) : (
                                 <tr>
                                     <td colSpan="10" className="px-6 py-4 text-center text-gray-500">No matching records found.</td>
