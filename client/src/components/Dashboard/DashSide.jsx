@@ -33,7 +33,7 @@ const DashSide = () => {
             return item.id !== 3; // Hide item with id 3
         }
         if (roleNames.includes('warden')) {
-            return ![2, 7, 8].includes(item.id); // Hide items 2 and 7
+            return ![2, 5, 8, 9].includes(item.id); // Hide items 2 and 7
         }
         return false; // All others get no menu
     });

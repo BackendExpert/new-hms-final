@@ -23,6 +23,12 @@ const dashsidedata = [
         icon: MdBedroomParent
     },
     {
+        id: 4,
+        name: 'Rooms',
+        link: '/Dashboard/WardenRooms',
+        icon: MdBedroomParent
+    },
+    {
         id: 5,
         name: 'Students',
         link: '/Dashboard/Students',
@@ -30,18 +36,24 @@ const dashsidedata = [
     },
     {
         id: 6,
+        name: 'Students',
+        link: '/Dashboard/WardenStudents',
+        icon: FaUserGraduate
+    },
+    {
+        id: 7,
         name: 'Profile',
         link: '/Dashboard/Profile',
         icon: FaUserCog,
     },
     {
-        id: 7,
+        id: 8,
         name: 'Permission',
         link: '/Dashboard/Permissions',
         icon: FaUserLock
     },
     {
-        id: 8,
+        id: 9,
         name: 'Users',
         link: '/Dashboard/Users',
         icon: FaUsers
