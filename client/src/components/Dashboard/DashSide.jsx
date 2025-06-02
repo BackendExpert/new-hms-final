@@ -1,42 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getUserInfoFromToken } from '../../utils/auth';
 import { dashsidedata } from './DashSideData';
 import uoplogo from '../../assets/uoplogo.png';
-import DashUser from '../../assets/DashUser.png'
+import DashUser from '../../assets/DashUser.png';
 
 const DashSide = () => {
     const [activeMenu, setActiveMenu] = useState(null);
     const location = useLocation();
+    const navigate = useNavigate();
 
     const { username, roles } = getUserInfoFromToken() || {};
 
-    useEffect(() => {
-        const currentItem = dashsidedata.find(item => item.link === location.pathname);
-        if (currentItem) {
-            setActiveMenu(currentItem.id);
-            localStorage.setItem('dashmenuID', currentItem.id);
-        } else {
-            const savedId = localStorage.getItem('dashmenuID');
-            setActiveMenu(savedId ? Number(savedId) : null);
-        }
-    }, [location]);
-
-    // ✅ Normalize role names
+    // Normalize role names
     const roleNames = Array.isArray(roles)
         ? roles.map(r => (typeof r === 'string' ? r : r.name))
         : [typeof roles === 'string' ? roles : roles?.name];
 
-    // ✅ Filter menu based on role
+    // Filter menu based on role
     const filteredMenu = dashsidedata.filter(item => {
         if (roleNames.includes('admin') || roleNames.includes('director')) {
-            return item.id !== 3; // Hide item with id 3
+            return ![3, 5, 7].includes(item.id); // Hide item with id 3
         }
         if (roleNames.includes('warden')) {
-            return ![2, 4, 6, 9, 10].includes(item.id); // Hide items 2 and 7
+            return ![2, 4, 6, 9, 10].includes(item.id); // Hide these items for warden
         }
         return false; // All others get no menu
     });
+
+    useEffect(() => {
+        const currentItem = dashsidedata.find(item => item.link === location.pathname);
+        if (currentItem) {
+            // Check if current item is allowed for this user role
+            const allowedIds = filteredMenu.map(item => item.id);
+            if (roleNames.includes('warden') && !allowedIds.includes(currentItem.id)) {
+                // Warden trying to access forbidden menu -> logout
+                localStorage.clear();
+                navigate('/');  // Adjust your login path here
+                return;
+            }
+            setActiveMenu(currentItem.id);
+            localStorage.setItem('dashmenuID', currentItem.id);
+        } else {
+            const savedId = localStorage.getItem('dashmenuID');
+            if (savedId) {
+                const savedIdNum = Number(savedId);
+                const allowedIds = filteredMenu.map(item => item.id);
+                if (allowedIds.includes(savedIdNum)) {
+                    setActiveMenu(savedIdNum);
+                } else {
+                    // Saved menu id not allowed for current user role, logout
+                    localStorage.clear();
+                    navigate('/');
+                }
+            } else {
+                setActiveMenu(null);
+            }
+        }
+    }, [location, filteredMenu, roleNames, navigate]);
 
     return (
         <aside
