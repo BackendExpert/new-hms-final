@@ -47,6 +47,23 @@ const ViewRoom = () => {
 
             <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-5">
                 <h1 className="text-2xl font-bold text-emerald-700 mb-4">Students in Room</h1>
+                {oneRoom?.students?.length > 0 ? (
+                    <ul className="space-y-2">
+                        {oneRoom.students.map((student, index) => (
+                            <li
+                                key={student._id || index}
+                                className="p-3 border border-gray-200 rounded-md bg-gray-50"
+                            >
+                                <p><span className="font-semibold">Name:</span> {student.fullName}</p>
+                                <p><span className="font-semibold">Reg No:</span> {student.enrolmentNo}</p>
+                                <p><span className="font-semibold">NIC:</span> {student.nic}</p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="text-gray-500">No students currently assigned to this room.</p>
+                )}
+
             </div>
         </div>
     )
