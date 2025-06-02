@@ -36,6 +36,14 @@ const Students = () => {
                             />
                         </Link>
                     </div>
+                    <div className="md:ml-4">
+                        <Link to={'/Dashboard/Student-assign'}>
+                            <DefaultBtn
+                                type='button'
+                                label='Student Assign'
+                            />
+                        </Link>
+                    </div>
                 </div>
             </div>
 
