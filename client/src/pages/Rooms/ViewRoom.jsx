@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import axios from 'axios'
 import secureLocalStorage from 'react-secure-storage'
+import DefaultInput from '../../components/Form/DefaultInput'
 
 
 const ViewRoom = () => {
@@ -19,6 +20,41 @@ const ViewRoom = () => {
             .then(res => setoneRoom(res.data.Result))
             .catch(err => console.log(err))
     }, [])
+
+    const [roomcapasity, setroomcapasity] = useState({
+        roomID: id,
+        capasity: 0,
+    })
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setroomcapasity(prev => ({ ...prev, [name]: value }));
+    };
+
+    const headleUpdateRoomcapasity = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await axios.post(`${import.meta.env.VITE_APP_API}/hostel/Update-room-capasity`, roomcapasity, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+
+            if(res.data.Status === "Success"){
+                alert(res.data.Message)
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+
     return (
         <div className="">
             <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-5">
@@ -43,6 +79,31 @@ const ViewRoom = () => {
 
             <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-5">
                 <h1 className="text-2xl font-bold text-emerald-700 mb-4">Update in Room Capasity</h1>
+                <div className="">
+                    <h1 className="text-emerald-700">Current Capasity</h1>
+                    <p className="">{oneRoom?.capasity}</p>
+                </div>
+
+                <div className="mt-4">
+                    <form onSubmit={headleUpdateRoomcapasity} method="post">
+                        <DefaultInput 
+                            label={"New Room Capasity"}
+                            type='number'
+                            name={'capasity'}
+                            value={roomcapasity.capasity}
+                            onChange={handleInputChange}
+                            placeholder={"Enter New Room Capasity"}
+                            required
+                        />
+                        
+                        <div className="-mt-4">
+                            <DefaultBtn 
+                                type='submit'
+                                label='Update Room Capasity'
+                            />
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-5">
