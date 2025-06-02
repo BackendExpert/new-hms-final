@@ -35,7 +35,7 @@ const ViewRoom = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_APP_API}/hostel/Update-room-capasity`, roomcapasity, {
+            const res = await axios.post(`${import.meta.env.VITE_APP_API}/room/Update-room-capasity`, roomcapasity, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }

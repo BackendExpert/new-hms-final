@@ -9,4 +9,6 @@ router.get('/get-all-rooms', authMiddleware, checkPermission('view-all-rooms'), 
 
 router.get('/get-one-room/:id', authMiddleware, checkPermission('get-one-room'), RoomController.getoneRoom)
 
+router.post('/Update-room-capasity', authMiddleware, checkPermission('update-room-capasity'), RoomController.updateRoomCapasity)
+
 module.exports = router;

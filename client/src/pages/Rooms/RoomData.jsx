@@ -1,13 +1,29 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { FaBed } from 'react-icons/fa6'
+import secureLocalStorage from 'react-secure-storage'
 
 const RoomData = () => {
+    const token = secureLocalStorage.getItem('login')
+    const [roomdata, setroomdata] = useState([])
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/room/get-all-rooms', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                setroomdata(res.data.Result)
+                setFilteredData(res.data.Result)
+            })
+            .catch(err => console.log(err))
+    }, [])
     const stddata = [
         {
             id: 1,
             name: 'Total Rooms',
             icon: FaBed,
-            value: 5,
+            value: roomdata.length,
             bgColor: 'bg-emerald-600',
         },
     ]
