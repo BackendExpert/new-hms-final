@@ -1,9 +1,10 @@
+const Allocation = require("../model/Allocation");
 const Hostel = require("../model/Hostel");
 const Role = require("../model/Role");
 const Room = require("../model/Room");
 const User = require("../model/User");
 const Warden = require("../model/Warden");
-
+const Student = require("../model/Student")
 
 const HostelController = {
     GetallWarden: async (req, res) => {
@@ -217,7 +218,38 @@ const HostelController = {
             console.error("Error assigning new warden:", err);
             res.json({ error: "Internal server error while assigning new warden" });
         }
+    },
+
+    assignStudents: async (req, res) => {
+        try {
+            const {
+                hostelId,
+                studentIds,
+            } = req.body
+
+            const allocations = studentIds.map(studentId => ({
+                regNo: studentId,
+                hostelId,
+                academicYear: new Date().getFullYear(),
+                inDate: new Date(),
+                active: true,
+            }));
+
+            await Allocation.insertMany(allocations);
+
+            await Student.updateMany(
+                { _id: { $in: studentIds } },
+                { $set: { isAssign: true } }
+            );
+
+            res.json({ Status: "Success", Message: "Students assigned and allocations created successfully"})
+
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
+
 
 };
 
