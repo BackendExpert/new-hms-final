@@ -225,7 +225,29 @@ const HostelController = {
             const {
                 hostelId,
                 studentIds,
-            } = req.body
+            } = req.body;
+
+            const hostel = await Hostel.findById(hostelId);
+            if (!hostel) {
+                return res.json({ Status: "Error", Message: "Hostel not found" });
+            }
+
+            const totalCapacity = hostel.roomCount * hostel.roomCapacity;
+
+            const existingAllocationsCount = await Allocation.countDocuments({
+                hostelId,
+                academicYear: new Date().getFullYear(),
+                active: true
+            });
+
+            const newAllocationsCount = studentIds.length;
+
+            if (existingAllocationsCount + newAllocationsCount > totalCapacity) {
+                return res.json({
+                    Status: "Error",
+                    Message: `Allocation failed. Total capacity (${totalCapacity}) will be exceeded.`
+                });
+            }
 
             const allocations = studentIds.map(studentId => ({
                 regNo: studentId,
@@ -242,14 +264,13 @@ const HostelController = {
                 { $set: { isAssign: true } }
             );
 
-            res.json({ Status: "Success", Message: "Students assigned and allocations created successfully"})
+            res.json({ Status: "Success", Message: "Students assigned and allocations created successfully" });
 
-        }
-        catch (err) {
-            console.log(err)
+        } catch (err) {
+            console.log(err);
+            res.json({ Status: "Error", Message: "An error occurred while assigning students" });
         }
     }
-
 
 };
 

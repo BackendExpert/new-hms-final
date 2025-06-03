@@ -17,10 +17,9 @@ const HostelAssign = () => {
     const token = secureLocalStorage.getItem('login')
 
     const [allhostels, setAllHostels] = useState([])
-    const [selectedHostel, setSelectedHostel] = useState('') // Selected hostel ID
-    const [selectedStudents, setSelectedStudents] = useState(new Set()) // Store selected student IDs in a Set for easy add/remove
+    const [selectedHostel, setSelectedHostel] = useState('')
+    const [selectedStudents, setSelectedStudents] = useState(new Set())
 
-    // Fetch students
     useEffect(() => {
         axios.get(import.meta.env.VITE_APP_API + '/student/get-all-students-auth', {
             headers: { Authorization: `Bearer ${token}` }
@@ -32,7 +31,6 @@ const HostelAssign = () => {
             .catch(err => console.log(err))
     }, [])
 
-    // Fetch hostels
     useEffect(() => {
         axios.get(import.meta.env.VITE_APP_API + '/hostel/get-all-hostels', {
             headers: { Authorization: `Bearer ${token}` }
@@ -41,16 +39,15 @@ const HostelAssign = () => {
             .catch(err => console.error("Failed to fetch hostels:", err))
     }, [])
 
-    // Filter students whenever filters or students change
     useEffect(() => {
         let filtered = getallstudents
 
         if (filters.search.trim() !== '') {
             const searchTerm = filters.search.toLowerCase()
             filtered = filtered.filter(student =>
-            (student.enrolmentNo?.toLowerCase().includes(searchTerm) ||
-                student.indexNo?.toLowerCase().includes(searchTerm) ||
-                student.nic?.toLowerCase().includes(searchTerm))
+                (student.enrolmentNo?.toLowerCase().includes(searchTerm) ||
+                    student.indexNo?.toLowerCase().includes(searchTerm) ||
+                    student.nic?.toLowerCase().includes(searchTerm))
             )
         }
 
@@ -75,7 +72,6 @@ const HostelAssign = () => {
         }))
     }
 
-    // Handle checkbox change
     const handleCheckboxChange = (studentId) => {
         setSelectedStudents(prev => {
             const newSelected = new Set(prev)
@@ -88,12 +84,10 @@ const HostelAssign = () => {
         })
     }
 
-    // Handle hostel dropdown change
     const handleHostelChange = (e) => {
         setSelectedHostel(e.target.value)
     }
 
-    // Submit handler to assign students to hostel
     const handleAssignSubmit = () => {
         if (!selectedHostel) {
             alert('Please select a hostel first.')
@@ -115,10 +109,7 @@ const HostelAssign = () => {
         })
             .then(res => {
                 alert('Students assigned successfully!')
-                // Optionally: refresh students or update state to reflect changes
-                // For now, let's clear selection
                 setSelectedStudents(new Set())
-                // Optionally refetch students to update assignment status
                 axios.get(import.meta.env.VITE_APP_API + '/student/get-all-students-auth', {
                     headers: { Authorization: `Bearer ${token}` }
                 })
@@ -137,7 +128,6 @@ const HostelAssign = () => {
         <div>
             <h1 className="font-bold text-emerald-600 text-xl">Assign Students to Hostels</h1>
 
-            {/* Filters */}
             <div className="flex flex-wrap gap-4 mt-4 max-w-3xl">
                 <div className="flex-grow min-w-[250px]">
                     <DefaultInput
@@ -173,25 +163,21 @@ const HostelAssign = () => {
                 </div>
             </div>
 
-            {/* Hostel Selection */}
-            <div className=" max-w-3xl">
+            <div className="max-w-3xl">
                 <Dropdown
                     label="Select Hostel"
                     name="hostel"
                     value={selectedHostel}
                     onChange={handleHostelChange}
-                    options={[
-                        ...allhostels.map(h => ({ label: h.name, value: h._id }))
-                    ]}
+                    options={allhostels.map(h => ({ label: h.name, value: h._id }))}
                 />
             </div>
 
-            {/* Table */}
             <div className="overflow-x-auto rounded-2xl shadow-lg mt-4 max-w-7xl">
                 <table className="min-w-full text-sm text-left text-gray-600 bg-white">
                     <thead className="text-xs uppercase bg-emerald-100 text-emerald-700">
                         <tr>
-                            <th className="px-6 py-4 font-semibold">Select</th> {/* Checkbox column */}
+                            <th className="px-6 py-4 font-semibold">Select</th>
                             <th className="px-6 py-4 font-semibold">#</th>
                             <th className="px-6 py-4 font-semibold">Enrolment No</th>
                             <th className="px-6 py-4 font-semibold">Index No</th>
@@ -209,13 +195,24 @@ const HostelAssign = () => {
                                 filteredStudents
                                     .filter(student => student.isAssign === false)
                                     .map((data, index) => (
-                                        <tr key={data._id} className="hover:bg-emerald-50 transition-all duration-150">
+                                        <tr
+                                            key={data._id}
+                                            onClick={() => handleCheckboxChange(data._id)}
+                                            className={`transition-all duration-150 cursor-pointer ${
+                                                selectedStudents.has(data._id)
+                                                    ? 'bg-emerald-100 text-emerald-900'
+                                                    : 'hover:bg-emerald-50'
+                                            }`}
+                                        >
                                             <td className="px-6 py-4">
                                                 <input
                                                     type="checkbox"
                                                     checked={selectedStudents.has(data._id)}
-                                                    onChange={() => handleCheckboxChange(data._id)}
-                                                    disabled={data.isAssign} // This will always be true here, so checkbox disabled
+                                                    onChange={(e) => {
+                                                        e.stopPropagation()
+                                                        handleCheckboxChange(data._id)
+                                                    }}
+                                                    disabled={data.isAssign}
                                                 />
                                             </td>
                                             <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
@@ -255,7 +252,6 @@ const HostelAssign = () => {
                 </table>
             </div>
 
-            {/* Submit Button */}
             <div className="mt-6 max-w-3xl">
                 <button
                     onClick={handleAssignSubmit}
