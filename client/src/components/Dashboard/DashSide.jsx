@@ -25,6 +25,9 @@ const DashSide = () => {
         if (roleNames.includes('warden')) {
             return ![2, 4, 6, 9, 10].includes(item.id); // Hide these items for warden
         }
+        if (roleNames.includes('student')) {
+            return ![2, 3, 4, 5, 6, 7, 8, 9, 10].includes(item.id); // Hide these items for warden
+        }
         return false; // All others get no menu
     });
 
