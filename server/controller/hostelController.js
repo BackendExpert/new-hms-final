@@ -5,6 +5,9 @@ const Room = require("../model/Room");
 const User = require("../model/User");
 const Warden = require("../model/Warden");
 const Student = require("../model/Student")
+const { jwtDecode } = require('jwt-decode');
+const bcrypt = require('bcrypt')
+
 
 const HostelController = {
     GetallWarden: async (req, res) => {
@@ -222,20 +225,32 @@ const HostelController = {
 
     assignStudents: async (req, res) => {
         try {
-            const {
-                hostelId,
-                studentIds,
-            } = req.body;
+            const { hostelId, studentIds } = req.body;
 
             const hostel = await Hostel.findById(hostelId);
             if (!hostel) {
                 return res.json({ Status: "Error", Message: "Hostel not found" });
             }
 
+            // Fetch students before proceeding
+            const students = await Student.find({ _id: { $in: studentIds } });
+
+            // Check gender match
+            const mismatch = students.find(
+                student => (student.sex || '').toLowerCase() !== (hostel.gender || '').toLowerCase()
+            );
+
+            if (mismatch) {
+                return res.json({
+                    Status: "Error",
+                    Message: `Gender mismatch: Student ${mismatch.fullName || mismatch.nic || 'Unknown'} (${mismatch.sex}) does not match hostel gender (${hostel.gender})`
+                });
+            }
+
             const totalCapacity = hostel.roomCount * hostel.roomCapacity;
 
             const existingAllocationsCount = await Allocation.countDocuments({
-                hostelId,
+                hostelID: hostelId,
                 academicYear: new Date().getFullYear(),
                 active: true
             });
@@ -243,15 +258,13 @@ const HostelController = {
             const newAllocationsCount = studentIds.length;
 
             if (existingAllocationsCount + newAllocationsCount > totalCapacity) {
-                return res.json({
-                    Status: "Error",
-                    Message: `Allocation failed. Total capacity (${totalCapacity}) will be exceeded.`
-                });
+                return res.json({ Error: "Gender Mismatch"});
             }
 
+            // Create allocations
             const allocations = studentIds.map(studentId => ({
                 regNo: studentId,
-                hostelId,
+                hostelID: hostelId,
                 academicYear: new Date().getFullYear(),
                 inDate: new Date(),
                 active: true,
@@ -259,16 +272,76 @@ const HostelController = {
 
             await Allocation.insertMany(allocations);
 
+            // Mark students as assigned
             await Student.updateMany(
                 { _id: { $in: studentIds } },
                 { $set: { isAssign: true } }
             );
 
-            res.json({ Status: "Success", Message: "Students assigned and allocations created successfully" });
+            // Get role document for 'student'
+            const studentRole = await Role.findOne({ name: 'student' });
+            if (!studentRole) {
+                return res.json({ Status: "Error", Message: "Student role not found" });
+            }
+
+            for (const student of students) {
+                const existingUser = await User.findOne({ username: student.nic });
+                if (!existingUser) {
+                    const hashedPassword = await bcrypt.hash('12345678', 10); // Load from .env if needed
+
+                    const newUser = new User({
+                        username: student.nic,
+                        email: student.email,
+                        emailVerified: true,
+                        password: hashedPassword,
+                        roles: [studentRole._id],
+                        active: true,
+                    });
+
+                    await newUser.save();
+                }
+            }
+
+            res.json({ Status: "Success", Message: "Students assigned and user accounts created successfully" });
 
         } catch (err) {
-            console.log(err);
+            console.error(err);
             res.json({ Status: "Error", Message: "An error occurred while assigning students" });
+        }
+    },
+
+
+    getWardenStudents: async (req, res) => {
+        try {
+            const authHeader = req.headers.authorization || '';
+            const token = authHeader.replace('Bearer ', '');
+            if (!token) return res.json({ message: 'Unauthorized: No token provided' });
+
+            const decoded = jwtDecode(token);
+            const email = decoded.email || decoded.user?.email;
+            if (!email) return res.json({ message: 'Unauthorized: Invalid token' });
+
+            const user = await User.findOne({ email });
+            if (!user) return res.json({ message: 'User not found' });
+
+            const warden = await Warden.findOne({ userId: user._id, active: true });
+            if (!warden) return res.json({ message: 'Warden not found' });
+
+            const currentYear = new Date().getFullYear().toString();
+
+            const allocations = await Allocation.find({
+                hostelID: warden.hostelId,
+                active: true,
+                academicYear: currentYear
+            }).populate('regNo');
+
+            const students = allocations.map(a => a.regNo);
+
+            res.json({ Result: students });
+
+        } catch (err) {
+            console.error(err);
+            res.json({ message: 'Server error' });
         }
     }
 
