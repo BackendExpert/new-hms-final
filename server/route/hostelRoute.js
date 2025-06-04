@@ -19,4 +19,6 @@ router.post('/assign-new-warden', authMiddleware, checkPermission('assign-new-wa
 
 router.post('/assign-students', authMiddleware, checkPermission('student-assign-hostel'), HostelController.assignStudents)
 
+router.get('/warden-students', authMiddleware, checkPermission('get-warden-students'), HostelController.getWardenStudents);
+
 module.exports = router;

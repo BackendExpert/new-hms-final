@@ -130,7 +130,8 @@ const SignIn = () => {
                         <ul className="list-disc ml-5 space-y-2">
                             <li>wait for email to confram that your account is Created and Active.</li>
                             <li>if you got the email there are credentials to log in to system</li>
-                            <li><span className='uppercase font-semibold'>important</span>: After Login with credentials please update the Password.</li>
+                            <li>Eveny Student Account Defult Password is <strong>12345678</strong></li>
+                            <li><span className='uppercase font-semibold text-red-500'>important</span>: After Login with credentials please update the Password.</li>
                         </ul>
                     }
                     onClose={() => setShowStudentGuide(false)}
