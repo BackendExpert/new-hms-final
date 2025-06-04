@@ -232,6 +232,21 @@ const HostelController = {
                 return res.json({ Status: "Error", Message: "Hostel not found" });
             }
 
+            // Fetch students before proceeding
+            const students = await Student.find({ _id: { $in: studentIds } });
+
+            // Check gender match
+            const mismatch = students.find(
+                student => (student.sex || '').toLowerCase() !== (hostel.gender || '').toLowerCase()
+            );
+
+            if (mismatch) {
+                return res.json({
+                    Status: "Error",
+                    Message: `Gender mismatch: Student ${mismatch.fullName || mismatch.nic || 'Unknown'} (${mismatch.sex}) does not match hostel gender (${hostel.gender})`
+                });
+            }
+
             const totalCapacity = hostel.roomCount * hostel.roomCapacity;
 
             const existingAllocationsCount = await Allocation.countDocuments({
@@ -243,10 +258,7 @@ const HostelController = {
             const newAllocationsCount = studentIds.length;
 
             if (existingAllocationsCount + newAllocationsCount > totalCapacity) {
-                return res.json({
-                    Status: "Error",
-                    Message: `Allocation failed. Total capacity (${totalCapacity}) will be exceeded.`
-                });
+                return res.json({ Error: "Gender Mismatch"});
             }
 
             // Create allocations
@@ -272,14 +284,11 @@ const HostelController = {
                 return res.json({ Status: "Error", Message: "Student role not found" });
             }
 
-            const students = await Student.find({ _id: { $in: studentIds } });
-
             for (const student of students) {
                 const existingUser = await User.findOne({ username: student.nic });
                 if (!existingUser) {
-                    const hashedPassword = await bcrypt.hash(process.env.DEFAULT_PASSWORD, 10);
+                    const hashedPassword = await bcrypt.hash('12345678', 10); // Load from .env if needed
 
-                    // Use email from student model
                     const newUser = new User({
                         username: student.nic,
                         email: student.email,

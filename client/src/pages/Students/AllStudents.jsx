@@ -6,14 +6,13 @@ import DefaultInput from '../../components/Form/DefaultInput'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import Dropdown from '../../components/Form/Dropdown'
 
-
 const AllStudents = () => {
     const [allstds, setAllStds] = useState([])
-    const [filteredStds, setFilteredStds] = useState([])
+    const [filteredStudents, setFilteredStudents] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
-    const [assignmentStatus, setAssignmentStatus] = useState('All') // 'All', 'Assigned', 'Unassigned'
+    const [assignmentStatus, setAssignmentStatus] = useState('All')
     const [minDistance, setMinDistance] = useState('')
-    const [genderFilter, setGenderFilter] = useState('') // 'Male', 'Female', or ''
+    const [genderFilter, setGenderFilter] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const recordsPerPage = 15
     const token = secureLocalStorage.getItem('login')
@@ -21,13 +20,11 @@ const AllStudents = () => {
     useEffect(() => {
         axios
             .get(import.meta.env.VITE_APP_API + '/student/get-all-students-auth', {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
+                headers: { Authorization: `Bearer ${token}` }
             })
             .then(res => {
                 setAllStds(res.data.Result)
-                setFilteredStds(res.data.Result)
+                setFilteredStudents(res.data.Result)
             })
             .catch(err => console.log(err))
     }, [])
@@ -35,15 +32,18 @@ const AllStudents = () => {
     useEffect(() => {
         const term = searchTerm.toLowerCase()
 
-        let filtered = allstds.filter(student => {
+        const filtered = allstds.filter(student => {
             const matchesSearch =
-                student.nic.toLowerCase().includes(term) ||
-                student.enrolmentNo.toLowerCase().includes(term) ||
-                student.indexNo.toLowerCase().includes(term)
+                student.nic?.toLowerCase().includes(term) ||
+                student.enrolmentNo?.toLowerCase().includes(term) ||
+                student.indexNo?.toLowerCase().includes(term)
 
-            let matchesAssigned = true
-            if (assignmentStatus === 'Assigned') matchesAssigned = student.isAssign === true
-            else if (assignmentStatus === 'Unassigned') matchesAssigned = student.isAssign !== true
+            const matchesAssigned =
+                assignmentStatus === 'All'
+                    ? true
+                    : assignmentStatus === 'Assigned'
+                        ? student.isAssign === true
+                        : student.isAssign !== true
 
             const matchesDistance =
                 minDistance === '' || (student.distance && student.distance >= Number(minDistance))
@@ -53,39 +53,75 @@ const AllStudents = () => {
             return matchesSearch && matchesAssigned && matchesDistance && matchesGender
         })
 
-        setFilteredStds(filtered)
+        setFilteredStudents(filtered)
         setCurrentPage(1)
     }, [searchTerm, allstds, assignmentStatus, minDistance, genderFilter])
 
-    const totalPages = Math.ceil(filteredStds.length / recordsPerPage)
-    const paginatedData = filteredStds.slice(
+    const totalPages = Math.ceil(filteredStudents.length / recordsPerPage)
+    const paginatedData = filteredStudents.slice(
         (currentPage - 1) * recordsPerPage,
         currentPage * recordsPerPage
     )
 
     const exportToCSV = () => {
         const headers = [
+            'No',
             'Enrolment No',
             'Index No',
+            'Name',
+            'Title',
+            'Last Name',
+            'Initials',
+            'Full Name',
+            'A/L District',
+            'Sex',
+            'Z-Score',
+            'Medium',
             'NIC',
-            'Gender',
-            'Home Town',
+            'Address Line 1',
+            'Address Line 2',
+            'Address Line 3',
+            'Full Address',
+            'Email',
+            'Phone 1',
+            'Phone 2',
+            'General English Marks',
+            'Intake',
+            'Date of Enrolment',
             'Distance (Km)',
-            'Hostel Assigned',
+            'Hostel Assigned'
         ]
-        const rows = filteredStds.map(std => [
-            std.enrolmentNo,
-            std.indexNo,
-            std.nic,
-            std.sex,
-            std.address3,
-            std.distance,
-            std.isAssign ? 'Assigned' : 'Not Assigned',
+
+        const rows = filteredStudents.map(std => [
+            std.no || '',
+            std.enrolmentNo || '',
+            std.indexNo || '',
+            std.name || '',
+            std.title || '',
+            std.lastName || '',
+            std.initials || '',
+            std.fullName || '',
+            std.alDistrict || '',
+            std.sex || '',
+            std.zScore ?? '',
+            std.medium || '',
+            `'${std.nic || ''}`,         
+            std.address1 || '',
+            std.address2 || '',
+            std.address3 || '',
+            std.fullAddress || '',
+            std.email || '',
+            `'${std.phone1 || ''}`,      
+            `'${std.phone2 || ''}`,      
+            std.genEnglishMarks ?? '',
+            std.intake || '',
+            std.dateOfEnrolment ? new Date(std.dateOfEnrolment).toLocaleDateString() : '',
+            std.distance ?? '',
+            std.isAssign ? 'Assigned' : 'Not Assigned'
         ])
 
-        let csvContent =
-            'data:text/csv;charset=utf-8,' +
-            [headers.join(','), ...rows.map(e => e.join(','))].join('\n')
+        const csvContent = 'data:text/csv;charset=utf-8,' +
+            [headers.join(','), ...rows.map(row => row.map(field => `"${field}"`).join(','))].join('\n')
 
         const encodedUri = encodeURI(csvContent)
         const link = document.createElement('a')
@@ -98,20 +134,17 @@ const AllStudents = () => {
 
     return (
         <div className="mt-8">
-            <div className="mb-4 flex flex-nowrap items-center gap-12 ">
-                {/* Search input */}
+            <div className="mb-4 flex flex-nowrap items-center gap-12">
                 <DefaultInput
-                    label={"Search by NIC, Enrolment No, or Index No"}
+                    label="Search by NIC, Enrolment No, or Index No"
                     name="search"
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                     placeholder="Enter search term..."
                     className="w-full"
                 />
-
-                {/* Assignment Status */}
                 <Dropdown
-                    inline={true}
+                    inline
                     label="Assignment Status"
                     name="assignmentStatus"
                     value={assignmentStatus}
@@ -121,12 +154,10 @@ const AllStudents = () => {
                         { value: 'Assigned', label: 'Assigned' },
                         { value: 'Unassigned', label: 'Unassigned' },
                     ]}
-                    className="w-44 min-w-[176px]"
+                    className="w-44"
                 />
-
-                {/* Min Distance */}
                 <DefaultInput
-                    label={"Min Distance (Km)"}
+                    label="Min Distance (Km)"
                     name="distance"
                     type="number"
                     min="0"
@@ -135,10 +166,8 @@ const AllStudents = () => {
                     placeholder="Enter minimum distance"
                     className="w-full"
                 />
-
-                {/* Gender */}
                 <Dropdown
-                    inline={true}
+                    inline
                     label="Gender"
                     name="genderFilter"
                     value={genderFilter}
@@ -148,32 +177,29 @@ const AllStudents = () => {
                         { value: 'Male', label: 'Male' },
                         { value: 'Female', label: 'Female' },
                     ]}
-                    className="w-44 min-w-[176px]"
+                    className="w-44"
                 />
-
-                {/* Export CSV button */}
                 <button
                     onClick={exportToCSV}
-                    className="whitespace-nowrap bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700"
+                    className="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700"
                 >
                     Export CSV
                 </button>
             </div>
 
-            {/* Table */}
             <div className="overflow-x-auto rounded-2xl shadow-lg">
                 <table className="min-w-full text-sm text-left text-gray-600 bg-white">
                     <thead className="text-xs uppercase bg-emerald-100 text-emerald-700">
                         <tr>
-                            <th className="px-6 py-4 font-semibold">#</th>
-                            <th className="px-6 py-4 font-semibold">Enrolment No</th>
-                            <th className="px-6 py-4 font-semibold">Index No</th>
-                            <th className="px-6 py-4 font-semibold">NIC</th>
-                            <th className="px-6 py-4 font-semibold">Gender</th>
-                            <th className="px-6 py-4 font-semibold">Home Town</th>
-                            <th className="px-6 py-4 font-semibold">Distance</th>
-                            <th className="px-6 py-4 font-semibold">Hostel Assigned</th>
-                            <th className="px-6 py-4 font-semibold">Action</th>
+                            <th className="px-6 py-4">#</th>
+                            <th className="px-6 py-4">Enrolment No</th>
+                            <th className="px-6 py-4">Index No</th>
+                            <th className="px-6 py-4">NIC</th>
+                            <th className="px-6 py-4">Gender</th>
+                            <th className="px-6 py-4">Home Town</th>
+                            <th className="px-6 py-4">Distance</th>
+                            <th className="px-6 py-4">Hostel Assigned</th>
+                            <th className="px-6 py-4">Action</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
@@ -188,12 +214,12 @@ const AllStudents = () => {
                                     <td className="px-6 py-4">{data.nic}</td>
                                     <td className="px-6 py-4">
                                         {data.sex === 'Male' ? (
-                                            <span className="flex uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full gap-1 items-center">
+                                            <span className="flex bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full gap-1 items-center">
                                                 <FaMale className="h-4 w-auto" />
                                                 Male
                                             </span>
                                         ) : (
-                                            <span className="flex uppercase bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full gap-1 items-center">
+                                            <span className="flex bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full gap-1 items-center">
                                                 <FaFemale className="h-4 w-auto" />
                                                 Female
                                             </span>
@@ -202,12 +228,12 @@ const AllStudents = () => {
                                     <td className="px-6 py-4">{data.address3}</td>
                                     <td className="px-6 py-4">{data.distance} Km</td>
                                     <td className="px-6 py-4">
-                                        {data.isAssign === true ? (
-                                            <span className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
+                                        {data.isAssign ? (
+                                            <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
                                                 Assigned
                                             </span>
                                         ) : (
-                                            <span className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">
+                                            <span className="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">
                                                 Not Assigned
                                             </span>
                                         )}
@@ -233,7 +259,6 @@ const AllStudents = () => {
                 </table>
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
                 <div className="mt-4 flex justify-center gap-4 text-gray-700">
                     <button
