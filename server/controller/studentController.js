@@ -2,7 +2,9 @@ const axios = require('axios');
 const XLSX = require('xlsx');
 const path = require('path');
 const jwt = require('jsonwebtoken');
-const Student = require('../model/Student')
+const Student = require('../model/Student');
+const SpecialNeeds = require('../model/SpecialNeeds');
+const EmergencyContact = require('../model/EmergencyContact');
 
 // Geocoding function using OpenCage API
 async function geocodeWithOpenCage(address) {
@@ -268,7 +270,7 @@ const StudentController = {
                     dateOfEnrolment,
                     distance
                 },
-                { new: true } 
+                { new: true }
             );
 
             if (!updatedStudent) {
@@ -279,6 +281,130 @@ const StudentController = {
         } catch (err) {
             console.error(err);
             res.json({ message: 'Internal server error' });
+        }
+    },
+
+
+
+    StudentCreateNeeds: async (req, res) => {
+        try {
+            const { regNo, needs } = req.body;
+
+            if (!regNo || !needs) {
+                return res.json({ Error: 'regNo and needs are required.' });
+            }
+            const newSpecialNeeds = new SpecialNeeds({
+                regNo,
+                needs,
+            });
+
+            await newSpecialNeeds.save();
+
+            return res.json({ Status: 'Success', Message: 'Special needs submitted successfully!' });
+        } catch (err) {
+            console.error('Error saving special needs:', err);
+            return res.json({ Error: 'Internal server error' });
+        }
+    },
+
+    studentAddEmergencyContact: async (req, res) => {
+        try {
+            const {
+                regNo,
+                firstName,
+                surname,
+                relationship,
+                telNo,
+                address,
+                active
+            } = req.body;
+
+            if (!regNo) {
+                return res.json({ message: 'User email (regNo) is required' });
+            }
+
+            // Check if emergency contact exists for this regNo
+            const existingContact = await EmergencyContact.findOne({ regNo });
+
+            if (existingContact) {
+                // Update existing contact
+                existingContact.firstName = firstName;
+                existingContact.surname = surname;
+                existingContact.relationship = relationship;
+                existingContact.telNo = telNo;
+                existingContact.address = address;
+                existingContact.active = active;
+
+                await existingContact.save();
+
+                return res.json({
+                    Status: "Success",
+                    Message: 'Emergency contact updated successfully',
+                });
+            } else {
+                // Create a new EmergencyContact document if not found
+                const newContact = new EmergencyContact({
+                    regNo,
+                    firstName,
+                    surname,
+                    relationship,
+                    telNo,
+                    address,
+                    active
+                });
+
+                await newContact.save();
+
+                return res.json({
+                    Status: "Success",
+                    Message: 'Emergency contact saved successfully',
+                });
+            }
+
+        } catch (err) {
+            console.error('Error saving emergency contact:', err);
+            return res.json({ message: 'Internal server error' });
+        }
+    },
+
+    getEmergencyContact: async (req, res) => {
+        try {
+            const { regNo } = req.query;
+            if (!regNo) {
+                return res.json({ Error: 'regNo query parameter is required' });
+            }
+
+            const emergencyContact = await EmergencyContact.findOne({ regNo, active: true }).lean();
+
+            if (!emergencyContact) {
+                return res.json({ Error: 'No emergency contact found' });
+            }
+
+            res.json({ Status: 'Success', emergencyContact });
+        } catch (err) {
+            console.error(err);
+            res.json({ Error: 'Server error' });
+        }
+    },
+
+    getNeedsStudents: async (req, res) => {
+        try {
+            const { email } = req.params;
+
+            if (!email) {
+                return res.json({ Status: 'Fail', Error: 'Email parameter is required' });
+            }
+
+            const specialNeeds = await SpecialNeeds.find({ regNo: email });
+
+            if (!specialNeeds) {
+                return res.json({ Status: 'Fail', Error: 'No special needs found for this user' });
+            }
+
+            return res.json({ Status: 'Success', Data: specialNeeds });
+        } catch (err) {
+            console.error('Error fetching special needs by email:', err);
+            return res.json({ Status: 'Fail', Error: 'Internal server error' });
         }
     }
 

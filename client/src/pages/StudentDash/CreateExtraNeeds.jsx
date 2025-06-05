@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import TextAreaInput from '../../components/Form/TextAreaInput'
+import { getUserInfoFromToken } from '../../utils/auth' 
+import secureLocalStorage from 'react-secure-storage'
+import { replace, useNavigate } from 'react-router-dom'
 
 const CreateExtraNeeds = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         regNo: '',
         needs: '',
     })
+
+    const token = secureLocalStorage.getItem('login')
+
+    useEffect(() => {
+        const userInfo = getUserInfoFromToken()
+        if (userInfo && userInfo.email) {
+            setFormData((prev) => ({
+                ...prev,
+                regNo: userInfo.email,
+            }))
+        }
+    }, [])
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -19,10 +35,18 @@ const CreateExtraNeeds = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log(formData)
         try {
-            const response = await axios.post('/api/special-needs', formData)
-            alert('Special needs submitted successfully!')
-            console.log(response.data)
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/student/student-create-needs', formData, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            })
+            if(res.data.Status === "Success"){
+                alert(res.data.Message)
+                navigate('/Dashboard/ExtraNeeds', { replace: true })
+            }
+            else{
+                alert(res.data.Error)
+            }
         } catch (error) {
             console.error('Error submitting special needs:', error)
             alert('Failed to submit special needs')
@@ -44,11 +68,11 @@ const CreateExtraNeeds = () => {
                         rows={5}
                     />
                 </div>
+
+                <input type="hidden" name="regNo" value={formData.regNo} />
+
                 <div className="col-span-full flex justify-end mt-2">
-                    <DefaultBtn
-                        type="submit"
-                        label="Submit Special Needs"
-                    />
+                    <DefaultBtn type="submit" label="Submit Special Needs" />
                 </div>
             </form>
         </div>

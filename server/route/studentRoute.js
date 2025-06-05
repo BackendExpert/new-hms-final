@@ -16,4 +16,12 @@ router.get('/get-student-byID/:id', authMiddleware, checkPermission('get-student
 
 router.post('/update-Student/:id', authMiddleware, checkPermission('update-Student'), StudentController.updateStudent)
 
+router.post('/student-create-needs', authMiddleware, checkPermission('student-create-needs'), StudentController.StudentCreateNeeds)
+
+router.post('/create-emergency-contact', authMiddleware, checkPermission('create-emergency-contact'), StudentController.studentAddEmergencyContact)
+
+router.get('/emergency-contact', authMiddleware, checkPermission('emergency-contact'), StudentController.getEmergencyContact)
+
+router.get('/get-student-needs/:email', authMiddleware, checkPermission('get-student-needs'), StudentController.getNeedsStudents)
+
 module.exports = router;
