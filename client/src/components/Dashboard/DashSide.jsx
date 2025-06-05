@@ -20,13 +20,13 @@ const DashSide = () => {
     // Filter menu based on role
     const filteredMenu = dashsidedata.filter(item => {
         if (roleNames.includes('admin') || roleNames.includes('director')) {
-            return ![3, 5, 7].includes(item.id); // Hide item with id 3
+            return ![3, 5, 7, 11].includes(item.id); // Hide item with id 3
         }
         if (roleNames.includes('warden')) {
-            return ![2, 4, 6, 9, 10].includes(item.id); // Hide these items for warden
+            return ![2, 4, 6, 9, 10, 11].includes(item.id); // Hide these items for warden
         }
         if (roleNames.includes('student')) {
-            return ![2, 3, 4, 5, 6, 7, 8, 9, 10].includes(item.id); // Hide these items for warden
+            return ![2, 3, 4, 5, 6, 7, 9, 10].includes(item.id); // Hide these items for warden
         }
         return false; // All others get no menu
     });
