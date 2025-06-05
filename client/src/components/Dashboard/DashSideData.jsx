@@ -2,6 +2,7 @@ import { MdBedroomParent, MdDashboard, MdAdminPanelSettings } from "react-icons/
 import { FaSchool, FaUserGraduate, FaGear } from "react-icons/fa6";
 import { FaUserCog, FaUsers, FaUserLock } from "react-icons/fa";
 import { MdContactEmergency } from "react-icons/md";
+import { FaHouseUser } from "react-icons/fa";
 
 
 const dashsidedata = [
@@ -64,6 +65,12 @@ const dashsidedata = [
         name: 'EmergencyContact',
         link: '/Dashboard/EmergencyContact',
         icon: MdContactEmergency
+    },
+    {
+        id: 12,
+        name: 'Extra Needs',
+        link: '/Dashboard/ExtraNeeds',
+        icon: FaHouseUser
     },
 ]
 
