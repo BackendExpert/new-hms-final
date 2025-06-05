@@ -33,6 +33,7 @@ import HostelAssign from './pages/Students/HostelAssign'
 import WardenStudents from './pages/WardenDash/WardenStudents'
 import ExtraNeeds from './pages/StudentDash/ExtraNeeds'
 import EmergencyContact from './pages/StudentDash/EmergencyContact'
+import CreateExtraNeeds from './pages/StudentDash/CreateExtraNeeds'
 
 function App() {
     return (
@@ -78,6 +79,7 @@ function App() {
                         <Route path='WardenStudents' element={<PrivateRoute element={<WardenStudents /> } /> } />
 
                         <Route path='ExtraNeeds' element={<PrivateRoute element={<ExtraNeeds /> } /> } />
+                        <Route path='CreateExtraNeeds' element={<PrivateRoute element={<CreateExtraNeeds /> } /> } />
                         <Route path='EmergencyContact' element={<PrivateRoute element={<EmergencyContact /> } /> } />
 
                     </Route>

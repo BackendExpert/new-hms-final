@@ -20,7 +20,7 @@ const ExtraNeeds = () => {
             </div>
 
             <div className="mt-4">
-                <Link>
+                <Link to={'/Dashboard/CreateExtraNeeds'}>
                     <DefaultBtn 
                         type='button'
                         label='Add Your Requirements'
