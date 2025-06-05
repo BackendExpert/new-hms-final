@@ -12,6 +12,7 @@ const AllStudents = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [assignmentStatus, setAssignmentStatus] = useState('All')
     const [minDistance, setMinDistance] = useState('')
+    const [maxDistance, setMaxDistance] = useState('') // ✅ Added maxDistance state
     const [genderFilter, setGenderFilter] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const recordsPerPage = 15
@@ -46,7 +47,8 @@ const AllStudents = () => {
                         : student.isAssign !== true
 
             const matchesDistance =
-                minDistance === '' || (student.distance && student.distance >= Number(minDistance))
+                (minDistance === '' || (student.distance && student.distance >= Number(minDistance))) &&
+                (maxDistance === '' || (student.distance && student.distance <= Number(maxDistance))) // ✅ Updated condition
 
             const matchesGender = genderFilter === '' || student.sex === genderFilter
 
@@ -55,7 +57,7 @@ const AllStudents = () => {
 
         setFilteredStudents(filtered)
         setCurrentPage(1)
-    }, [searchTerm, allstds, assignmentStatus, minDistance, genderFilter])
+    }, [searchTerm, allstds, assignmentStatus, minDistance, maxDistance, genderFilter]) // ✅ added maxDistance
 
     const totalPages = Math.ceil(filteredStudents.length / recordsPerPage)
     const paginatedData = filteredStudents.slice(
@@ -105,14 +107,14 @@ const AllStudents = () => {
             std.sex || '',
             std.zScore ?? '',
             std.medium || '',
-            `'${std.nic || ''}`,         
+            `'${std.nic || ''}`,
             std.address1 || '',
             std.address2 || '',
             std.address3 || '',
             std.fullAddress || '',
             std.email || '',
-            `'${std.phone1 || ''}`,      
-            `'${std.phone2 || ''}`,      
+            `'${std.phone1 || ''}`,
+            `'${std.phone2 || ''}`,
             std.genEnglishMarks ?? '',
             std.intake || '',
             std.dateOfEnrolment ? new Date(std.dateOfEnrolment).toLocaleDateString() : '',
@@ -158,12 +160,22 @@ const AllStudents = () => {
                 />
                 <DefaultInput
                     label="Min Distance (Km)"
-                    name="distance"
+                    name="minDistance"
                     type="number"
                     min="0"
                     value={minDistance}
                     onChange={e => setMinDistance(e.target.value)}
                     placeholder="Enter minimum distance"
+                    className="w-full"
+                />
+                <DefaultInput
+                    label="Max Distance (Km)" // ✅ Added max distance input
+                    name="maxDistance"
+                    type="number"
+                    min="0"
+                    value={maxDistance}
+                    onChange={e => setMaxDistance(e.target.value)}
+                    placeholder="Enter maximum distance"
                     className="w-full"
                 />
                 <Dropdown
