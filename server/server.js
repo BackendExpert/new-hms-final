@@ -8,6 +8,12 @@ const bodyParser = require('body-parser');
 
 // routes
 const ConnectDB = require('./config/DB');
+const authRoute = require('./route/authRoute')
+const userRoute = require('./route/userRoute')
+const studentRoute = require('./route/studentRoute')
+const hostelRoute = require('./route/hostelRoute')
+const roomRoute = require('./route/roomRoute')
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,6 +27,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.use('/auth', authRoute)
+app.use('/user', userRoute)
+app.use('/student', studentRoute)
+app.use('/hostel', hostelRoute)
+app.use('/room', roomRoute)
 
 app.get('/', (req, res) => {
     res.send(`Server running on port ${PORT}`);
