@@ -1,64 +1,80 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
-import DefaultBtn from '../../components/Buttons/DefaultBtn'
-import DefaultInput from '../../components/Form/DefaultInput'
-
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams, Navigate } from 'react-router-dom';
+import secureLocalStorage from 'react-secure-storage';
+import DefaultBtn from '../../components/Buttons/DefaultBtn';
+import DefaultInput from '../../components/Form/DefaultInput';
+import { getUserInfoFromToken } from '../../utils/auth';
 
 const ViewStudent = () => {
-    const { id } = useParams()
-    const [stdData, setStdData] = useState(null)
-    const [isEditing, setIsEditing] = useState(false)
-    const [formData, setFormData] = useState({})
-    const token = secureLocalStorage.getItem('login')
+    const { id } = useParams();
+    const [stdData, setStdData] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
+    const [formData, setFormData] = useState({});
+    const token = secureLocalStorage.getItem('login');
+
+    const userInfo = getUserInfoFromToken();
+    const userRoles = (userInfo?.roles || [])
+        .map(r => (typeof r === 'string' ? r.toLowerCase() : r.name?.toLowerCase?.()))
+        .filter(Boolean);
+
+
+    // ✅ Role-based access control (lowercase match)
+    const allowedRoles = ['warden', 'admin', 'director'];
+    const isAuthorized = userRoles.some(role => allowedRoles.includes(role));
+
+    if (!isAuthorized) {
+        return <Navigate to="/" replace />;
+    }
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_APP_API}/student/get-student-byID/${id}`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(res => {
-                setStdData(res.data.Result)
-                setFormData(res.data.Result)
+                setStdData(res.data.Result);
+                setFormData(res.data.Result);
             })
-            .catch(err => console.log(err))
-    }, [])
+            .catch(err => console.log(err));
+    }, [id, token]);
 
-    const handleEditToggle = () => setIsEditing(!isEditing)
+    const handleEditToggle = () => setIsEditing(!isEditing);
 
     const handleChange = (e) => {
         setFormData(prev => ({
             ...prev,
             [e.target.name]: e.target.value
-        }))
-    }
+        }));
+    };
 
     const handleUpdate = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
             const res = await axios.post(`${import.meta.env.VITE_APP_API}/student/update-Student/${id}`, formData, {
                 headers: { 'Authorization': `Bearer ${token}` }
-            })
-            if(res.data.Status === "Success"){
-                alert(res.data.Message)
-                window.location.reload()
+            });
+            if (res.data.Status === "Success") {
+                alert(res.data.Message);
+                window.location.reload();
+            } else {
+                alert(res.data.Error);
             }
-            else{
-                alert(res.data.Error)
-            }
+        } catch (err) {
+            console.log(err);
         }
-        catch (err) {
-            console.log(err)
-        }
-    }
+    };
 
-    if (!stdData) return <div className="text-gray-500">Loading student data...</div>
+    if (!stdData) return <div className="text-gray-500">Loading student data...</div>;
 
     return (
         <div className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg mt-5">
             <div className="flex justify-between items-center -mt-4 mb-2">
-                <Link to={'/Dashboard/Students'}>
+                <Link to={
+                    userRoles.includes('warden')
+                        ? '/Dashboard/WardenStudents'
+                        : '/Dashboard/Students'
+                }>
                     <DefaultBtn type="button" label="Back" />
                 </Link>
                 <DefaultBtn type="button" label={isEditing ? 'Cancel' : 'Edit'} onClick={handleEditToggle} />
@@ -95,7 +111,7 @@ const ViewStudent = () => {
                 </div>
             ) : (
                 <form onSubmit={handleUpdate} className="grid md:grid-cols-2 gap-4 text-sm">
-                    {[
+                    {[ // Editable fields
                         { name: 'name', label: 'Name' },
                         { name: 'title', label: 'Title' },
                         { name: 'lastName', label: 'Last Name' },
@@ -128,17 +144,16 @@ const ViewStudent = () => {
                         <DefaultBtn type="submit" label="Update Student" />
                     </div>
                 </form>
-
             )}
         </div>
-    )
-}
+    );
+};
 
 const Detail = ({ label, value }) => (
     <div>
         <p className="text-emerald-600 font-semibold">{label}</p>
         <p className="text-gray-800">{value || '-'}</p>
     </div>
-)
+);
 
-export default ViewStudent
+export default ViewStudent;
