@@ -13,4 +13,8 @@ router.post('/Update-room-capasity', authMiddleware, checkPermission('update-roo
 
 router.get('/warden-Rooms', authMiddleware, checkPermission('warden-rooms'), RoomController.wardenRooms)
 
+// router.get('/student-assign-need/:email', authMiddleware, checkPermission('student-assign-need'), RoomController.studentAssignNeed)
+
+router.post('/student-assign-to-rooms', authMiddleware, checkPermission('student-assign-to-rooms'), RoomController.stundetassigntoroom)
+
 module.exports = router;

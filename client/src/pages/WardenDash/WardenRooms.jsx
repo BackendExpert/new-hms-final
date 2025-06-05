@@ -52,20 +52,13 @@ const WardenRooms = () => {
             </div>
 
             <div className="flex my-4 mb-8">
-                <Link to={'/Dashboard/WardenRoomAssignNeed'}>
+                {/* <Link to={'/Dashboard/WardenRoomAssignNeed'}>
                     <DefaultBtn
                         label='Assign Student (Needs Available)'
                         type='button'
                     />
-                </Link>
-                <div className="ml-2">
-                    <Link to={'/Dashboard/StudentdAssignNormal'}>
-                        <DefaultBtn
-                            label='Assign Student Normal'
-                            type='button'
-                        />
-                    </Link>
-                </div>
+                </Link> */}
+
             </div>
 
             <div className="overflow-x-auto rounded-2xl shadow-lg">
