@@ -11,4 +11,6 @@ router.get('/get-one-room/:id', authMiddleware, checkPermission('get-one-room'),
 
 router.post('/Update-room-capasity', authMiddleware, checkPermission('update-room-capasity'), RoomController.updateRoomCapasity)
 
+router.get('/warden-Rooms', authMiddleware, checkPermission('warden-rooms'), RoomController.wardenRooms)
+
 module.exports = router;

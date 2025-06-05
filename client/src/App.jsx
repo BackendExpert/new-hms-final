@@ -34,6 +34,9 @@ import WardenStudents from './pages/WardenDash/WardenStudents'
 import ExtraNeeds from './pages/StudentDash/ExtraNeeds'
 import EmergencyContact from './pages/StudentDash/EmergencyContact'
 import CreateExtraNeeds from './pages/StudentDash/CreateExtraNeeds'
+import WardenRooms from './pages/WardenDash/WardenRooms'
+import WardenRoomAssignNeed from './pages/WardenDash/WardenRoomAssignNeed'
+import StdAssignNormal from './pages/WardenDash/StdAssignNormal'
 
 function App() {
     return (
@@ -77,6 +80,10 @@ function App() {
                         <Route path='View-Room/:id' element={<PrivateRoute element={<ViewRoom /> } /> } />
 
                         <Route path='WardenStudents' element={<PrivateRoute element={<WardenStudents /> } /> } />
+                        <Route path='WardenRooms' element={<PrivateRoute element={<WardenRooms /> } /> } />
+                        <Route path='WardenRoomAssignNeed' element={<PrivateRoute element={<WardenRoomAssignNeed /> } /> } />
+                        <Route path='StudentdAssignNormal' element={<PrivateRoute element={<StdAssignNormal /> } /> } /> 
+        
 
                         <Route path='ExtraNeeds' element={<PrivateRoute element={<ExtraNeeds /> } /> } />
                         <Route path='CreateExtraNeeds' element={<PrivateRoute element={<CreateExtraNeeds /> } /> } />

@@ -1,4 +1,6 @@
 const Room = require("../model/Room");
+const Warden = require("../model/Warden");
+
 
 const RoomController = {
     getallrooms: async (req, res) => {
@@ -37,8 +39,8 @@ const RoomController = {
                 capasity,
             } = req.body
 
-            if(capasity > 7){
-                return res.json({ Error: "The Max capasity is 6"})
+            if (capasity > 7) {
+                return res.json({ Error: "The Max capasity is 6" })
             }
 
             const checkroom = await Room.findById(roomID)
@@ -49,15 +51,32 @@ const RoomController = {
                 { new: true }
             );
 
-            if(updatedRoom){
-                return res.json({ Status: "Success", Message: "Room Capasity Updated Success"})
+            if (updatedRoom) {
+                return res.json({ Status: "Success", Message: "Room Capasity Updated Success" })
             }
-            else{
-                return res.json({ Error: "Internal Server Error Whilte Updating Room Capasity"})
+            else {
+                return res.json({ Error: "Internal Server Error Whilte Updating Room Capasity" })
             }
         }
         catch (err) {
             console.log(err)
+        }
+    },
+
+    wardenRooms: async (req, res) => {
+        try {
+            const userId = req.user.id;
+
+            const warden = await Warden.findOne({ userId, active: true });
+            if (!warden) {
+                return res.json({ rooms: [] });
+            }
+
+            const rooms = await Room.find({ hostelID: warden.hostelId }).populate('students');
+
+            return res.json({ rooms });
+        } catch (err) {
+            console.log(err);
         }
     }
 };
