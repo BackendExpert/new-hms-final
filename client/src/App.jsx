@@ -32,6 +32,7 @@ import ViewRoom from './pages/Rooms/ViewRoom'
 import HostelAssign from './pages/Students/HostelAssign'
 import WardenStudents from './pages/WardenDash/WardenStudents'
 import ExtraNeeds from './pages/StudentDash/ExtraNeeds'
+import EmergencyContact from './pages/StudentDash/EmergencyContact'
 
 function App() {
     return (
@@ -77,6 +78,7 @@ function App() {
                         <Route path='WardenStudents' element={<PrivateRoute element={<WardenStudents /> } /> } />
 
                         <Route path='ExtraNeeds' element={<PrivateRoute element={<ExtraNeeds /> } /> } />
+                        <Route path='EmergencyContact' element={<PrivateRoute element={<EmergencyContact /> } /> } />
 
                     </Route>
 
