@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaFemale, FaGraduationCap, FaMale } from 'react-icons/fa';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { getUserInfoFromToken } from '../../utils/auth';
@@ -16,7 +16,7 @@ const WardenStudents = () => {
   const [assigningAll, setAssigningAll] = useState(false);
   const recordsPerPage = 15;
 
-  const token = secureLocalStorage.getItem('login');
+  const token = localStorage.getItem('login');
   const currentUser = useMemo(() => getUserInfoFromToken(), []);
 
   useEffect(() => {

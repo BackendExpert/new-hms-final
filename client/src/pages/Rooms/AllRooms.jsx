@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import DefaultInput from '../../components/Form/DefaultInput'
 import Dropdown from '../../components/Form/Dropdown'
 import { FaRegCheckSquare } from "react-icons/fa"
@@ -9,7 +9,7 @@ import { BsHouseGearFill } from "react-icons/bs"
 import { MdOutlineDoNotDisturbAlt } from "react-icons/md"
 
 const AllRooms = () => {
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     const [roomdata, setroomdata] = useState([])
     const [filteredData, setFilteredData] = useState([])
     const [searchTerm, setSearchTerm] = useState('')

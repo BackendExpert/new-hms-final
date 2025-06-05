@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { FaBed } from 'react-icons/fa6'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 
 const RoomData = () => {
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     const [roomdata, setroomdata] = useState([])
     useEffect(() => {
         axios.get(import.meta.env.VITE_APP_API + '/room/get-all-rooms', {

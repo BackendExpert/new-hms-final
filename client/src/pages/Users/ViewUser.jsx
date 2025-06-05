@@ -1,15 +1,15 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import Dropdown from '../../components/Form/Dropdown'
 
 
 const ViewUser = () => {
     const { id } = useParams()
-    const token = secureLocalStorage.getItem('login')
-    const loginemail = secureLocalStorage.getItem('loginE')
+    const token = localStorage.getItem('login')
+    const loginemail = localStorage.getItem('loginE')
     const [getoneuser, setgetoneuser] = useState({})
 
     useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import axios from 'axios'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import DefaultInput from '../../components/Form/DefaultInput'
@@ -11,7 +11,7 @@ import DateInput from '../../components/Form/DateInput'
 
 const StdCreateManually = () => {
     const navigate = useNavigate()
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     const [studentData, setStudentData] = useState({
         enrolmentNo: '',

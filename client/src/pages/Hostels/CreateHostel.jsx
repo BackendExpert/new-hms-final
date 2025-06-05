@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import DefaultInput from '../../components/Form/DefaultInput';
 import Dropdown from '../../components/Form/Dropdown';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 
 const CreateHostel = () => {
     const navigate = useNavigate();
-    const token = secureLocalStorage.getItem('login');
+    const token = localStorage.getItem('login');
 
     const [wardendata, setwardendata] = useState([]);
     const [hosteldata, sethosteldata] = useState({

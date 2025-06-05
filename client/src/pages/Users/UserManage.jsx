@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { FaUsers } from 'react-icons/fa6'
 import axios from 'axios'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import { Link } from 'react-router-dom'
 
 
 const UserManage = () => {
     const [getusers, setgetusers] = useState([])
 
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     useEffect(() => {
         axios.get(import.meta.env.VITE_APP_API + '/user/view-all-users', {
