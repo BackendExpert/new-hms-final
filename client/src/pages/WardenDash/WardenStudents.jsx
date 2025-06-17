@@ -161,7 +161,7 @@ const WardenStudents = () => {
 
           <div className="relative z-10">
             <div className="text-sm font-medium uppercase tracking-wide text-emerald-100">
-              Roles (User Types)
+              Total Students
             </div>
             <div className="mt-2 text-3xl font-bold">{students.length}</div>
           </div>
