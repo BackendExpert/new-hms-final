@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 
 // Function to check if user is authenticated
 const isAuthenticated = () => {
-    return !!secureLocalStorage.getItem('login'); // Check for token in localStorage
+    return !!localStorage.getItem('login'); // Check for token in localStorage
 };
 
 const PrivateRoute = ({ element }) => {

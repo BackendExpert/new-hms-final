@@ -4,7 +4,7 @@ import Dropdown from '../../components/Form/Dropdown'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 
 const HostelAssign = () => {
     const [getallstudents, setgetallstudents] = useState([])
@@ -14,7 +14,7 @@ const HostelAssign = () => {
         distance: '',
         gender: '',
     })
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     const [allhostels, setAllHostels] = useState([])
     const [selectedHostel, setSelectedHostel] = useState('')

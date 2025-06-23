@@ -3,14 +3,14 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { Link } from 'react-router-dom';
 import { getUserInfoFromToken } from '../../utils/auth'; // adjust path
 import axios from 'axios';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 
 const ExtraNeeds = () => {
     const [specialNeedsList, setSpecialNeedsList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const token = secureLocalStorage.getItem('login');
+    const token = localStorage.getItem('login');
 
     useEffect(() => {
         const fetchSpecialNeeds = async () => {

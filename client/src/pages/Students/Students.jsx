@@ -4,12 +4,12 @@ import StdData from './StdData'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import AllStudents from './AllStudents'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import axios from 'axios'
 
 
 const Students = () => {
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     return (
         <div>

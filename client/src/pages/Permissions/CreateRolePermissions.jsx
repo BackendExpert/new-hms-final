@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link, useNavigate } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import axios from 'axios'
 import DefaultInput from '../../components/Form/DefaultInput'
 
 
 const CreateRolePermissions = () => {
     const navigate = useNavigate()
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     const [permissiondata, setpermissiondata] = useState({
         role: "",
         permission: "",

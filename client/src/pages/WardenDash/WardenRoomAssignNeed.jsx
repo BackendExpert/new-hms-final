@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import { getUserInfoFromToken } from '../../utils/auth';
 
 const WardenRoomAssignNeed = () => {
@@ -18,7 +18,7 @@ const WardenRoomAssignNeed = () => {
                 return;
             }
 
-            const token = secureLocalStorage.getItem('login');
+            const token = localStorage.getItem('login');
             if (!token) {
                 setError('Unauthorized. Please login.');
                 setLoading(false);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 
@@ -33,7 +33,7 @@ const SignIn = () => {
 
             if (res.data.Status === 'Success') {
                 alert(res.data.Message);
-                secureLocalStorage.setItem('login', res.data.Token);
+                localStorage.setItem('login', res.data.Token);
                 localStorage.setItem('dashmenuID', 1);
                 navigate('/Dashboard/Home');
                 // window.location.reload();

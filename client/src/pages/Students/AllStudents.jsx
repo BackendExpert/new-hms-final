@@ -1,10 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import DefaultInput from '../../components/Form/DefaultInput'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import Dropdown from '../../components/Form/Dropdown'
+
+const DEPARTMENT_MAP = {
+    A: 'Arts',
+    LLB: 'Law',
+    GIS: 'Geographical Science',
+    SW: 'Social Work',
+}
 
 const AllStudents = () => {
     const [allstds, setAllStds] = useState([])
@@ -12,11 +19,23 @@ const AllStudents = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [assignmentStatus, setAssignmentStatus] = useState('All')
     const [minDistance, setMinDistance] = useState('')
-    const [maxDistance, setMaxDistance] = useState('') // ✅ Added maxDistance state
+    const [maxDistance, setMaxDistance] = useState('')
     const [genderFilter, setGenderFilter] = useState('')
+    const [departmentFilter, setDepartmentFilter] = useState('')
+    const [yearFilter, setYearFilter] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const recordsPerPage = 15
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
+
+    const getDept = enrolNo => {
+        if (!enrolNo) return ''
+        const parts = enrolNo.split('/')
+        if (parts.length === 3) return parts[0] // A/23/354 → A
+        if (parts.length === 4) return parts[2] // A/23/LLB/007 → LLB
+        return ''
+    }
+
+    const getYear = enrolNo => enrolNo?.split('/')?.[1] ?? ''
 
     useEffect(() => {
         axios
@@ -29,6 +48,19 @@ const AllStudents = () => {
             })
             .catch(err => console.log(err))
     }, [])
+
+    const departmentOptions = React.useMemo(() => {
+        const set = new Set(allstds.map(s => getDept(s.enrolmentNo)))
+        return [{ value: '', label: 'All Departments' }, ...Array.from(set).sort().map(code => ({
+            value: code,
+            label: DEPARTMENT_MAP[code] || code
+        }))]
+    }, [allstds])
+
+    const yearOptions = React.useMemo(() => {
+        const set = new Set(allstds.map(s => getYear(s.enrolmentNo)))
+        return [{ value: '', label: 'All' }, ...Array.from(set).sort().map(y => ({ value: y, label: `20${y}` }))]
+    }, [allstds])
 
     useEffect(() => {
         const term = searchTerm.toLowerCase()
@@ -48,16 +80,20 @@ const AllStudents = () => {
 
             const matchesDistance =
                 (minDistance === '' || (student.distance && student.distance >= Number(minDistance))) &&
-                (maxDistance === '' || (student.distance && student.distance <= Number(maxDistance))) // ✅ Updated condition
+                (maxDistance === '' || (student.distance && student.distance <= Number(maxDistance)))
 
             const matchesGender = genderFilter === '' || student.sex === genderFilter
 
-            return matchesSearch && matchesAssigned && matchesDistance && matchesGender
+            const matchesDepartment = departmentFilter === '' || getDept(student.enrolmentNo) === departmentFilter
+
+            const matchesYear = yearFilter === '' || getYear(student.enrolmentNo) === yearFilter
+
+            return matchesSearch && matchesAssigned && matchesDistance && matchesGender && matchesDepartment && matchesYear
         })
 
         setFilteredStudents(filtered)
         setCurrentPage(1)
-    }, [searchTerm, allstds, assignmentStatus, minDistance, maxDistance, genderFilter]) // ✅ added maxDistance
+    }, [searchTerm, allstds, assignmentStatus, minDistance, maxDistance, genderFilter, departmentFilter, yearFilter])
 
     const totalPages = Math.ceil(filteredStudents.length / recordsPerPage)
     const paginatedData = filteredStudents.slice(
@@ -67,59 +103,19 @@ const AllStudents = () => {
 
     const exportToCSV = () => {
         const headers = [
-            'No',
-            'Enrolment No',
-            'Index No',
-            'Name',
-            'Title',
-            'Last Name',
-            'Initials',
-            'Full Name',
-            'A/L District',
-            'Sex',
-            'Z-Score',
-            'Medium',
-            'NIC',
-            'Address Line 1',
-            'Address Line 2',
-            'Address Line 3',
-            'Full Address',
-            'Email',
-            'Phone 1',
-            'Phone 2',
-            'General English Marks',
-            'Intake',
-            'Date of Enrolment',
-            'Distance (Km)',
-            'Hostel Assigned'
+            'No', 'Enrolment No', 'Index No', 'Name', 'Title', 'Last Name', 'Initials', 'Full Name', 'A/L District',
+            'Sex', 'Z-Score', 'Medium', 'NIC', 'Address Line 1', 'Address Line 2', 'Address Line 3', 'Full Address',
+            'Email', 'Phone 1', 'Phone 2', 'General English Marks', 'Intake', 'Date of Enrolment', 'Distance (Km)', 'Hostel Assigned'
         ]
 
         const rows = filteredStudents.map(std => [
-            std.no || '',
-            std.enrolmentNo || '',
-            std.indexNo || '',
-            std.name || '',
-            std.title || '',
-            std.lastName || '',
-            std.initials || '',
-            std.fullName || '',
-            std.alDistrict || '',
-            std.sex || '',
-            std.zScore ?? '',
-            std.medium || '',
-            `'${std.nic || ''}`,
-            std.address1 || '',
-            std.address2 || '',
-            std.address3 || '',
-            std.fullAddress || '',
-            std.email || '',
-            `'${std.phone1 || ''}`,
-            `'${std.phone2 || ''}`,
-            std.genEnglishMarks ?? '',
-            std.intake || '',
+            std.no || '', std.enrolmentNo || '', std.indexNo || '', std.name || '', std.title || '',
+            std.lastName || '', std.initials || '', std.fullName || '', std.alDistrict || '', std.sex || '',
+            std.zScore ?? '', std.medium || '', `'${std.nic || ''}`, std.address1 || '', std.address2 || '',
+            std.address3 || '', std.fullAddress || '', `'${std.phone1 || ''}`, `'${std.phone2 || ''}`,
+            std.genEnglishMarks ?? '', std.intake || '',
             std.dateOfEnrolment ? new Date(std.dateOfEnrolment).toLocaleDateString() : '',
-            std.distance ?? '',
-            std.isAssign ? 'Assigned' : 'Not Assigned'
+            std.distance ?? '', std.isAssign ? 'Assigned' : 'Not Assigned'
         ])
 
         const csvContent = 'data:text/csv;charset=utf-8,' +
@@ -136,7 +132,7 @@ const AllStudents = () => {
 
     return (
         <div className="mt-8">
-            <div className="mb-4 flex flex-nowrap items-center gap-12">
+            <div className="mb-4 flex flex-wrap items-center gap-6">
                 <DefaultInput
                     label="Search by NIC, Enrolment No, or Index No"
                     name="search"
@@ -145,6 +141,27 @@ const AllStudents = () => {
                     placeholder="Enter search term..."
                     className="w-full"
                 />
+
+                <Dropdown
+                    inline
+                    label="Department"
+                    name="departmentFilter"
+                    value={departmentFilter}
+                    onChange={e => setDepartmentFilter(e.target.value)}
+                    options={departmentOptions}
+                    className="w-44"
+                />
+
+                <Dropdown
+                    inline
+                    label="Intake Year"
+                    name="yearFilter"
+                    value={yearFilter}
+                    onChange={e => setYearFilter(e.target.value)}
+                    options={yearOptions}
+                    className="w-44"
+                />
+
                 <Dropdown
                     inline
                     label="Assignment Status"
@@ -158,6 +175,7 @@ const AllStudents = () => {
                     ]}
                     className="w-44"
                 />
+
                 <DefaultInput
                     label="Min Distance (Km)"
                     name="minDistance"
@@ -168,8 +186,9 @@ const AllStudents = () => {
                     placeholder="Enter minimum distance"
                     className="w-full"
                 />
+
                 <DefaultInput
-                    label="Max Distance (Km)" // ✅ Added max distance input
+                    label="Max Distance (Km)"
                     name="maxDistance"
                     type="number"
                     min="0"
@@ -178,6 +197,7 @@ const AllStudents = () => {
                     placeholder="Enter maximum distance"
                     className="w-full"
                 />
+
                 <Dropdown
                     inline
                     label="Gender"
@@ -191,6 +211,7 @@ const AllStudents = () => {
                     ]}
                     className="w-44"
                 />
+
                 <button
                     onClick={exportToCSV}
                     className="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700"

@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 
 const ViewHostel = () => {
     const { id } = useParams()
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     const [getonehostel, setGetOneHostel] = useState(null)
     const [newRoomCount, setNewRoomCount] = useState('')

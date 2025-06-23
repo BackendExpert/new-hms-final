@@ -4,7 +4,7 @@ import { getUserInfoFromToken } from '../../utils/auth';
 import DashSide from './DashSide';
 import DashNav from './DashNav';
 import DashFooter from './DashFooter';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 
 
 const Dashboard = () => {
@@ -25,7 +25,7 @@ const Dashboard = () => {
         }
     }, [navigate]);
 
-    const aToken = secureLocalStorage.getItem('login')
+    const aToken = localStorage.getItem('login')
 
     const toggleSide = () => setSideOpen(prev => !prev);
 

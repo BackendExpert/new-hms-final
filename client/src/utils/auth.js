@@ -1,8 +1,8 @@
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import { jwtDecode } from 'jwt-decode';
 
 export function getUserInfoFromToken() {
-    const token = secureLocalStorage.getItem('login');
+    const token = localStorage.getItem('login');
     // console.log("TOKEN FROM STORAGE:", token);
     if (!token) return null;
 
@@ -18,7 +18,7 @@ export function getUserInfoFromToken() {
             return null;
         }
 
-        secureLocalStorage.setItem('loginE', email)
+        localStorage.setItem('loginE', email)
 
         return { username, email, roles };
     } catch (error) {

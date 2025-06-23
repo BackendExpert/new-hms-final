@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams, Navigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import DefaultInput from '../../components/Form/DefaultInput';
 import { getUserInfoFromToken } from '../../utils/auth';
@@ -11,7 +11,7 @@ const ViewStudent = () => {
     const [stdData, setStdData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({});
-    const token = secureLocalStorage.getItem('login');
+    const token = localStorage.getItem('login');
 
     const userInfo = getUserInfoFromToken();
     const userRoles = (userInfo?.roles || [])
