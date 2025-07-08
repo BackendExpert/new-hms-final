@@ -3,7 +3,7 @@ import axios from 'axios'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import TextAreaInput from '../../components/Form/TextAreaInput'
 import { getUserInfoFromToken } from '../../utils/auth' 
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import { replace, useNavigate } from 'react-router-dom'
 
 const CreateExtraNeeds = () => {
@@ -13,7 +13,7 @@ const CreateExtraNeeds = () => {
         needs: '',
     })
 
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     useEffect(() => {
         const userInfo = getUserInfoFromToken()

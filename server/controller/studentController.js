@@ -92,10 +92,11 @@ const StudentController = {
                     distance: null
                 };
 
-                // Use only ADD3 to get distance
-                const add3 = s['ADD3'];
-                if (add3 && universityCoords) {
-                    const studentCoords = await geocodeWithOpenCage(add3);
+                // Try ADD3, then ADD2, then ADD1
+                let addressToGeocode = s['ADD3'] || s['ADD2'] || s['ADD1'];
+
+                if (addressToGeocode && universityCoords) {
+                    const studentCoords = await geocodeWithOpenCage(addressToGeocode);
                     if (studentCoords) {
                         const distanceKm = await getRoadDistanceOSRM(studentCoords, universityCoords);
                         if (distanceKm !== null) {

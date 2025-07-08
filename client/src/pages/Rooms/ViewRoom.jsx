@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import axios from 'axios'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import DefaultInput from '../../components/Form/DefaultInput'
 
 
 const ViewRoom = () => {
     const { id } = useParams()
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     const [oneRoom, setoneRoom] = useState([])
 
     useEffect(() => {

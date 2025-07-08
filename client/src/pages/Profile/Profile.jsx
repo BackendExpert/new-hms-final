@@ -3,12 +3,12 @@ import { MdOutlineEdit } from "react-icons/md";
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import DashUser from '../../assets/DashUser.png'
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import axios from 'axios';
 
 const Profile = () => {
     const [btnClick, setBtnClick] = useState(false);
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     const handleBtnClick = () => {
         setBtnClick(!btnClick);

@@ -3,12 +3,12 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import { FaUserLock } from "react-icons/fa";
 import axios from 'axios';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 
 const RolePermissions = () => {
 
     const [getreols, setgetroles] = useState([])
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     useEffect(() => {
         axios.get(import.meta.env.VITE_APP_API + '/auth/view-all-role', {
             headers: {

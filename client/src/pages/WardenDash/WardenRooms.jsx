@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import secureLocalStorage from 'react-secure-storage'
+import localStorage from 'react-secure-storage'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ const WardenRooms = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const recordsPerPage = 15
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
 
     useEffect(() => {
         axios

@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 import FileInput from '../../components/Form/FileInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 
 
 const StdCreateSheet = () => {
     const navigate = useNavigate();
-    const token = secureLocalStorage.getItem('login');
+    const token = localStorage.getItem('login');
 
     const [sheet, setsheet] = useState({
         file: null

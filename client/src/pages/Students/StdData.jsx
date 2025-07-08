@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import { FaUserGraduate } from 'react-icons/fa6'
 import { FaRoad } from "react-icons/fa6";
-import secureLocalStorage from 'react-secure-storage';
+import localStorage from 'react-secure-storage';
 
 
 const StdData = () => {
-    const token = secureLocalStorage.getItem('login')
+    const token = localStorage.getItem('login')
     const [allstds, setAllStds] = useState([])
 
     useEffect(() => {
