@@ -2,11 +2,28 @@ import React from 'react'
 import { getUserInfoFromToken } from '../../utils/auth';
 import { useEffect } from 'react';
 import { FaGraduationCap } from 'react-icons/fa6';
+import { useState } from 'react';
+import axios from 'axios'
 
 const AssignStdRoomSp = () => {
+    const token = localStorage.getItem('login')
     const { username, roles } = getUserInfoFromToken() || {};
 
-    // Normalize role names
+    const [approvedstds, setapprovedstds] = useState([]);
+
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_APP_API + '/warden/std-extra-needs', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                const filtered = res.data.Result.filter(item => item.isAccpeted === true);
+                setapprovedstds(filtered);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
     const roleNames = Array.isArray(roles)
         ? roles.map(r => (typeof r === 'string' ? r : r.name))
         : [typeof roles === 'string' ? roles : roles?.name];
@@ -24,7 +41,7 @@ const AssignStdRoomSp = () => {
                             <div className="text-sm font-medium uppercase tracking-wide text-emerald-100">
                                 Total Students
                             </div>
-                            <div className="mt-2 text-3xl font-bold">50</div>
+                            <div className="mt-2 text-3xl font-bold">{approvedstds.length}</div>
                         </div>
                     </div>
                 </div>
@@ -43,11 +60,36 @@ const AssignStdRoomSp = () => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
+                            {approvedstds.length === 0 ? (
+                                <tr>
+                                    <td colSpan={7} className="text-center py-4">
+                                        No approved students found.
+                                    </td>
+                                </tr>
+                            ) : (
+                                approvedstds.map((student, index) => (
+                                    <tr key={student._id || student.regNo || index}>
+                                        <td className="px-6 py-3">{index + 1}</td>
+                                        <td className="px-6 py-3">{student.regNo?.enrolmentNo || '-'}</td>
+                                        <td className="px-6 py-3">{student.regNo?.indexNo || '-'}</td>
+                                        <td className="px-6 py-3">{student.regNo?.nic || '-'}</td>
+                                        <td className="px-6 py-3 capitalize">{student.regNo?.sex || '-'}</td>
+                                        <td className="px-6 py-3">{student.regNo?.email || '-'}</td>
+                                        <td className="px-6 py-3">
+                                            {/* Customize this action button as needed */}
+                                            <button
+                                                className="text-sm text-emerald-600 hover:text-emerald-800 font-semibold"
+                                                onClick={() => alert(`Assign room to ${student.regNo?._id}`)}
+                                            >
+                                                Assign Room
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
                         </tbody>
                     </table>
                 </div>
-
-
             </div>
         )
     }
@@ -57,7 +99,6 @@ const AssignStdRoomSp = () => {
             window.location.reload()
         }, [])
     }
-
 }
 
 export default AssignStdRoomSp
