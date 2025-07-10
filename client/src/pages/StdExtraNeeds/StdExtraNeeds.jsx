@@ -22,16 +22,21 @@ const StdExtraNeeds = () => {
         })
             .then(res => {
                 console.log("API FULL RESPONSE:", res.data);
-                setGetExtraNeeds(res.data.Result)
-                setFilteredData(res.data.Result)
+                // enrich data with status so we can easily use in table
+                const processedData = res.data.Result.map(item => ({
+                    ...item,
+                    student: item.regNo,
+                    status: item.isAccpeted ? "Approved" : "Pending"
+                }))
+                setGetExtraNeeds(processedData)
+                setFilteredData(processedData)
             })
             .catch(err => console.log(err))
     }, [])
 
-
     useEffect(() => {
         const filtered = getExtraNeeds.filter(item =>
-            item.studentEmail?.toLowerCase().includes(search.toLowerCase())
+            item.student?.email?.toLowerCase().includes(search.toLowerCase())
         )
         setFilteredData(filtered)
         setCurrentPage(1)
@@ -63,28 +68,24 @@ const StdExtraNeeds = () => {
                             <th className="px-6 py-4 font-semibold">Student Email</th>
                             <th className="px-6 py-4 font-semibold">Needs</th>
                             <th className="px-6 py-4 font-semibold">Status</th>
+                            <th className="px-6 py-4 font-semibold">Action</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                         {currentItems.length > 0 ? currentItems.map((data, index) => (
-                            <tr key={index} className="hover:bg-emerald-50 transition-all duration-150">
+                            <tr key={data._id} className="hover:bg-emerald-50 transition-all duration-150">
                                 <td className="px-6 py-4 font-medium text-gray-800">{indexOfFirstItem + index + 1}</td>
-                                <td className="px-6 py-4">{data.studentEmail}</td>
+                                <td className="px-6 py-4">{data.student?.email || "N/A"}</td>
                                 <td className="px-6 py-4">{data.needs}</td>
                                 <td className="px-6 py-4">
-                                    {data.status === "Approved" && (
+                                    {data.isAccpeted === true && (
                                         <span className="flex items-center gap-1 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full uppercase">
-                                            <FaRegCheckSquare className="h-4 w-auto" /> Approved
+                                            <FaRegCheckSquare className="h-4 w-auto" /> Approve
                                         </span>
                                     )}
-                                    {data.status === "Pending" && (
+                                    {data.isAccpeted === false && (
                                         <span className="flex items-center gap-1 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full uppercase">
-                                            <BsHouseGearFill className="h-4 w-auto" /> Pending
-                                        </span>
-                                    )}
-                                    {data.status === "Rejected" && (
-                                        <span className="flex items-center gap-1 bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full uppercase">
-                                            <MdOutlineDoNotDisturbAlt className="h-4 w-auto" /> Rejected
+                                            <BsHouseGearFill className="h-4 w-auto" /> Pending / Rejected
                                         </span>
                                     )}
                                 </td>
