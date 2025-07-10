@@ -38,6 +38,7 @@ import WardenRooms from './pages/WardenDash/WardenRooms'
 import WardenRoomAssignNeed from './pages/WardenDash/WardenRoomAssignNeed'
 import StdAssignNormal from './pages/WardenDash/StdAssignNormal'
 import StdExtraNeeds from './pages/StdExtraNeeds/StdExtraNeeds'
+import AssignStdRoomSp from './pages/WardenDash/AssignStdRoomSp'
 
 function App() {
     return (
@@ -84,12 +85,13 @@ function App() {
                         <Route path='WardenRooms' element={<PrivateRoute element={<WardenRooms /> } /> } />
                         <Route path='WardenRoomAssignNeed' element={<PrivateRoute element={<WardenRoomAssignNeed /> } /> } />
                         <Route path='StudentdAssignNormal' element={<PrivateRoute element={<StdAssignNormal /> } /> } /> 
-        
+                        <Route path='AssignStudentViaNeeds' element={<PrivateRoute element={<AssignStdRoomSp /> } /> } />
 
                         <Route path='ExtraNeeds' element={<PrivateRoute element={<ExtraNeeds /> } /> } />
                         <Route path='CreateExtraNeeds' element={<PrivateRoute element={<CreateExtraNeeds /> } /> } />
                         <Route path='EmergencyContact' element={<PrivateRoute element={<EmergencyContact /> } /> } />
                         <Route path='StdExtraNeeds' element={<PrivateRoute element={<StdExtraNeeds /> } /> } />
+
 
                     </Route>
 
