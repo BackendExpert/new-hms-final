@@ -21,7 +21,6 @@ const StdExtraNeeds = () => {
             }
         })
             .then(res => {
-                console.log("API FULL RESPONSE:", res.data);
                 // enrich data with status so we can easily use in table
                 const processedData = res.data.Result.map(item => ({
                     ...item,
@@ -47,6 +46,23 @@ const StdExtraNeeds = () => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem)
     const totalPages = Math.ceil(filteredData.length / itemsPerPage)
+
+
+    const headleApprove = async (id) => {
+        const res = await axios.post(import.meta.env.VITE_APP_API + '/warden/approve-need/' + id, {}, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+
+        if (res.data.Status === "Success") {
+            alert("Student Need Approve Success")
+            window.location.reload()
+        }
+        else {
+            alert(res.data.Error)
+        }
+    }
 
     return (
         <div className="p-6 max-w-7xl mx-auto">
@@ -88,6 +104,22 @@ const StdExtraNeeds = () => {
                                             <BsHouseGearFill className="h-4 w-auto" /> Pending / Rejected
                                         </span>
                                     )}
+                                </td>
+                                <td className="px-6 py-4">
+
+                                    {
+                                        data.isAccpeted === true && (
+                                            <div className="text-emerald-800">Approved</div>
+                                        )
+                                    }
+                                    {
+                                        data.isAccpeted === false && (
+                                            <div className="text-emerald-800 hover:underline cursor-pointer" onClick={() => headleApprove(data._id)}>
+                                                Approve
+                                            </div>
+                                        )
+                                    }
+
                                 </td>
                             </tr>
                         )) : (

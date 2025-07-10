@@ -7,4 +7,6 @@ const router = express.Router();
 
 router.get('/std-extra-needs', authMiddleware, checkPermission('std-extra-needs'), WardenController.getstdextraneeds)
 
+router.post('/approve-need/:id', authMiddleware, checkPermission('approve-needs'), WardenController.approveneeds)
+
 module.exports = router;
