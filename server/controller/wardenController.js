@@ -4,16 +4,9 @@ const Student = require("../model/Student");
 const WardenController = {
     getstdextraneeds: async (req, res) => {
         try {
-            const specialNeedsRecords = await SpecialNeeds.find();
+            const stdneeds = await SpecialNeeds.find().populate('regNo')
 
-
-            for (let item of specialNeedsRecords) {
-                const student = await Student.findOne({ email: item.regNo });
-
-
-            }
-
-            return res.json({ Result: combinedData });
+            return res.json({ Result: stdneeds })
         }
         catch (err) {
             console.log(err)

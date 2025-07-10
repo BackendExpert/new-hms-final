@@ -293,8 +293,11 @@ const StudentController = {
             if (!regNo || !needs) {
                 return res.json({ Error: 'regNo and needs are required.' });
             }
+
+            const getstdId = await Student.findOne({ email: regNo })
+
             const newSpecialNeeds = new SpecialNeeds({
-                regNo,
+                regNo: getstdId._id,
                 needs,
             });
 
@@ -395,7 +398,9 @@ const StudentController = {
                 return res.json({ Status: 'Fail', Error: 'Email parameter is required' });
             }
 
-            const specialNeeds = await SpecialNeeds.find({ regNo: email });
+            const stdID = await Student.findOne({ email: email })
+
+            const specialNeeds = await SpecialNeeds.find({ regNo: stdID._id });
 
             if (!specialNeeds) {
                 return res.json({ Status: 'Fail', Error: 'No special needs found for this user' });
