@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import DefaultInput from '../../components/Form/DefaultInput'
 import { FaRegCheckSquare } from 'react-icons/fa'
 import { BsHouseGearFill } from 'react-icons/bs'
-import { MdOutlineDoNotDisturbAlt } from 'react-icons/md'
 
 const StdExtraNeeds = () => {
     const [getExtraNeeds, setGetExtraNeeds] = useState([])
@@ -21,46 +20,49 @@ const StdExtraNeeds = () => {
             }
         })
             .then(res => {
-                // enrich data with status so we can easily use in table
-                const processedData = res.data.Result.map(item => ({
-                    ...item,
-                    student: item.regNo,
-                    status: item.isAccpeted ? "Approved" : "Pending"
-                }))
-                setGetExtraNeeds(processedData)
-                setFilteredData(processedData)
+                console.log("API raw data:", res.data)
+                if (res.data && res.data.Result) {
+                    setGetExtraNeeds(res.data.Result)
+                    setFilteredData(res.data.Result)
+                } else {
+                    console.error("API returned no Result:", res.data)
+                    setGetExtraNeeds([])
+                    setFilteredData([])
+                }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.error("API error:", err)
+                setGetExtraNeeds([])
+                setFilteredData([])
+            })
     }, [])
 
     useEffect(() => {
-        const filtered = getExtraNeeds.filter(item =>
-            item.student?.email?.toLowerCase().includes(search.toLowerCase())
+        const filtered = (getExtraNeeds || []).filter(item =>
+            item.regNo?.email?.toLowerCase().includes(search.toLowerCase())
         )
         setFilteredData(filtered)
         setCurrentPage(1)
     }, [search, getExtraNeeds])
 
-    // Pagination calculations
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
-    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem)
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage)
-
+    const currentItems = (filteredData || []).slice(indexOfFirstItem, indexOfLastItem)
+    const totalPages = Math.ceil((filteredData || []).length / itemsPerPage)
 
     const headleApprove = async (id) => {
-        const res = await axios.post(import.meta.env.VITE_APP_API + '/warden/approve-need/' + id, {}, {
-            headers: {
-                'Authorization': `Bearer ${token}`
+        try {
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/warden/approve-need/' + id, {}, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            })
+            if (res.data.Status === "Success") {
+                alert("Student Need Approve Success")
+                window.location.reload()
+            } else {
+                alert(res.data.Error)
             }
-        })
-
-        if (res.data.Status === "Success") {
-            alert("Student Need Approve Success")
-            window.location.reload()
-        }
-        else {
-            alert(res.data.Error)
+        } catch (err) {
+            console.log(err)
         }
     }
 
@@ -88,15 +90,19 @@ const StdExtraNeeds = () => {
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                        {currentItems.length > 0 ? currentItems.map((data, index) => (
+                        {(currentItems || []).length > 0 ? currentItems.map((data, index) => (
                             <tr key={data._id} className="hover:bg-emerald-50 transition-all duration-150">
-                                <td className="px-6 py-4 font-medium text-gray-800">{indexOfFirstItem + index + 1}</td>
-                                <td className="px-6 py-4">{data.student?.email || "N/A"}</td>
+                                <td className="px-6 py-4 font-medium text-gray-800">
+                                    {indexOfFirstItem + index + 1}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {data.regNo?.email || "N/A"}
+                                </td>
                                 <td className="px-6 py-4">{data.needs}</td>
                                 <td className="px-6 py-4">
                                     {data.isAccpeted === true && (
                                         <span className="flex items-center gap-1 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full uppercase">
-                                            <FaRegCheckSquare className="h-4 w-auto" /> Approve
+                                            <FaRegCheckSquare className="h-4 w-auto" /> Approved
                                         </span>
                                     )}
                                     {data.isAccpeted === false && (
@@ -106,41 +112,39 @@ const StdExtraNeeds = () => {
                                     )}
                                 </td>
                                 <td className="px-6 py-4">
-
-                                    {
-                                        data.isAccpeted === true && (
-                                            <div className="text-emerald-800">Approved</div>
-                                        )
-                                    }
-                                    {
-                                        data.isAccpeted === false && (
-                                            <div className="text-emerald-800 hover:underline cursor-pointer" onClick={() => headleApprove(data._id)}>
-                                                Approve
-                                            </div>
-                                        )
-                                    }
-
+                                    {data.isAccpeted === true ? (
+                                        <div className="text-emerald-800">Approved</div>
+                                    ) : (
+                                        <div
+                                            className="text-emerald-800 hover:underline cursor-pointer"
+                                            onClick={() => headleApprove(data._id)}
+                                        >
+                                            Approve
+                                        </div>
+                                    )}
                                 </td>
                             </tr>
                         )) : (
                             <tr>
-                                <td colSpan="4" className="px-6 py-4 text-center text-gray-500">No matching records found.</td>
+                                <td colSpan="5" className="px-6 py-4 text-center text-gray-500">
+                                    No matching records found.
+                                </td>
                             </tr>
                         )}
                     </tbody>
                 </table>
             </div>
 
-            {/* Pagination Controls */}
             <div className="flex justify-center mt-6 space-x-2">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
                     <button
                         key={number}
                         onClick={() => setCurrentPage(number)}
-                        className={`px-3 py-1 rounded-md border text-sm font-medium ${currentPage === number
-                            ? 'bg-emerald-600 text-white'
-                            : 'bg-white text-gray-700 border-gray-300 hover:bg-emerald-50'
-                            }`}
+                        className={`px-3 py-1 rounded-md border text-sm font-medium ${
+                            currentPage === number
+                                ? 'bg-emerald-600 text-white'
+                                : 'bg-white text-gray-700 border-gray-300 hover:bg-emerald-50'
+                        }`}
                     >
                         {number}
                     </button>

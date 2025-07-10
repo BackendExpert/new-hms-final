@@ -1,17 +1,49 @@
+const Allocation = require("../model/Allocation");
 const SpecialNeeds = require("../model/SpecialNeeds");
 const Student = require("../model/Student");
+const User = require("../model/User");
+const Warden = require("../model/Warden");
+const { jwtDecode } = require('jwt-decode');
 
 const WardenController = {
     getstdextraneeds: async (req, res) => {
         try {
-            const stdneeds = await SpecialNeeds.find().populate('regNo')
+            const authHeader = req.headers.authorization || '';
+            const token = authHeader.replace('Bearer ', '');
+            if (!token) return res.json({ message: 'Unauthorized: No token provided' });
 
-            return res.json({ Result: stdneeds })
+            const decoded = jwtDecode(token);
+            const email = decoded.email || decoded.user?.email;
+
+            // Find logged in user
+            const userid = await User.findOne({ email: email });
+            if (!userid) return res.json({ message: 'User not found' });
+
+            // Find warden record
+            const getwarden = await Warden.findOne({ userId: userid._id }).populate('hostelId');
+            if (!getwarden) return res.json({ message: 'Warden record not found' });
+
+            // Find students allocated to warden's hostel
+            const getstudents = await Allocation.find({ hostelID: getwarden.hostelId._id });
+            if (!getstudents.length) return res.json({ message: 'No students allocated' });
+
+            // Extract regNos
+            const regNos = getstudents.map(s => s.regNo);
+
+            // Find special needs of these students
+            const getstduntneeds = await SpecialNeeds.find({ regNo: { $in: regNos } }).populate('regNo');
+
+            // ✅ Only log special needs data
+            console.log("Special needs records:", JSON.stringify(getstduntneeds, null, 2));
+
+            return res.json({ Result: getstduntneeds });
         }
         catch (err) {
-            console.log(err)
+            console.error("Error occurred:", err);
+            return res.json({ message: 'Server error', error: err.message });
         }
     },
+
 
     approveneeds: async (req, res) => {
         try {
