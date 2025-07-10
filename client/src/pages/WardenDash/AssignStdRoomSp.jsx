@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { FaGraduationCap } from 'react-icons/fa6';
 import { useState } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 const AssignStdRoomSp = () => {
     const token = localStorage.getItem('login')
@@ -77,12 +78,15 @@ const AssignStdRoomSp = () => {
                                         <td className="px-6 py-3">{student.regNo?.email || '-'}</td>
                                         <td className="px-6 py-3">
                                             {/* Customize this action button as needed */}
-                                            <button
-                                                className="text-sm text-emerald-600 hover:text-emerald-800 font-semibold"
-                                                onClick={() => alert(`Assign room to ${student.regNo?._id}`)}
-                                            >
-                                                Assign Room
-                                            </button>
+
+                                            <Link to={`/Dashboard/AssignStudentToRoom/${student.regNo?._id}`}>
+                                                <button
+                                                    className="cursor-pointer text-sm text-emerald-600 hover:text-emerald-800 font-semibold"
+                                                >
+                                                    Assign Room
+                                                </button>
+                                            </Link>
+
                                         </td>
                                     </tr>
                                 ))
