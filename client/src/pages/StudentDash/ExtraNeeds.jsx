@@ -3,7 +3,7 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { Link } from 'react-router-dom';
 import { getUserInfoFromToken } from '../../utils/auth'; // adjust path
 import axios from 'axios';
-import localStorage from 'react-secure-storage';
+;
 
 const ExtraNeeds = () => {
     const [specialNeedsList, setSpecialNeedsList] = useState([]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaFemale, FaGraduationCap, FaMale } from 'react-icons/fa';
-import localStorage from 'react-secure-storage';
+;
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { getUserInfoFromToken } from '../../utils/auth';

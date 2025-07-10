@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import localStorage from 'react-secure-storage'
+
 import DefaultInput from '../../components/Form/DefaultInput'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import Dropdown from '../../components/Form/Dropdown'

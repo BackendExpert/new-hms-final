@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaMale, FaFemale } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import localStorage from 'react-secure-storage';
+;
 
 const AllHostelData = () => {
     const [allhostels, setAllHostels] = useState([]);

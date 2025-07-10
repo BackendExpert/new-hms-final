@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import { FaUserGraduate } from 'react-icons/fa6'
 import { FaRoad } from "react-icons/fa6";
-import localStorage from 'react-secure-storage';
+;
 
 
 const StdData = () => {

@@ -3,7 +3,7 @@ import axios from 'axios'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import DefaultInput from '../../components/Form/DefaultInput'
 import { getUserInfoFromToken } from '../../utils/auth'
-import localStorage from 'react-secure-storage'
+
 
 const EmergencyContact = () => {
     const token = localStorage.getItem('login')

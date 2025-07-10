@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import localStorage from 'react-secure-storage'
+
 import { FaFemale, FaMale } from 'react-icons/fa'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
