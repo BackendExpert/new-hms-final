@@ -34,7 +34,7 @@ const WardenController = {
             const getstduntneeds = await SpecialNeeds.find({ regNo: { $in: regNos } }).populate('regNo');
 
             // ✅ Only log special needs data
-            console.log("Special needs records:", JSON.stringify(getstduntneeds, null, 2));
+            // console.log("Special needs records:", JSON.stringify(getstduntneeds, null, 2));
 
             return res.json({ Result: getstduntneeds });
         }
