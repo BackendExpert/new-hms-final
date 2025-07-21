@@ -65,6 +65,31 @@ const WardenController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    getallwardenrooms: async(req, res) => {
+        try{
+            const authHeader = req.headers.authorization || '';
+            const token = authHeader.replace('Bearer ', '');
+            if (!token) return res.json({ message: 'Unauthorized: No token provided' });
+
+            const decoded = jwtDecode(token);
+            const email = decoded.email || decoded.user?.email;
+
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
+
+    assignstdtorooms_via_sp: async(req, res) => {
+        try{
+            const stdid = req.params.id
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
