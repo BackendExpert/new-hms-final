@@ -4,6 +4,9 @@ const Student = require("../model/Student");
 const User = require("../model/User");
 const Warden = require("../model/Warden");
 const { jwtDecode } = require('jwt-decode');
+const { getoneHostel } = require("./hostelController");
+const Hostel = require("../model/Hostel");
+const Room = require("../model/Room");
 
 const WardenController = {
     getstdextraneeds: async (req, res) => {
@@ -67,8 +70,8 @@ const WardenController = {
         }
     },
 
-    getallwardenrooms: async(req, res) => {
-        try{
+    getallwardenrooms: async (req, res) => {
+        try {
             const authHeader = req.headers.authorization || '';
             const token = authHeader.replace('Bearer ', '');
             if (!token) return res.json({ message: 'Unauthorized: No token provided' });
@@ -76,18 +79,28 @@ const WardenController = {
             const decoded = jwtDecode(token);
             const email = decoded.email || decoded.user?.email;
 
+            const getwardendata = await User.findOne({ email });
+            if (!getwardendata) return res.json({ message: 'Warden not found' });
 
+            const gethostel = await Hostel.findOne({ warden: getwardendata._id });
+            if (!gethostel) return res.json({ message: 'Hostel not assigned to this warden' });
+
+            const rooms = await Room.find({ hostelID: gethostel._id });
+
+            console.log(rooms)
+
+            return res.json({ message: 'Rooms fetched successfully', rooms });
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     },
 
-    assignstdtorooms_via_sp: async(req, res) => {
-        try{
+    assignstdtorooms_via_sp: async (req, res) => {
+        try {
             const stdid = req.params.id
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     }
