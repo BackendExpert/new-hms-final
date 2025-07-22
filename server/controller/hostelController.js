@@ -366,7 +366,7 @@ const HostelController = {
             const result = Object.values(allocationsByStudentId);
 
             // Pretty print full result for debugging
-            console.log(JSON.stringify(result, null, 2));
+            // console.log(JSON.stringify(result, null, 2));
 
             res.json({ Result: result });
 
