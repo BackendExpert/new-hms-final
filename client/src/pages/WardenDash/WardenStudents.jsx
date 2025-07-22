@@ -143,7 +143,7 @@ const WardenStudents = () => {
                 </div>
 
                 <div className="ml-4">
-                    <Link to={'/Dashboard/AssignStudentViaNeeds'}>
+                    <Link to={'/Dashboard/AlreadyAssigned'}>
                         <DefaultBtn
                             type='button'
                             label='Already Assigned Students'
