@@ -1,20 +1,17 @@
-
 import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaFemale, FaGraduationCap, FaMale } from 'react-icons/fa';
-;
 import DefaultInput from '../../components/Form/DefaultInput';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { getUserInfoFromToken } from '../../utils/auth';
 
 const WardenStudents = () => {
-    const [students, setStudents] = useState([]);
+    const [students, setStudents] = useState([]); // Array of { student, allocations }
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
-    const [assigningAll, setAssigningAll] = useState(false);
     const recordsPerPage = 15;
 
     const token = localStorage.getItem('login');
@@ -49,37 +46,7 @@ const WardenStudents = () => {
         fetchStudents();
     }, [token, currentUser.email]);
 
-    const handleAssignStudent = async (studentId) => {
-        try {
-            const res = await axios.post(
-                `${import.meta.env.VITE_APP_API}/room/student-assign-to-rooms`,
-                {
-                    studentId,
-                    wardenEmail: currentUser.email,
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-
-            if (res.data.success) {
-                alert('Student assigned successfully!');
-                setStudents((prev) =>
-                    prev.map((s) => (s._id === studentId ? { ...s, isAssign: true } : s))
-                );
-            } else {
-                alert(res.data.message || 'Assignment failed.');
-            }
-        } catch (error) {
-            console.error('Error assigning student:', error);
-            alert('Error assigning student.');
-        }
-    };
-
-
-    const filteredStudents = students.filter((student) => {
+    const filteredStudents = students.filter(({ student }) => {
         const term = searchTerm.toLowerCase();
         return (
             student.nic?.toLowerCase().includes(term) ||
@@ -133,34 +100,24 @@ const WardenStudents = () => {
             />
 
             <div className="-mt-4 mb-4 flex">
-                <div className="">
+                <div>
                     <Link to={'/Dashboard/AssignStudentViaNeeds'}>
-                        <DefaultBtn
-                            type='button'
-                            label='Assign Student Via Needs'
-                        />
+                        <DefaultBtn type="button" label="Assign Student Via Needs" />
                     </Link>
                 </div>
 
                 <div className="ml-4">
                     <Link to={'/Dashboard/StudentdAssignNormal'}>
-                        <DefaultBtn
-                            type='button'
-                            label='Assign Students'
-                        />
+                        <DefaultBtn type="button" label="Assign Students" />
                     </Link>
                 </div>
 
                 <div className="ml-4">
                     <Link to={'/Dashboard/AlreadyAssigned'}>
-                        <DefaultBtn
-                            type='button'
-                            label='Already Assigned Students'
-                        />
+                        <DefaultBtn type="button" label="Already Assigned Students" />
                     </Link>
                 </div>
             </div>
-
 
             <div className="overflow-x-auto rounded-2xl shadow-lg">
                 <table className="min-w-full text-sm text-left text-gray-600 bg-white">
@@ -179,7 +136,7 @@ const WardenStudents = () => {
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                         {paginatedStudents.length > 0 ? (
-                            paginatedStudents.map((student, idx) => {
+                            paginatedStudents.map(({ student, allocations }, idx) => {
                                 const gender = (student.sex || '').toLowerCase();
                                 return (
                                     <tr
@@ -244,7 +201,7 @@ const WardenStudents = () => {
                             })
                         ) : (
                             <tr>
-                                <td colSpan="9" className="px-6 py-4 text-center text-gray-500">
+                                <td colSpan="10" className="px-6 py-4 text-center text-gray-500">
                                     No students found.
                                 </td>
                             </tr>
