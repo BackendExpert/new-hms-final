@@ -11,4 +11,6 @@ router.post('/approve-need/:id', authMiddleware, checkPermission('approve-needs'
 
 router.get('/all-rooms', authMiddleware, checkPermission('rooms-for-students'), WardenController.getallwardenrooms)
 
+router.post('/assign-room-special', authMiddleware, checkPermission('assign-room-special'), WardenController.assignstdtorooms_via_sp)
+
 module.exports = router;

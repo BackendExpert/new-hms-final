@@ -89,7 +89,7 @@ const WardenController = {
 
             // console.log(rooms)
 
-            return res.json({ message: 'Rooms fetched successfully', rooms });
+            return res.json({ Result: rooms });
         }
         catch (err) {
             console.log(err)
@@ -98,12 +98,59 @@ const WardenController = {
 
     assignstdtorooms_via_sp: async (req, res) => {
         try {
-            const stdid = req.params.id
-        }
-        catch (err) {
-            console.log(err)
+            const { studentId, roomId } = req.body;
+
+            const gethostel = await Room.findById(roomId);
+            const getstudent = await Student.findById(studentId);
+
+            if (!getstudent || !gethostel) {
+                return res.json({ error: "Invalid student or room ID" });
+            }
+
+            const getid = getstudent.enrolmentNo;
+            const parts = getid.split('/');
+            const yearofenroll = parseInt(parts[1], 10);
+
+            if (yearofenroll >= 22 && yearofenroll <= 40) {
+                const fullyear = 2000 + yearofenroll;
+
+                const checkallocation = await Allocation.findOne({ regNo: studentId })
+
+                if(checkallocation){
+                    return res.json({ Error: "Already Assign" })
+                }
+
+                const createroomAllocation = new Allocation({
+                    regNo: studentId,
+                    roomId: roomId,
+                    hostelID: gethostel.hostelID,
+                    academicYear: fullyear,
+                    inDate: new Date(),
+                    active: true
+                });
+
+                const resultcreateroomAllocation = await createroomAllocation.save();
+
+                if (resultcreateroomAllocation) {
+                    await Room.findByIdAndUpdate(
+                        roomId,
+                        { $inc: { currentOccupants: 1 } }, // Use atomic increment
+                        { new: true }
+                    );
+
+                    return res.json({ Status: "Success", Message: "Allocation successful" });
+                } else {
+                    return res.json({ Error: "Failed to save allocation" });
+                }
+            } else {
+                return res.json({ Error: "Invalid enrolment year in student ID" });
+            }
+        } catch (err) {
+            console.log(err);
+            return res.json({ Error: "Something went wrong" });
         }
     }
+
 };
 
 module.exports = WardenController;  
