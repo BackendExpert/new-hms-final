@@ -157,8 +157,8 @@ const WardenController = {
                 .populate('regNo')
                 .populate('roomId')
             
-            console.log(getallstds)
-
+            // console.log(getallstds)
+            return res.json({ Result: getallstds })
         }
         catch(err){
             console.log(err)

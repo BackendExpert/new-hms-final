@@ -3,7 +3,7 @@ import { getUserInfoFromToken } from '../../utils/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import DefaultBtn from '../../components/Buttons/DefaultBtn';
 import { FaGraduationCap } from 'react-icons/fa6';
-
+import axios from 'axios'
 
 const AlreadyAssigned = () => {
     const navigate = useNavigate()
@@ -28,7 +28,7 @@ const AlreadyAssigned = () => {
         })
             .then(res => setassignedstd(res.data.Result))
             .catch(err => console.log(err));
-    }, [id]);
+    }, []);
 
     return (
         <div>
