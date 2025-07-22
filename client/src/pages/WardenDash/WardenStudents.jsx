@@ -135,8 +135,11 @@ const WardenStudents = () => {
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                        {paginatedStudents.length > 0 ? (
-                            paginatedStudents.map(({ student, allocations }, idx) => {
+                        {paginatedStudents
+                            .filter(({ allocations }) =>
+                                allocations?.some(a => !a.roomId) // Only include students with at least one unassigned allocation
+                            )
+                            .map(({ student, allocations }, idx) => {
                                 const gender = (student.sex || '').toLowerCase();
                                 return (
                                     <tr
@@ -169,15 +172,9 @@ const WardenStudents = () => {
                                         <td className="px-6 py-4">{student.address3 || '-'}</td>
                                         <td className="px-6 py-4">{student.distance ?? '-'}</td>
                                         <td className="px-6 py-4">
-                                            {student.isAssign ? (
-                                                <span className="uppercase bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                                    Assigned
-                                                </span>
-                                            ) : (
-                                                <span className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">
-                                                    Not Assigned
-                                                </span>
-                                            )}
+                                            <span className="uppercase bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">
+                                                Not Assigned
+                                            </span>
                                         </td>
                                         <td className="px-6 py-4 space-x-2">
                                             <Link
@@ -186,26 +183,17 @@ const WardenStudents = () => {
                                             >
                                                 View
                                             </Link>
-
-                                            {!student.isAssign && (
-                                                <button
-                                                    onClick={() => handleAssignStudent(student._id)}
-                                                    className="text-blue-600 font-medium hover:underline"
-                                                >
-                                                    Assign
-                                                </button>
-                                            )}
+                                            <button
+                                                onClick={() => handleAssignStudent(student._id)}
+                                                className="text-blue-600 font-medium hover:underline"
+                                            >
+                                                Assign
+                                            </button>
                                         </td>
                                     </tr>
                                 );
-                            })
-                        ) : (
-                            <tr>
-                                <td colSpan="10" className="px-6 py-4 text-center text-gray-500">
-                                    No students found.
-                                </td>
-                            </tr>
-                        )}
+                            })}
+
                     </tbody>
                 </table>
             </div>

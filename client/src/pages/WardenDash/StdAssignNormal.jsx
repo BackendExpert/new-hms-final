@@ -77,9 +77,19 @@ const StdAssignNormal = () => {
             // Simulate API call
             await new Promise((resolve) => setTimeout(resolve, 1000))
 
-            console.log('Submitted student IDs:', selectedIds)
-            alert('Rooms assigned successfully!')
-
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/warden/student-assign-to-rooms', selectedIds, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            if (res.data.Status === "Success") {
+                console.log('Submitted student IDs:', selectedIds)
+                alert('Rooms assigned successfully!')
+                window.location.reload()
+            }
+            else {
+                alert(res.data.Error)
+            }
             setSelectedStudents(new Set())
         } catch (error) {
             console.error('Failed to assign rooms:', error)
@@ -128,34 +138,33 @@ const StdAssignNormal = () => {
                                 </td>
                             </tr>
                         )}
-                        {students.map(({ student, allocations }, index) => {
-                            const id = student._id || index
-                            const roomIds =
-                                allocations && allocations.length > 0
-                                    ? allocations.map((a) => a.roomId || 'N/A').join(', ')
-                                    : 'No rooms assigned'
-
-                            return (
-                                <tr key={id}>
-                                    <td className="px-6 py-4">
-                                        <input
-                                            type="checkbox"
-                                            checked={selectedStudents.has(id)}
-                                            onChange={() => toggleStudentSelection(id)}
-                                            aria-label={`Select student ${student.enrolmentNo || index + 1}`}
-                                        />
-                                    </td>
-                                    <td className="px-6 py-4">{index + 1}</td>
-                                    <td className="px-6 py-4">{student.enrolmentNo || '-'}</td>
-                                    <td className="px-6 py-4">{student.indexNo || '-'}</td>
-                                    <td className="px-6 py-4">{student.nic || '-'}</td>
-                                    <td className="px-6 py-4">{student.sex || '-'}</td>
-                                    <td className="px-6 py-4">{student.address3 || '-'}</td>
-                                    <td className="px-6 py-4">{student.distance || '-'}</td>
-                                    <td className="px-6 py-4">{roomIds}</td>
-                                </tr>
+                        {students
+                            .filter(({ allocations }) =>
+                                allocations?.some(a => !a.roomId) // Only include students with at least one unassigned room
                             )
-                        })}
+                            .map(({ student, allocations }, index) => {
+                                const id = student._id || index
+
+                                return (
+                                    <tr key={id}>
+                                        <td className="px-6 py-4">
+                                            <input
+                                                type="checkbox"
+                                                checked={selectedStudents.has(id)}
+                                                onChange={() => toggleStudentSelection(id)}
+                                                aria-label={`Select student ${student.enrolmentNo || index + 1}`}
+                                            />
+                                        </td>
+                                        <td className="px-6 py-4">{index + 1}</td>
+                                        <td className="px-6 py-4">{student.enrolmentNo || '-'}</td>
+                                        <td className="px-6 py-4">{student.indexNo || '-'}</td>
+                                        <td className="px-6 py-4">{student.nic || '-'}</td>
+                                        <td className="px-6 py-4">{student.sex || '-'}</td>
+                                        <td className="px-6 py-4">{student.address3 || '-'}</td>
+                                        <td className="px-6 py-4">{student.distance || '-'}</td>
+                                    </tr>
+                                )
+                            })}
                     </tbody>
                 </table>
             </div>

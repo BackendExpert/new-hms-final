@@ -160,11 +160,67 @@ const WardenController = {
 
     assign_students_room: async (req, res) => {
         try {
-        
+            const selectedStudentIds = req.body; // Array of Student IDs
+
+            if (!Array.isArray(selectedStudentIds) || selectedStudentIds.length === 0) {
+                return res.json({ Error: 'No student IDs provided' });
+            }
+
+            for (let i = 0; i < selectedStudentIds.length; i++) {
+                const studentId = selectedStudentIds[i];
+
+                // Find the student's allocation record
+                const allocation = await Allocation.findOne({ regNo: studentId });
+                if (!allocation) {
+                    console.log(`No allocation found for student: ${studentId}`);
+                    continue;
+                }
+
+                const hostelID = allocation.hostelID;
+                if (!hostelID) {
+                    console.log(`No hostelID in allocation for student: ${studentId}`);
+                    continue;
+                }
+
+                // Find all available rooms in the same hostel
+                const rooms = await Room.find({
+                    hostelID: hostelID,
+                    status: 'Availabe'
+                });
+
+                let assigned = false;
+
+                for (let j = 0; j < rooms.length; j++) {
+                    const room = rooms[j];
+
+                    if (room.currentOccupants < room.capasity) {
+
+                        allocation.roomId = room._id;
+                        await allocation.save();
+
+                        room.students.push(studentId);
+                        room.currentOccupants += 1;
+                        if (room.currentOccupants >= room.capasity) {
+                            room.status = 'Full';
+                        }
+
+                        await room.save();
+                        console.log(`Assigned student ${studentId} to room ${room.roomID}`);
+                        assigned = true;
+                        break;
+                    }
+                }
+
+                if (!assigned) {
+                    console.log(`No available room in hostel ${hostelID} for student ${studentId}`);
+                }
+            }
+
+            return res.json({ Status: 'Success', message: 'All possible students assigned to rooms' });
 
         } catch (error) {
-            console.error(error);
-            return res.json({ Error: 'An error occurred' });
+            console.error('assign_students_room error:', error);
+            return res.json({ Error: 'An error occurred while assigning rooms' });
         }
     }
 
