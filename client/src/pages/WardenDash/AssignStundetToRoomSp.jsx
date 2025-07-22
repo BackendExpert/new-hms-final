@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getUserInfoFromToken } from '../../utils/auth';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios'
+import DefaultBtn from '../../components/Buttons/DefaultBtn';
 
 const AssignStundetToRoomSp = () => {
     const { id } = useParams()
@@ -27,8 +28,18 @@ const AssignStundetToRoomSp = () => {
     if (roleNames.includes('admin') || roleNames.includes('director') || roleNames.includes('warden')) {
         return (
             <div>
-                <h2 className="text-2xl font-bold mb-6 text-gray-800">Assign Stundet Room {id}</h2>
-                <p className="text-gray-500 text-sm">(vie Special Needs)</p>
+                <div className="-mt-4 mb-2">
+                    <Link to={'/Dashboard/AssignStudentViaNeeds'}>
+                        <DefaultBtn
+                            type='button'
+                            label='Back'
+                        />
+                    </Link>
+                </div>
+                <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-emerald-600">Assign Stundet Room {id}</h2>
+                    <p className="text-gray-500 text-sm">(vie Special Needs)</p>
+                </div>
             </div>
         )
     }
