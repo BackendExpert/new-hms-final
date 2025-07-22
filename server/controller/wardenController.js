@@ -87,7 +87,7 @@ const WardenController = {
 
             const rooms = await Room.find({ hostelID: gethostel._id });
 
-            console.log(rooms)
+            // console.log(rooms)
 
             return res.json({ message: 'Rooms fetched successfully', rooms });
         }

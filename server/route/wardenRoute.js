@@ -9,4 +9,6 @@ router.get('/std-extra-needs', authMiddleware, checkPermission('std-extra-needs'
 
 router.post('/approve-need/:id', authMiddleware, checkPermission('approve-needs'), WardenController.approveneeds)
 
+router.get('/all-rooms', authMiddleware, checkPermission('rooms-for-students'), WardenController.getallwardenrooms)
+
 module.exports = router;
