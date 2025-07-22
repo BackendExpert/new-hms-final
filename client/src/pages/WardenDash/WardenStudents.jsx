@@ -132,13 +132,24 @@ const WardenStudents = () => {
                 placeholder="Type NIC, Enrolment No or Index No"
             />
 
-            <div className="-mt-4 mb-4">
-                <Link to={'/Dashboard/AssignStudentViaNeeds'}>
-                    <DefaultBtn
-                        type='button'
-                        label='Assign Student Via Needs'
-                    />
-                </Link>
+            <div className="-mt-4 mb-4 flex">
+                <div className="">
+                    <Link to={'/Dashboard/AssignStudentViaNeeds'}>
+                        <DefaultBtn
+                            type='button'
+                            label='Assign Student Via Needs'
+                        />
+                    </Link>
+                </div>
+
+                <div className="ml-4">
+                    <Link to={'/Dashboard/AssignStudentViaNeeds'}>
+                        <DefaultBtn
+                            type='button'
+                            label='Already Assigned Students'
+                        />
+                    </Link>
+                </div>
             </div>
 
 
