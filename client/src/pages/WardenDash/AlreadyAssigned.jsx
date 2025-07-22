@@ -103,24 +103,31 @@ const AlreadyAssigned = () => {
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                        {currentData.map((item, index) => (
-                            <tr key={item._id} className="hover:bg-gray-50">
-                                <td className="px-6 py-4">{startIndex + index + 1}</td>
-                                <td className="px-6 py-4">{item?.regNo?.enrolmentNo || 'N/A'}</td>
-                                <td className="px-6 py-4">{item?.regNo?.email || 'N/A'}</td>
-                                <td className="px-6 py-4">{item?.regNo?.indexNo || 'N/A'}</td>
-                                <td className="px-6 py-4">{item?.regNo?.nic || 'N/A'}</td>
-                                <td className="px-6 py-4">{item?.regNo?.sex || 'N/A'}</td>
-                                <td className="px-6 py-4">{item?.roomId?.roomID || 'N/A'}</td>
-                                <td className="px-6 py-4">
-                                    {item?.regNo?.dateOfEnrolment ? new Date(item.regNo.dateOfEnrolment).getFullYear() : 'N/A'}
-                                </td>
-                                <td className="px-6 py-4">
-                                    {/* Optional Action */}
-                                </td>
-                            </tr>
-                        ))}
+                        {currentData.map((item, index) => {
+                            if (!item?.roomId?.roomID) return null;
+
+                            return (
+                                <tr key={item._id || index} className="hover:bg-gray-50">
+                                    <td className="px-6 py-4">{startIndex + index + 1}</td>
+                                    <td className="px-6 py-4">{item?.regNo?.enrolmentNo ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">{item?.regNo?.email ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">{item?.regNo?.indexNo ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">{item?.regNo?.nic ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">{item?.regNo?.sex ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">{item?.roomId?.roomID ?? 'N/A'}</td>
+                                    <td className="px-6 py-4">
+                                        {item?.regNo?.dateOfEnrolment
+                                            ? new Date(item.regNo.dateOfEnrolment).getFullYear()
+                                            : 'N/A'}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {/* Optional Action */}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
+
                 </table>
             </div>
 

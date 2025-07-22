@@ -114,34 +114,25 @@ const WardenController = {
             if (yearofenroll >= 22 && yearofenroll <= 40) {
                 const fullyear = 2000 + yearofenroll;
 
-                const checkallocation = await Allocation.findOne({ regNo: studentId })
+                const allocation = await Allocation.findOne({ regNo: studentId });
 
-                if(checkallocation){
-                    return res.json({ Error: "Already Assign" })
+                if (!allocation) {
+                    return res.json({ Error: "No existing allocation found for this student" });
                 }
 
-                const createroomAllocation = new Allocation({
-                    regNo: studentId,
-                    roomId: roomId,
-                    hostelID: gethostel.hostelID,
-                    academicYear: fullyear,
-                    inDate: new Date(),
-                    active: true
-                });
+                allocation.roomId = roomId;
+                allocation.academicYear = fullyear;
+                allocation.inDate = new Date();
+                allocation.active = true;
+                await allocation.save();
 
-                const resultcreateroomAllocation = await createroomAllocation.save();
+                await Room.findByIdAndUpdate(
+                    roomId,
+                    { $inc: { currentOccupants: 1 } },
+                    { new: true }
+                );
 
-                if (resultcreateroomAllocation) {
-                    await Room.findByIdAndUpdate(
-                        roomId,
-                        { $inc: { currentOccupants: 1 } }, // Use atomic increment
-                        { new: true }
-                    );
-
-                    return res.json({ Status: "Success", Message: "Allocation successful" });
-                } else {
-                    return res.json({ Error: "Failed to save allocation" });
-                }
+                return res.json({ Status: "Success", Message: "Allocation updated successfully" });
             } else {
                 return res.json({ Error: "Invalid enrolment year in student ID" });
             }
@@ -151,17 +142,29 @@ const WardenController = {
         }
     },
 
-    assigned_students: async(req, res) =>{
-        try{
+
+    assigned_students: async (req, res) => {
+        try {
             const getallstds = await Allocation.find()
                 .populate('regNo')
                 .populate('roomId')
-            
+
             // console.log(getallstds)
             return res.json({ Result: getallstds })
         }
-        catch(err){
+        catch (err) {
             console.log(err)
+        }
+    },
+
+
+    assign_students_room: async (req, res) => {
+        try {
+        
+
+        } catch (error) {
+            console.error(error);
+            return res.json({ Error: 'An error occurred' });
         }
     }
 
