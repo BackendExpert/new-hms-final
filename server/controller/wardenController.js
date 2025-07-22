@@ -149,6 +149,20 @@ const WardenController = {
             console.log(err);
             return res.json({ Error: "Something went wrong" });
         }
+    },
+
+    assigned_students: async(req, res) =>{
+        try{
+            const getallstds = await Allocation.find()
+                .populate('regNo')
+                .populate('roomId')
+            
+            console.log(getallstds)
+
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
 };
