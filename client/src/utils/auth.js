@@ -1,4 +1,3 @@
-import localStorage from 'react-secure-storage';
 import { jwtDecode } from 'jwt-decode';
 
 export function getUserInfoFromToken() {

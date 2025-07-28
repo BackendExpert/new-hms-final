@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import localStorage from 'react-secure-storage';
+;
 
 // Function to check if user is authenticated
 const isAuthenticated = () => {

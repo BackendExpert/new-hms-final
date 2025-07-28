@@ -72,6 +72,12 @@ const dashsidedata = [
         link: '/Dashboard/ExtraNeeds',
         icon: FaHouseUser
     },
+    {
+        id: 13,
+        name: 'Student Extra Needs',
+        link: '/Dashboard/StdExtraNeeds',
+        icon: FaHouseUser
+    },
 ]
 
 export { dashsidedata }

@@ -4,7 +4,7 @@ import Dropdown from '../../components/Form/Dropdown'
 import { FaFemale, FaMale } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import localStorage from 'react-secure-storage'
+
 
 const HostelAssign = () => {
     const [getallstudents, setgetallstudents] = useState([])

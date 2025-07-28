@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link, useNavigate } from 'react-router-dom'
-import localStorage from 'react-secure-storage'
+
 import axios from 'axios'
 import DefaultInput from '../../components/Form/DefaultInput'
 

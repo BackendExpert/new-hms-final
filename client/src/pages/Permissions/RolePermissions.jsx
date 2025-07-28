@@ -3,7 +3,7 @@ import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import { FaUserLock } from "react-icons/fa";
 import axios from 'axios';
-import localStorage from 'react-secure-storage';
+;
 
 const RolePermissions = () => {
 

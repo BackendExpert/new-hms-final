@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import axios from 'axios'
-import localStorage from 'react-secure-storage'
+
 import DefaultInput from '../../components/Form/DefaultInput'
 
 

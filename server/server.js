@@ -13,7 +13,7 @@ const userRoute = require('./route/userRoute')
 const studentRoute = require('./route/studentRoute')
 const hostelRoute = require('./route/hostelRoute')
 const roomRoute = require('./route/roomRoute')
-
+const wardenRoute = require('./route/wardenRoute')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,6 +32,7 @@ app.use('/user', userRoute)
 app.use('/student', studentRoute)
 app.use('/hostel', hostelRoute)
 app.use('/room', roomRoute)
+app.use('/warden', wardenRoute)
 
 app.get('/', (req, res) => {
     res.send(`Server running on port ${PORT}`);

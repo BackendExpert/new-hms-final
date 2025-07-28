@@ -4,7 +4,7 @@ import StdData from './StdData'
 import DefaultBtn from '../../components/Buttons/DefaultBtn'
 import { Link } from 'react-router-dom'
 import AllStudents from './AllStudents'
-import localStorage from 'react-secure-storage'
+
 import axios from 'axios'
 
 

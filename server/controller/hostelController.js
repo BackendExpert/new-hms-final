@@ -258,7 +258,7 @@ const HostelController = {
             const newAllocationsCount = studentIds.length;
 
             if (existingAllocationsCount + newAllocationsCount > totalCapacity) {
-                return res.json({ Error: "Gender Mismatch"});
+                return res.json({ Error: "Gender Mismatch" });
             }
 
             // Create allocations
@@ -329,21 +329,55 @@ const HostelController = {
 
             const currentYear = new Date().getFullYear().toString();
 
+            // Find allocations for this hostel and academic year and populate student data
             const allocations = await Allocation.find({
                 hostelID: warden.hostelId,
                 active: true,
-                academicYear: currentYear
-            }).populate('regNo');
+                academicYear: currentYear,
+            }).populate('regNo'); // Populates student document
 
-            const students = allocations.map(a => a.regNo);
+            // Group allocations by student _id
+            const allocationsByStudentId = {};
+            allocations.forEach(allocation => {
+                const student = allocation.regNo;
+                if (!student) return; // skip if no student linked
 
-            res.json({ Result: students });
+                const studentId = student._id.toString();
+
+                if (!allocationsByStudentId[studentId]) {
+                    allocationsByStudentId[studentId] = {
+                        student,
+                        allocations: [],
+                    };
+                }
+
+                allocationsByStudentId[studentId].allocations.push({
+                    allocationId: allocation._id,
+                    roomId: allocation.roomId,
+                    hostelID: allocation.hostelID,
+                    academicYear: allocation.academicYear,
+                    inDate: allocation.inDate,
+                    outDate: allocation.outDate,
+                    note: allocation.note,
+                    active: allocation.active,
+                });
+            });
+
+            const result = Object.values(allocationsByStudentId);
+
+            // Pretty print full result for debugging
+            // console.log(JSON.stringify(result, null, 2));
+
+            res.json({ Result: result });
 
         } catch (err) {
             console.error(err);
             res.json({ message: 'Server error' });
         }
     }
+
+
+
 
 };
 

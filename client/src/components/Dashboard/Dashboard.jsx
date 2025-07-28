@@ -4,7 +4,6 @@ import { getUserInfoFromToken } from '../../utils/auth';
 import DashSide from './DashSide';
 import DashNav from './DashNav';
 import DashFooter from './DashFooter';
-import localStorage from 'react-secure-storage';
 
 
 const Dashboard = () => {
