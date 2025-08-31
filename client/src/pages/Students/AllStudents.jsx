@@ -17,6 +17,7 @@ const AllStudents = () => {
     const [allstds, setAllStds] = useState([])
     const [filteredStudents, setFilteredStudents] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
+    const [hometownFilter, setHometownFilter] = useState('')
     const [assignmentStatus, setAssignmentStatus] = useState('All')
     const [minDistance, setMinDistance] = useState('')
     const [maxDistance, setMaxDistance] = useState('')
@@ -64,12 +65,19 @@ const AllStudents = () => {
 
     useEffect(() => {
         const term = searchTerm.toLowerCase()
+        const hometownTerm = hometownFilter.toLowerCase()
 
         const filtered = allstds.filter(student => {
             const matchesSearch =
                 student.nic?.toLowerCase().includes(term) ||
                 student.enrolmentNo?.toLowerCase().includes(term) ||
                 student.indexNo?.toLowerCase().includes(term)
+
+            const matchesHometown =
+                hometownTerm === '' ||
+                student.address1?.toLowerCase().includes(hometownTerm) ||
+                student.address2?.toLowerCase().includes(hometownTerm) ||
+                student.address3?.toLowerCase().includes(hometownTerm)
 
             const matchesAssigned =
                 assignmentStatus === 'All'
@@ -88,12 +96,12 @@ const AllStudents = () => {
 
             const matchesYear = yearFilter === '' || getYear(student.enrolmentNo) === yearFilter
 
-            return matchesSearch && matchesAssigned && matchesDistance && matchesGender && matchesDepartment && matchesYear
+            return matchesSearch && matchesHometown && matchesAssigned && matchesDistance && matchesGender && matchesDepartment && matchesYear
         })
 
         setFilteredStudents(filtered)
         setCurrentPage(1)
-    }, [searchTerm, allstds, assignmentStatus, minDistance, maxDistance, genderFilter, departmentFilter, yearFilter])
+    }, [searchTerm, hometownFilter, allstds, assignmentStatus, minDistance, maxDistance, genderFilter, departmentFilter, yearFilter])
 
     const totalPages = Math.ceil(filteredStudents.length / recordsPerPage)
     const paginatedData = filteredStudents.slice(
@@ -139,6 +147,15 @@ const AllStudents = () => {
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                     placeholder="Enter search term..."
+                    className="w-full"
+                />
+
+                <DefaultInput
+                    label="Search by Home Town"
+                    name="hometown"
+                    value={hometownFilter}
+                    onChange={e => setHometownFilter(e.target.value)}
+                    placeholder="Enter home town..."
                     className="w-full"
                 />
 
