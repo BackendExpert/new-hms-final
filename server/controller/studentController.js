@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const Student = require('../model/Student');
 const SpecialNeeds = require('../model/SpecialNeeds');
 const EmergencyContact = require('../model/EmergencyContact');
-const Allocation = require('../model/Allocation');
 
 // Geocoding function using OpenCage API
 async function geocodeWithOpenCage(address) {
@@ -213,34 +212,14 @@ const StudentController = {
 
     getStudentById: async (req, res) => {
         try {
-            const { id } = req.params;
+            const { id } = req.params
 
-            // Try finding Allocation by regNo first
-            let allocation = await Allocation.findOne({ regNo: id })
-                .populate('regNo')
-                .populate('roomId')
-                .populate('hostelID');
+            const findStudent = await Student.findById(id)
 
-            // If not found, try to find Allocation by Student _id
-            if (!allocation) {
-                allocation = await Allocation.findOne()
-                    .populate('regNo')
-                    .populate('roomId')
-                    .populate('hostelID')
-                    .where('regNo').equals(id);
-            }
-
-            // If still not found, return student data only
-            if (!allocation) {
-                const student = await Student.findById(id);
-                return res.json({ Result: { regNo: student } });
-            }
-
-            res.json({ Result: allocation });
-
-        } catch (err) {
-            console.log(err);
-            res.status(500).json({ error: "Server error" });
+            res.json({ Result: findStudent })
+        }
+        catch (err) {
+            console.log(err)
         }
     },
 
