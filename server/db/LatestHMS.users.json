@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "68366b039e3ccbc943d0cb90"
+  },
+  "username": "newuser",
+  "email": "jehanapptest@gmail.com",
+  "emailVerified": true,
+  "active": true,
+  "password": "$2b$10$Hr0vVGC09CA1HA/MCanbQeoU.pBAcYprVRuyFL/cDsNV1dHRPMeMi",
+  "roles": [
+    {
+      "$oid": "6837b60b735077d2866f126b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T01:46:43.760Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-30T08:18:36.382Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683934dcde4d79b456ebb1db"
+  },
+  "username": "warden",
+  "email": "warden1@123.com",
+  "emailVerified": true,
+  "active": true,
+  "password": "$2b$10$YjowRZwdhR9.d4A.XapvjeKseHIYwPzgkg5aLK3ZvcxF.tKhdO.7S",
+  "roles": [
+    {
+      "$oid": "68366525d6497a7bcfd842a4"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-30T04:32:28.717Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-30T05:20:26.690Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683b3b4aa13f9e9b654108c2"
+  },
+  "username": "warden1",
+  "email": "jkandymusic@gmail.com",
+  "emailVerified": true,
+  "active": true,
+  "password": "$2b$10$AdRIztVNjVuWquU1JEscuOAXs2LIamBwmxl8mYqft857O4OnXMQ1G",
+  "roles": [
+    {
+      "$oid": "68366525d6497a7bcfd842a4"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-31T17:24:26.621Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:20:52.743Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683b3b7ea13f9e9b654108cb"
+  },
+  "username": "warden2",
+  "email": "jehannewapptest@gmail.com",
+  "emailVerified": true,
+  "active": true,
+  "password": "$2b$10$4ecR/WZDJdkyBoo9OpaSoev1XOkJUU5jh3IQV0zOSoQRydJjT0AGy",
+  "roles": [
+    {
+      "$oid": "68366525d6497a7bcfd842a4"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-31T17:25:18.111Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:26:07.785Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d1fa65736ca3aa95b1ade0"
+  },
+  "username": "200224500595",
+  "email": "aselransikagamage@gmail.com",
+  "emailVerified": true,
+  "active": true,
+  "password": "$2b$10$Yep.HSvbqLr2JBjGJA5ccuD91i1ZZnUL8WKEGhxafluUqTojrg0re",
+  "roles": [
+    {
+      "$oid": "68365d3755f99d69336b1b83"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-23T01:39:49.252Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-23T01:39:49.252Z"
+  },
+  "__v": 0
+}]

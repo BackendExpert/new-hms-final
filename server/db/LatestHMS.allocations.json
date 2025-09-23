@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "68d1fa65736ca3aa95b1addb"
+  },
+  "regNo": "683b39ada13f9e9b65410812",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "academicYear": "2025",
+  "inDate": {
+    "$date": "2025-09-23T01:39:49.089Z"
+  },
+  "active": true,
+  "__v": 0,
+  "roomId": {
+    "$oid": "683cf32cebeb3d51706b20b0"
+  }
+}]

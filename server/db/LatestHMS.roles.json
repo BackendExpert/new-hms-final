@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "68365d3755f99d69336b1b83"
+  },
+  "name": "student",
+  "permissions": [
+    "login",
+    "update-password-dash",
+    "view-current-user",
+    "student-create-needs",
+    "create-emergency-contact",
+    "emergency-contact",
+    "get-student-needs"
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T00:47:51.748Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-05T04:38:23.758Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "68366525d6497a7bcfd842a4"
+  },
+  "name": "warden",
+  "permissions": [
+    "signup",
+    "update-password-dash",
+    "view-current-user",
+    "get-student-byID",
+    "update-Student",
+    "get-warden-students",
+    "warden-rooms",
+    "student-assign-need",
+    "student-assign-to-rooms",
+    "std-extra-needs",
+    "approve-needs",
+    "rooms-for-students",
+    "assign-room-special",
+    "assigned-all-students"
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T01:21:41.529Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T05:51:55.910Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "6837b60b735077d2866f126b"
+  },
+  "name": "director",
+  "permissions": [
+    "create-role-permission",
+    "view-role-permission",
+    "view-one-role-permission",
+    "delete-role-permission",
+    "view-all-users",
+    "view-one-user",
+    "update-user-status",
+    "update-user-role",
+    "verify-user-email",
+    "update-password-dash",
+    "view-current-user",
+    "create-student-sheet",
+    "create-student-manually",
+    "get-all-students-auth",
+    "get-student-byID",
+    "update-Student",
+    "get-all-warden",
+    "create-hostel",
+    "get-all-hostels",
+    "view-one-hostel",
+    "update-room-count",
+    "assign-new-warden",
+    "view-all-rooms",
+    "get-one-room",
+    "student-assign-hostel",
+    "get-warden-students",
+    "warden-rooms",
+    "student-assign-need",
+    "student-assign-to-rooms",
+    "std-extra-needs",
+    "approve-needs",
+    "rooms-for-students",
+    "assign-room-special",
+    "assigned-all-students",
+    "update-room-capasity"
+  ],
+  "createdAt": {
+    "$date": "2025-05-29T01:19:07.542Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:19:05.693Z"
+  },
+  "__v": 34
+},
+{
+  "_id": {
+    "$oid": "6837b616735077d2866f126e"
+  },
+  "name": "admin",
+  "permissions": [
+    "view-role-permission",
+    "view-all-users",
+    "view-one-user",
+    "update-password-dash",
+    "view-current-user",
+    "create-student-sheet",
+    "create-student-manually",
+    "get-all-students-auth",
+    "get-student-byID",
+    "update-Student",
+    "get-all-warden",
+    "create-hostel",
+    "get-all-hostels",
+    "view-one-hostel",
+    "update-room-count",
+    "assign-new-warden",
+    "view-all-rooms",
+    "get-one-room",
+    "student-assign-hostel",
+    "get-warden-students",
+    "warden-rooms",
+    "student-assign-need",
+    "student-assign-to-rooms",
+    "std-extra-needs",
+    "approve-needs",
+    "rooms-for-students",
+    "assign-room-special",
+    "assigned-all-students",
+    "update-room-capasity"
+  ],
+  "createdAt": {
+    "$date": "2025-05-29T01:19:18.585Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:18:49.406Z"
+  },
+  "__v": 29
+}]

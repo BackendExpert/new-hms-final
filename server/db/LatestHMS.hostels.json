@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "hostelID": "UOP/M/NE",
+  "name": "New Male Hostel",
+  "location": "https://www.google.com/maps/place/University+of+Peradeniya/@7.2549422,80.5948099,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae368deaaaaaaab:0xb5476b88282d47fb!8m2!3d7.2549422!4d80.5973902!16zL20vMGM5cDF5?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D",
+  "gender": "Male",
+  "roomCount": 40,
+  "warden": {
+    "$oid": "683b3b4aa13f9e9b654108c2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "hostelID": "UOP/F/NE",
+  "name": "New Female Hostel",
+  "location": "https://www.google.com/maps/place/University+of+Peradeniya/@7.2549422,80.5948099,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae368deaaaaaaab:0xb5476b88282d47fb!8m2!3d7.2549422!4d80.5973902!16zL20vMGM5cDF5?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D",
+  "gender": "Female",
+  "roomCount": 40,
+  "warden": {
+    "$oid": "683934dcde4d79b456ebb1db"
+  },
+  "__v": 0
+}]

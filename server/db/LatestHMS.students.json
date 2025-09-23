@@ -1,0 +1,4458 @@
+[{
+  "_id": {
+    "$oid": "683a765adf2c96a134399a4a"
+  },
+  "no": "001",
+  "enrolmentNo": "VS/22/001",
+  "indexNo": "4177495",
+  "name": "ABEWICRAMA B.D.G.D.M.",
+  "title": "MR",
+  "lastName": "ABEWICRAMA ",
+  "initials": "B.D.G.D.M.",
+  "fullName": "BILIDA DEWAYALAGE GEDARA DINESH MANJULA ABEWICRAMA",
+  "alDistrict": "Polonnaruwa",
+  "sex": "Male",
+  "zScore": 1.332,
+  "medium": "S",
+  "nic": "200313211830",
+  "address1": "TRACK 29,",
+  "address2": "WEWEKADE,",
+  "address3": "ATHTHANAKADAWALA.",
+  "fullAddress": "TRACK 29, WEWEKADE, ATHTHANAKADAWALA.",
+  "email": "dineshmanjulamy319@gmail.com",
+  "phone1": "0785259950",
+  "phone2": "",
+  "genEnglishMarks": 18,
+  "intake": "Normal_Intake (Late_Reg-1)",
+  "distance": 110.07,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T03:24:10.345Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:00:06.320Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683a765adf2c96a134399a4b"
+  },
+  "no": "002",
+  "enrolmentNo": "VS/22/002",
+  "indexNo": "4489349",
+  "name": "ABEYKOON A.M.K.S.",
+  "title": "MISS",
+  "lastName": "ABEYKOON ",
+  "initials": "A.M.K.S.",
+  "fullName": "ABEYKOON MUDIYANSELAGE KAVINDHYA SAMUDINI ABEYKOON",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7382,
+  "medium": "S",
+  "nic": "200169201942",
+  "address1": "42/D, DAMBARAWA,",
+  "address2": "PAHALAGAMA,",
+  "address3": "MENIKHINNA.",
+  "fullAddress": "42/D, DAMBARAWA, PAHALAGAMA, MENIKHINNA.",
+  "email": "kavisamu2023@gmail.com",
+  "phone1": "0703544564",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-1",
+  "distance": 19.31,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T03:24:10.347Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T03:24:10.347Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683a765adf2c96a134399a4c"
+  },
+  "no": "003",
+  "enrolmentNo": "VS/22/003",
+  "indexNo": "3725855",
+  "name": "ADHIKARI A.A.S.S.",
+  "title": "MISS",
+  "lastName": "ADHIKARI",
+  "initials": "A.A.S.S.",
+  "fullName": "APPUHAMI ARACHCHILALAGE SUBHASHI SATHYANI ADHIKARI",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7624,
+  "medium": "S",
+  "nic": "200167704354",
+  "address1": "232/4, SIRINIWASA MAWATHA,",
+  "address2": "WILAKATUPOTHA,",
+  "address3": "WARIYAPOLA.",
+  "fullAddress": "232/4, SIRINIWASA MAWATHA, WILAKATUPOTHA, WARIYAPOLA.",
+  "email": "subhashiadhikari25@gmail.com",
+  "phone1": "0763103553",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 62.87,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T03:24:10.348Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T03:24:10.348Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b654107fe"
+  },
+  "no": "004",
+  "enrolmentNo": "VS/22/004",
+  "indexNo": "5093643",
+  "name": "AMALRAJ A.N.",
+  "title": "MISS",
+  "lastName": "AMALRAJ",
+  "initials": "A.N.",
+  "fullName": "ANN NATHUSHIKA AMALRAJ",
+  "alDistrict": "Trincomalee",
+  "sex": "Female",
+  "zScore": 1.6669,
+  "medium": "T",
+  "nic": "200275701030",
+  "address1": "92,",
+  "address2": "POST OFFICE ROAD,",
+  "address3": "TRINCOMALEE.",
+  "fullAddress": "92, POST OFFICE ROAD, TRINCOMALEE.",
+  "email": "nathushika57@gmail.com",
+  "phone1": "0760867913",
+  "phone2": "",
+  "genEnglishMarks": 72,
+  "intake": "Normal Intake",
+  "distance": 187.91,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.643Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.643Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b654107ff"
+  },
+  "no": "005",
+  "enrolmentNo": "VS/22/005",
+  "indexNo": "4268180",
+  "name": "ARACHCHI B.A.C.D.B.",
+  "title": "MISS",
+  "lastName": "ARACHCHI",
+  "initials": "B.A.C.D.B.",
+  "fullName": "BARAGAMA ARACHCHIGE CHANDOOPAMA DEWMINI BARAGAMA ARACHCHI",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7054,
+  "medium": "S",
+  "nic": "200268501705",
+  "address1": "209/4,",
+  "address2": "WALAGAMA,",
+  "address3": "MURUTHALAWA.",
+  "fullAddress": "209/4, WALAGAMA, MURUTHALAWA.",
+  "email": "cdbaragamaarachchi2002@gmail.com",
+  "phone1": "0742646624",
+  "phone2": "",
+  "genEnglishMarks": 74,
+  "intake": "Vacancy Step-1",
+  "distance": 7.39,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410800"
+  },
+  "no": "006",
+  "enrolmentNo": "VS/22/006",
+  "indexNo": "2867516",
+  "name": "ARACHCHIGE A.S.J.",
+  "title": "MISS",
+  "lastName": "ARACHCHIGE",
+  "initials": "A.S.J.",
+  "fullName": "AYUNI SANJANA JAYASUNDARA ARACHCHIGE",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7045,
+  "medium": "S",
+  "nic": "200282402390",
+  "address1": "4TH MILE POST,",
+  "address2": "KALEHE,",
+  "address3": "WANCHAWALA.",
+  "fullAddress": "4TH MILE POST, KALEHE, WANCHAWALA.",
+  "email": "ayunisj2002@gmail.com",
+  "phone1": "0761792877",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 214.49,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410801"
+  },
+  "no": "007",
+  "enrolmentNo": "VS/22/007",
+  "indexNo": "4917863",
+  "name": "ASHRIN B.A.",
+  "title": "MISS",
+  "lastName": "ASHRIN",
+  "initials": "B.A.",
+  "fullName": "BATHIUTHEEN AMANAA ASHRIN",
+  "alDistrict": "Ampara",
+  "sex": "Female",
+  "zScore": 1.7317,
+  "medium": "T",
+  "nic": "200281203766",
+  "address1": "353 B/1, ASHRAFF SQUARE ROAD,",
+  "address2": "NATPIDDIMUNAI- 03,",
+  "address3": "KALMUNAI.",
+  "fullAddress": "353 B/1, ASHRAFF SQUARE ROAD, NATPIDDIMUNAI- 03, KALMUNAI.",
+  "email": "amanafathima2002@gmail.com",
+  "phone1": "0773895660",
+  "phone2": "",
+  "genEnglishMarks": 47,
+  "intake": "Normal Intake",
+  "distance": 200.55,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410802"
+  },
+  "no": "008",
+  "enrolmentNo": "VS/22/008",
+  "indexNo": "4826019",
+  "name": "ATHTHANAYAKA A.M.H.U.",
+  "title": "MR",
+  "lastName": "ATHTHANAYAKA",
+  "initials": "A.M.H.U.",
+  "fullName": "ATHTHANAYAKA MUDIYANSELAGE HASHAN UMAYANGA ATHTHANAYAKA",
+  "alDistrict": "Moneragala",
+  "sex": "Male",
+  "zScore": 1.5767,
+  "medium": "S",
+  "nic": "200230200373",
+  "address1": "NO. 77, SELLABA 1 ROAD,",
+  "address2": "BATHALARAGAMA,",
+  "address3": "WELLAWAYA.",
+  "fullAddress": "NO. 77, SELLABA 1 ROAD, BATHALARAGAMA, WELLAWAYA.",
+  "email": "hashanumayangaugc@gmail.com",
+  "phone1": "0776633259",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 153.29,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:00:06.320Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410803"
+  },
+  "no": "009",
+  "enrolmentNo": "VS/22/009",
+  "indexNo": "3601633",
+  "name": "ATHUKORALA A.B.D.",
+  "title": "MISS",
+  "lastName": "ATHUKORALA",
+  "initials": "A.B.D.",
+  "fullName": "ATHUKORALALAGE BHAGYA DHANANJALEE ATHUKORALA",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7185,
+  "medium": "S",
+  "nic": "200176803786",
+  "address1": "26/5,",
+  "address2": "KULEEPITIYA ROAD,",
+  "address3": "POLGAHAWELA.",
+  "fullAddress": "26/5, KULEEPITIYA ROAD, POLGAHAWELA.",
+  "email": "bhagyaathukorala0924@gmail.com",
+  "phone1": "0716151467",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 46.64,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410804"
+  },
+  "no": "010",
+  "enrolmentNo": "VS/22/010",
+  "indexNo": "3493113",
+  "name": "ATHUKORALA A.S.O.N.",
+  "title": "MISS",
+  "lastName": "ATHUKORALA",
+  "initials": "A.S.O.N.",
+  "fullName": "ATHUKORALLAGE SUHASNA ONELI NAVINMA ATHUKORALA",
+  "alDistrict": "Kegalle",
+  "sex": "Female",
+  "zScore": 1.7233,
+  "medium": "S",
+  "nic": "200350402550",
+  "address1": "F134, LANKADENIYA,",
+  "address2": "THATAKA ROAD,",
+  "address3": "KEGALLE.",
+  "fullAddress": "F134, LANKADENIYA, THATAKA ROAD, KEGALLE.",
+  "email": "athukoralasuhasna@gmail.com",
+  "phone1": "0716232992",
+  "phone2": "",
+  "genEnglishMarks": 68,
+  "intake": "Normal Intake",
+  "distance": 65.05,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410805"
+  },
+  "no": "011",
+  "enrolmentNo": "VS/22/011",
+  "indexNo": "2258650",
+  "name": "BIHARI J.Y.",
+  "title": "MISS",
+  "lastName": "BIHARI",
+  "initials": "J.Y.",
+  "fullName": "JATHUNGAGE YASHMI BIHARI",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7757,
+  "medium": "S",
+  "nic": "200080600210",
+  "address1": "NO. 53/D3,",
+  "address2": "KESBEWA,",
+  "address3": "PILIYANDALA.",
+  "fullAddress": "NO. 53/D3, KESBEWA, PILIYANDALA.",
+  "email": "jyashmibihari@gmail.com",
+  "phone1": "0762782405",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 126.59,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410806"
+  },
+  "no": "012",
+  "enrolmentNo": "VS/22/012",
+  "indexNo": "2450356",
+  "name": "BUTHPITIYA B.L.D.A.",
+  "title": "MISS",
+  "lastName": "BUTHPITIYA",
+  "initials": "B.L.D.A.",
+  "fullName": "BUTHPITI LEKAMLAGE DILMI AMANDA BUTHPITIYA",
+  "alDistrict": "Gampaha",
+  "sex": "Female",
+  "zScore": 1.5741,
+  "medium": "S",
+  "nic": "200185703330",
+  "address1": "NO. 82,",
+  "address2": "THARALA,",
+  "address3": "PUGODA.",
+  "fullAddress": "NO. 82, THARALA, PUGODA.",
+  "email": "dilmibuthpitiya@gmail.com",
+  "phone1": "0764075956",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 90.49,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410807"
+  },
+  "no": "013",
+  "enrolmentNo": "VS/22/013",
+  "indexNo": "3026345",
+  "name": "CHAMATHKA K.K.A.N.",
+  "title": "MISS",
+  "lastName": "CHAMATHKA",
+  "initials": "K.K.A.N.",
+  "fullName": "KIRAMA KANKANAMGE AMADHI NETHMI CHAMATHKA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.8102,
+  "medium": "S",
+  "nic": "200272902505",
+  "address1": "HILLSIDE,",
+  "address2": "PRAGATHI MAWATHA,",
+  "address3": "YATIYANA.",
+  "fullAddress": "HILLSIDE, PRAGATHI MAWATHA, YATIYANA.",
+  "email": "ncama30@gmail.com",
+  "phone1": "0757118016",
+  "phone2": "",
+  "genEnglishMarks": 80,
+  "intake": "Normal Intake",
+  "distance": 250.49,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.646Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410808"
+  },
+  "no": "014",
+  "enrolmentNo": "VS/22/014",
+  "indexNo": "3478831",
+  "name": "CHANDRASIRI W.K.N.R.",
+  "title": "MISS",
+  "lastName": "CHANDRASIRI",
+  "initials": "W.K.N.R.",
+  "fullName": "WALIMUNI KUMARAGE NISHANI RANGIKA CHANDRASIRI",
+  "alDistrict": "Kegalle",
+  "sex": "Female",
+  "zScore": 1.7363,
+  "medium": "S",
+  "nic": "200285502578",
+  "address1": "F 33/2, KALUGALLA,",
+  "address2": "MOLAGODA,",
+  "address3": "KEGALLE.",
+  "fullAddress": "F 33/2, KALUGALLA, MOLAGODA, KEGALLE.",
+  "email": "ranganachandrasiri93@gmail.com",
+  "phone1": "0712229874",
+  "phone2": "",
+  "genEnglishMarks": 72,
+  "intake": "Normal Intake",
+  "distance": 65.05,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410809"
+  },
+  "no": "015",
+  "enrolmentNo": "VS/22/015",
+  "indexNo": "2588765",
+  "name": "DEWMITH B.A.S.N.",
+  "title": "MR",
+  "lastName": "DEWMITH",
+  "initials": "B.A.S.N.",
+  "fullName": "BIYAGAMA ACHARIGE SACHINDU NIMSILU DEWMITH",
+  "alDistrict": "Gampaha",
+  "sex": "Male",
+  "zScore": 1.6021,
+  "medium": "S",
+  "nic": "200108201849",
+  "address1": "NO. 119/C/2, PERALANDA,",
+  "address2": "RAGAMA,",
+  "address3": "GAMPAHA.",
+  "fullAddress": "NO. 119/C/2, PERALANDA, RAGAMA, GAMPAHA.",
+  "email": "sachindunimsilu22@gmail.com",
+  "phone1": "0740640479",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 93.56,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:00:06.320Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080a"
+  },
+  "no": "016",
+  "enrolmentNo": "VS/22/016",
+  "indexNo": "2303086",
+  "name": "DHARMAPALA K.A.C.J.",
+  "title": "MISS",
+  "lastName": "DHARMAPALA",
+  "initials": "K.A.C.J.",
+  "fullName": "KURUPPU ACHCHIGE CHANTHI JANIYA DHARMAPALA",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7504,
+  "medium": "S",
+  "nic": "200158002567",
+  "address1": "591,",
+  "address2": "PITIPANA SOUTH,",
+  "address3": "KIRIWATHTHUDUWA.",
+  "fullAddress": "591, PITIPANA SOUTH, KIRIWATHTHUDUWA.",
+  "email": "janiyachanthi@gmail.com",
+  "phone1": "0705289911",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 124.13,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080b"
+  },
+  "no": "017",
+  "enrolmentNo": "VS/22/017",
+  "indexNo": "5248876",
+  "name": "DILAXANA S.",
+  "title": "MISS",
+  "lastName": "DILAXANA",
+  "initials": "S.",
+  "fullName": "SIVARASA DILAXANA",
+  "alDistrict": "Jaffna",
+  "sex": "Female",
+  "zScore": 1.7529,
+  "medium": "T",
+  "nic": "200363300630",
+  "address1": "WARD NO 2,",
+  "address2": "ALLAIPIDDY,",
+  "address3": "JAFFNA.",
+  "fullAddress": "WARD NO 2, ALLAIPIDDY, JAFFNA.",
+  "email": "kdilaxy12@gmail.com",
+  "phone1": "0761531168",
+  "phone2": "",
+  "genEnglishMarks": 51,
+  "intake": "Normal Intake",
+  "distance": 323.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080c"
+  },
+  "no": "018",
+  "enrolmentNo": "VS/22/018",
+  "indexNo": "2831830",
+  "name": "DILMANTHI D.G.",
+  "title": "MISS",
+  "lastName": "DILMANTHI",
+  "initials": "D.G.",
+  "fullName": "DOLAMULLAGE GAYANSA DILMANTHI",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7561,
+  "medium": "S",
+  "nic": "200451612832",
+  "address1": "INDIGAHAWILA,",
+  "address2": "KAHADUWA.",
+  "fullAddress": "INDIGAHAWILA, KAHADUWA. ",
+  "email": "gayansad7@gmail.com",
+  "phone1": "0762661788",
+  "phone2": "",
+  "genEnglishMarks": 75,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080d"
+  },
+  "no": "019",
+  "enrolmentNo": "VS/22/019",
+  "indexNo": "3956539",
+  "name": "DISANAYAKA U.A.N.S.",
+  "title": "MR",
+  "lastName": "DISANAYAKA",
+  "initials": "U.A.N.S.",
+  "fullName": "UDUWILA ARACHCHILAGE NIPUN SATHSARA DISANAYAKA",
+  "alDistrict": "Puttalam",
+  "sex": "Male",
+  "zScore": 1.6574,
+  "medium": "S",
+  "nic": "200229800500",
+  "address1": "WASANA NIWASA, NEAR TO 1ST MILE POST,",
+  "address2": "USWEWA ROAD,",
+  "address3": "ANAMADUWA.",
+  "fullAddress": "WASANA NIWASA, NEAR TO 1ST MILE POST, USWEWA ROAD, ANAMADUWA.",
+  "email": "nipun200sathsara@gmail.com",
+  "phone1": "0713567156",
+  "phone2": "",
+  "genEnglishMarks": 27,
+  "intake": "Normal Intake",
+  "distance": 102.73,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:00:06.320Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080e"
+  },
+  "no": "020",
+  "enrolmentNo": "VS/22/020",
+  "indexNo": "4253736",
+  "name": "DISSANAYAKA D.M.C.P.",
+  "title": "MR",
+  "lastName": "DISSANAYAKA",
+  "initials": "D.M.C.P.",
+  "fullName": "DISSANAYAKA MUDIYANSELAGE CHAMOD PRAMUDITHA DISSANAYAKA",
+  "alDistrict": "Matale",
+  "sex": "Male",
+  "zScore": 1.529,
+  "medium": "S",
+  "nic": "200112700218",
+  "address1": "341/B/1,",
+  "address2": "MALLAGOLLA,",
+  "address3": "NAULA.",
+  "fullAddress": "341/B/1, MALLAGOLLA, NAULA.",
+  "email": "chamoddissanayaka581@gmail.com",
+  "phone1": "0701578453",
+  "phone2": "",
+  "genEnglishMarks": 53,
+  "intake": "Vacancy Step-1",
+  "distance": 61.02,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T08:00:06.320Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541080f"
+  },
+  "no": "021",
+  "enrolmentNo": "VS/22/021",
+  "indexNo": "4350251",
+  "name": "DISSANAYAKE D.M.C.N.",
+  "title": "MR",
+  "lastName": "DISSANAYAKE",
+  "initials": "D.M.C.N.",
+  "fullName": "DISSANAYAKE MUDIYANSELAGE CHANDUPA NAWANJANA DISSANAYAKE",
+  "alDistrict": "Kandy",
+  "sex": "Male",
+  "zScore": 1.7665,
+  "medium": "S",
+  "nic": "200313710092",
+  "address1": "NO. 19,",
+  "address2": "ANGAMMANA,",
+  "address3": "GAMPOLA.",
+  "fullAddress": "NO. 19, ANGAMMANA, GAMPOLA.",
+  "email": "dissanayakechandupa456@gmail.com",
+  "phone1": "0761858938",
+  "phone2": "",
+  "genEnglishMarks": 85,
+  "intake": "Normal Intake",
+  "distance": 15.41,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410810"
+  },
+  "no": "022",
+  "enrolmentNo": "VS/22/022",
+  "indexNo": "5241391",
+  "name": "ELANGKOVAN E.",
+  "title": "MISS",
+  "lastName": "ELANGKOVAN",
+  "initials": "E.",
+  "fullName": "ELAKKIYA ELANGKOVAN",
+  "alDistrict": "Jaffna",
+  "sex": "Female",
+  "zScore": 1.737,
+  "medium": "T",
+  "nic": "200276900233",
+  "address1": "120/1, PRATHESA SABAI LANE,",
+  "address2": "URUMPIRAY EAST,",
+  "address3": "URUMPIRAY.",
+  "fullAddress": "120/1, PRATHESA SABAI LANE, URUMPIRAY EAST, URUMPIRAY.",
+  "email": "oviyaelangkovan2003@gmail.com",
+  "phone1": "0766584941",
+  "phone2": "",
+  "genEnglishMarks": 76,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410811"
+  },
+  "no": "023",
+  "enrolmentNo": "VS/22/023",
+  "indexNo": "4311108",
+  "name": "FERNANDO H.T.L.",
+  "title": "MISS",
+  "lastName": "FERNANDO",
+  "initials": "H.T.L.",
+  "fullName": "HATHURUSINHAYALAGE THASHMILA LAKSHANI FERNANDO",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7711,
+  "medium": "S",
+  "nic": "200286600702",
+  "address1": "106/2, NEW PERADENIYA,",
+  "address2": "KARAMADA,",
+  "address3": "GELIOYA.",
+  "fullAddress": "106/2, NEW PERADENIYA, KARAMADA, GELIOYA.",
+  "email": "thashmilafernando92@gmail.com",
+  "phone1": "0776933929",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 7.93,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410812"
+  },
+  "no": "024",
+  "enrolmentNo": "VS/22/024",
+  "indexNo": "2082926",
+  "name": "GAMAGE G.D.A.R.",
+  "title": "MR",
+  "lastName": "GAMAGE",
+  "initials": "G.D.A.R.",
+  "fullName": "GAMAGE DON ASEL RANSIKA GAMAGE",
+  "alDistrict": "Colombo",
+  "sex": "Male",
+  "zScore": 1.701,
+  "medium": "S",
+  "nic": "200224500595",
+  "address1": "29/B, SRI SARANANKARA MAWATHA,",
+  "address2": "RILAWALA,",
+  "address3": "KAHATHUDUWA.",
+  "fullAddress": "29/B, SRI SARANANKARA MAWATHA, RILAWALA, KAHATHUDUWA.",
+  "email": "aselransikagamage@gmail.com",
+  "phone1": "0752728503",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 120.13,
+  "isAssign": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-23T01:39:49.101Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410813"
+  },
+  "no": "025",
+  "enrolmentNo": "VS/22/025",
+  "indexNo": "2379759",
+  "name": "GAMAGE J.C.W.",
+  "title": "MISS",
+  "lastName": "GAMAGE",
+  "initials": "J.C.W.",
+  "fullName": "JITHMA CHANMINI WILLADDARA GAMAGE",
+  "alDistrict": "Gampaha",
+  "sex": "Female",
+  "zScore": 1.6002,
+  "medium": "E",
+  "nic": "200383312382",
+  "address1": "96/149 C, SISILA MAWATHA,",
+  "address2": "SIRIMAL UYANA,",
+  "address3": "GAMPAHA.",
+  "fullAddress": "96/149 C, SISILA MAWATHA, SIRIMAL UYANA, GAMPAHA.",
+  "email": "jithmag@gmail.com",
+  "phone1": "0777315209",
+  "phone2": "",
+  "genEnglishMarks": 92,
+  "intake": "Vacancy Step-1",
+  "distance": 93.56,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410814"
+  },
+  "no": "026",
+  "enrolmentNo": "VS/22/026",
+  "indexNo": "3433480",
+  "name": "GAYANTHA W.A.A.K.S.",
+  "title": "MR",
+  "lastName": "GAYANTHA",
+  "initials": "W.A.A.K.S.",
+  "fullName": "WICKRAMA ARACHCHI ABESINGHA KANKANAMGE SHEHAN GAYANTHA",
+  "alDistrict": "Ratnapura",
+  "sex": "Male",
+  "zScore": 1.7202,
+  "medium": "S",
+  "nic": "200131702116",
+  "address1": "NO. 246,",
+  "address2": "KAWANTHISSAPURA,",
+  "address3": "EMBILIPITIYA.",
+  "fullAddress": "NO. 246, KAWANTHISSAPURA, EMBILIPITIYA.",
+  "email": "shehanemb2001@gmail.com",
+  "phone1": "0711360988",
+  "phone2": "",
+  "genEnglishMarks": 46,
+  "intake": "Normal Intake",
+  "distance": 178.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410815"
+  },
+  "no": "027",
+  "enrolmentNo": "VS/22/027",
+  "indexNo": "2869063",
+  "name": "GIHANSA M.A.R.",
+  "title": "MISS",
+  "lastName": "GIHANSA",
+  "initials": "M.A.R.",
+  "fullName": "MALAWEERA ARCHCHIGE RANUDI GIHANSA",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.8019,
+  "medium": "S",
+  "nic": "200269903364",
+  "address1": "74/1, WALAADDARA WATTA,",
+  "address2": "PILANA,",
+  "address3": "WANCHAWALA.",
+  "fullAddress": "74/1, WALAADDARA WATTA, PILANA, WANCHAWALA.",
+  "email": "sandyashiranthi13@gmail.com",
+  "phone1": "0760749502",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 214.49,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410816"
+  },
+  "no": "028",
+  "enrolmentNo": "VS/22/028",
+  "indexNo": "3971350",
+  "name": "GUNARATHNE T.M.K.K.",
+  "title": "MR",
+  "lastName": "GUNARATHNE",
+  "initials": "T.M.K.K.",
+  "fullName": "THENNAKOON MUDIYANSELAGE KOLITHA KAVINDU GUNARATHNE",
+  "alDistrict": "Anuradhapura",
+  "sex": "Male",
+  "zScore": 1.4933,
+  "medium": "S",
+  "nic": "200219202930",
+  "address1": "DEWATA ROAD, KUDA NELUMKULAMA,",
+  "address2": "GALKULAMA,",
+  "address3": "ANURADHAPURA.",
+  "fullAddress": "DEWATA ROAD, KUDA NELUMKULAMA, GALKULAMA, ANURADHAPURA.",
+  "email": "tmkkgunarathna2021al@gmail.com",
+  "phone1": "0767585842",
+  "phone2": "",
+  "genEnglishMarks": 79,
+  "intake": "Normal Intake",
+  "distance": 143.22,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410817"
+  },
+  "no": "029",
+  "enrolmentNo": "VS/22/029",
+  "indexNo": "3043681",
+  "name": "GUNAWARDANA H.S.P.",
+  "title": "MISS",
+  "lastName": "GUNAWARDANA",
+  "initials": "H.S.P.",
+  "fullName": "HANSI SATHSARA PUJITHA GUNAWARDANA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7784,
+  "medium": "S",
+  "nic": "200376611579",
+  "address1": "KINKINI, ALUTHGEDARA WATTA,",
+  "address2": "WERADUWA,",
+  "address3": "MATARA.",
+  "fullAddress": "KINKINI, ALUTHGEDARA WATTA, WERADUWA, MATARA.",
+  "email": "hsathsara27@gmail.com",
+  "phone1": "0712387808",
+  "phone2": "",
+  "genEnglishMarks": 70,
+  "intake": "Normal Intake",
+  "distance": 245.03,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410818"
+  },
+  "no": "030",
+  "enrolmentNo": "VS/22/030",
+  "indexNo": "4702883",
+  "name": "GURUGE B.D.",
+  "title": "MISS",
+  "lastName": "GURUGE",
+  "initials": "B.D.",
+  "fullName": "BUDDHINI DHARANIKA GURUGE",
+  "alDistrict": "Badulla",
+  "sex": "Female",
+  "zScore": 1.6002,
+  "medium": "S",
+  "nic": "200275902550",
+  "address1": "NO. 1/57,",
+  "address2": "KEPPETIPOLA ROAD,",
+  "address3": "BADULLA.",
+  "fullAddress": "NO. 1/57, KEPPETIPOLA ROAD, BADULLA.",
+  "email": "buddhinidharanika123@gmail.com",
+  "phone1": "0711224132",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 121.57,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410819"
+  },
+  "no": "031",
+  "enrolmentNo": "VS/22/031",
+  "indexNo": "5248671",
+  "name": "HAMSHIGA R.",
+  "title": "MISS",
+  "lastName": "HAMSHIGA",
+  "initials": "R.",
+  "fullName": "RAMANAN HAMSHIGA",
+  "alDistrict": "Jaffna",
+  "sex": "Female",
+  "zScore": 1.77,
+  "medium": "T",
+  "nic": "200285700207",
+  "address1": "POONARI BY LANE 4,",
+  "address2": "KOKUVIL WEST,",
+  "address3": "KOKUVIL.",
+  "fullAddress": "POONARI BY LANE 4, KOKUVIL WEST, KOKUVIL.",
+  "email": "hamshigaramanan@gmail.com",
+  "phone1": "0766835839",
+  "phone2": "",
+  "genEnglishMarks": 48,
+  "intake": "Normal Intake",
+  "distance": 323.33,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081a"
+  },
+  "no": "032",
+  "enrolmentNo": "VS/22/032",
+  "indexNo": "2976021",
+  "name": "HANSAKA A.P.I.",
+  "title": "MR",
+  "lastName": "HANSAKA",
+  "initials": "A.P.I.",
+  "fullName": "ABEDEERA PUNCHIHEWAGE ISURU HANSAKA",
+  "alDistrict": "Galle",
+  "sex": "Male",
+  "zScore": 1.7551,
+  "medium": "S",
+  "nic": "200024901384",
+  "address1": "NO. 24, ATHKAM NIWASA,",
+  "address2": "OKANDA,",
+  "address3": "AMBALANGODA.",
+  "fullAddress": "NO. 24, ATHKAM NIWASA, OKANDA, AMBALANGODA.",
+  "email": "hansaka0905@gmail.com",
+  "phone1": "0786906809",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 194.61,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081b"
+  },
+  "no": "033",
+  "enrolmentNo": "VS/22/033",
+  "indexNo": "2868318",
+  "name": "HANSIKA H.K.P.P.",
+  "title": "MISS",
+  "lastName": "HANSIKA",
+  "initials": "H.K.P.P.",
+  "fullName": "HEWA KOTTAGE POOJANI PIUMI HANSIKA",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7784,
+  "medium": "S",
+  "nic": "200278503540",
+  "address1": "PINNADUWA WATTA, WELIKONDA,",
+  "address2": "DORAPE,",
+  "address3": "ANGULUGAHA.",
+  "fullAddress": "PINNADUWA WATTA, WELIKONDA, DORAPE, ANGULUGAHA.",
+  "email": "poojanipiumi82@gmail.com",
+  "phone1": "0712460456",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 217.4,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081c"
+  },
+  "no": "034",
+  "enrolmentNo": "VS/22/034",
+  "indexNo": "3620336",
+  "name": "HERATH H.M.J.S.",
+  "title": "MISS",
+  "lastName": "HERATH",
+  "initials": "H.M.J.S.",
+  "fullName": "HERATH MUDIYANSELAGE JANITHNI SETHMI HERATH",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7466,
+  "medium": "E",
+  "nic": "200174703773",
+  "address1": "NO. 153/7,",
+  "address2": "OLUPALIYAWA,",
+  "address3": "BOYAGANE.",
+  "fullAddress": "NO. 153/7, OLUPALIYAWA, BOYAGANE.",
+  "email": "janithnisethmi@gmail.com",
+  "phone1": "0705136956",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 47.04,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081d"
+  },
+  "no": "035",
+  "enrolmentNo": "VS/22/035",
+  "indexNo": "3847381",
+  "name": "ILANGAKOON M.I.R.I.",
+  "title": "MISS",
+  "lastName": "ILANGAKOON",
+  "initials": "M.I.R.I.",
+  "fullName": "MAHA ILANGARANGE RASHMI ISHARA ILANGAKOON",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7625,
+  "medium": "S",
+  "nic": "200183403105",
+  "address1": "RATHMALLA,",
+  "address2": "KATUPOTHA.",
+  "fullAddress": "RATHMALLA, KATUPOTHA. ",
+  "email": "ilangakoonrashmi@gmail.com",
+  "phone1": "0702004552",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081e"
+  },
+  "no": "036",
+  "enrolmentNo": "VS/22/036",
+  "indexNo": "2473070",
+  "name": "IMALSHA L.A.T.",
+  "title": "MISS",
+  "lastName": "IMALSHA",
+  "initials": "L.A.T.",
+  "fullName": "LENAGALA ARACHCHILLAGE THARIDI IMALSHA",
+  "alDistrict": "Gampaha",
+  "sex": "Female",
+  "zScore": 1.6097,
+  "medium": "S",
+  "nic": "200278301163",
+  "address1": "401, KIRIDHI NADEE ROAD,",
+  "address2": "POLGAHAWELANA,",
+  "address3": "THISSAMAHARAMA.",
+  "fullAddress": "401, KIRIDHI NADEE ROAD, POLGAHAWELANA, THISSAMAHARAMA.",
+  "email": "tharidiimalsha00@gmail.com",
+  "phone1": "0762447541",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 215.39,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541081f"
+  },
+  "no": "037",
+  "enrolmentNo": "VS/22/037",
+  "indexNo": "3121399",
+  "name": "ISHARA K.P.",
+  "title": "MISS",
+  "lastName": "ISHARA",
+  "initials": "K.P.",
+  "fullName": "KARANDENIYAGE PAWANI ISHARA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7192,
+  "medium": "S",
+  "nic": "200166103814",
+  "address1": "VEENAS C/F,",
+  "address2": "AMBEDOLA,",
+  "address3": "KANANKE KADAVIDIYA.",
+  "fullAddress": "VEENAS C/F, AMBEDOLA, KANANKE KADAVIDIYA.",
+  "email": "pawaniishara99@gmail.com",
+  "phone1": "0787881866",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410820"
+  },
+  "no": "038",
+  "enrolmentNo": "VS/22/038",
+  "indexNo": "2279746",
+  "name": "JAYASINGHE V.V.",
+  "title": "MR",
+  "lastName": "JAYASINGHE",
+  "initials": "V.V.",
+  "fullName": "VINUDA VIWANDITH JAYASINGHE",
+  "alDistrict": "Colombo",
+  "sex": "Male",
+  "zScore": 1.7345,
+  "medium": "S",
+  "nic": "200320710548",
+  "address1": "72/5A, DEWALA ROAD,",
+  "address2": "MAKOLA NORTH,",
+  "address3": "MAKOLA.",
+  "fullAddress": "72/5A, DEWALA ROAD, MAKOLA NORTH, MAKOLA.",
+  "email": "vinudajayasinghe@gmail.com",
+  "phone1": "0777802294",
+  "phone2": "",
+  "genEnglishMarks": 75,
+  "intake": "Normal Intake",
+  "distance": 11666,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410821"
+  },
+  "no": "039",
+  "enrolmentNo": "VS/22/039",
+  "indexNo": "2934337",
+  "name": "KALHARI H.M.D.K.",
+  "title": "MISS",
+  "lastName": "KALHARI",
+  "initials": "H.M.D.K.",
+  "fullName": "HORAWALA MAWATHAGE DON KAVEESHA KALHARI",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7465,
+  "medium": "S",
+  "nic": "200171002198",
+  "address1": "C/O H. ARIYASENA, PIYATHILAKA MAWATHA,",
+  "address2": "UDUGAMA SOUTH,",
+  "address3": "UDUGAMA.",
+  "fullAddress": "C/O H. ARIYASENA, PIYATHILAKA MAWATHA, UDUGAMA SOUTH, UDUGAMA.",
+  "email": "horawalamawathagedonkaveesha@gmail.com",
+  "phone1": "0774817053",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-1",
+  "distance": 217.33,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410822"
+  },
+  "no": "040",
+  "enrolmentNo": "VS/22/040",
+  "indexNo": "3011658",
+  "name": "KALUARACHCHI S.S.",
+  "title": "MISS",
+  "lastName": "KALUARACHCHI",
+  "initials": "S.S.",
+  "fullName": "SAMINDI SATHSARANI KALUARACHCHI",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7372,
+  "medium": "S",
+  "nic": "200174903227",
+  "address1": "NO. 243/4, PRAGATHI MAWATHA,",
+  "address2": "KATUWANA,",
+  "address3": "HOMAGAMA.",
+  "fullAddress": "NO. 243/4, PRAGATHI MAWATHA, KATUWANA, HOMAGAMA.",
+  "email": "samindikaluarachchi95@gmail.com",
+  "phone1": "0704290796",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 116.7,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410823"
+  },
+  "no": "041",
+  "enrolmentNo": "VS/22/041",
+  "indexNo": "3198294",
+  "name": "KAVINDI G.S.",
+  "title": "MISS",
+  "lastName": "KAVINDI",
+  "initials": "G.S.",
+  "fullName": "GEEGANAGE SAPUNI KAVINDI",
+  "alDistrict": "Hambantota",
+  "sex": "Female",
+  "zScore": 1.7457,
+  "medium": "S",
+  "nic": "200165002478",
+  "address1": "BOGAHAWATHTHA,",
+  "address2": "MADAGAMA,",
+  "address3": "WEERAKETIYA.",
+  "fullAddress": "BOGAHAWATHTHA, MADAGAMA, WEERAKETIYA.",
+  "email": "premathilakageeganage@gmail.com",
+  "phone1": "0729395104",
+  "phone2": "",
+  "genEnglishMarks": 26,
+  "intake": "Normal Intake",
+  "distance": 278.72,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410824"
+  },
+  "no": "042",
+  "enrolmentNo": "VS/22/042",
+  "indexNo": "2026988",
+  "name": "KOLLURE D.D.C.",
+  "title": "MISS",
+  "lastName": "KOLLURE",
+  "initials": "D.D.C.",
+  "fullName": "DONA DULANI CHATURYA KOLLURE",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7957,
+  "medium": "S",
+  "nic": "200282003018",
+  "address1": "174, ",
+  "address2": "KERAGALA,",
+  "address3": "HENEGAMA.",
+  "fullAddress": "174, KERAGALA, HENEGAMA.",
+  "email": "ddckollure@gmail.com",
+  "phone1": "0779725925",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 131.78,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410825"
+  },
+  "no": "043",
+  "enrolmentNo": "VS/22/043",
+  "indexNo": "4340493",
+  "name": "KUMARAWANSHA W.G.O.",
+  "title": "MISS",
+  "lastName": "KUMARAWANSHA",
+  "initials": "W.G.O.",
+  "fullName": "WIHARAWATHTHE GEDARA OSHADEE KUMARAWANSHA",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7449,
+  "medium": "S",
+  "nic": "200277501658",
+  "address1": "NO. 96/4A, ATTARAGAMA,",
+  "address2": "MEDAWALA,",
+  "address3": "HARISPATTUWA.",
+  "fullAddress": "NO. 96/4A, ATTARAGAMA, MEDAWALA, HARISPATTUWA.",
+  "email": "wgok2002@gmail.com",
+  "phone1": "0715450671",
+  "phone2": "",
+  "genEnglishMarks": 72,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410826"
+  },
+  "no": "044",
+  "enrolmentNo": "VS/22/044",
+  "indexNo": "3044998",
+  "name": "KUMARI V.P.S.",
+  "title": "MISS",
+  "lastName": "KUMARI",
+  "initials": "V.P.S.",
+  "fullName": "VITHARANA PATHIRANAGE SARANGI KUMARI",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7211,
+  "medium": "S",
+  "nic": "200260400650",
+  "address1": "40/3, SANDUL,",
+  "address2": "HETTIYAKORATUWA, NUGASEWANA,",
+  "address3": "URUBOKKA.",
+  "fullAddress": "40/3, SANDUL, HETTIYAKORATUWA, NUGASEWANA, URUBOKKA.",
+  "email": "sarangivitharana30@gmail.com",
+  "phone1": "0774202978",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 208.3,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410827"
+  },
+  "no": "045",
+  "enrolmentNo": "VS/22/045",
+  "indexNo": "2868792",
+  "name": "LAKSHANI K.L.M.",
+  "title": "MISS",
+  "lastName": "LAKSHANI",
+  "initials": "K.L.M.",
+  "fullName": "KOMBALA LIYANAGE METHMA LAKSHANI",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.8064,
+  "medium": "S",
+  "nic": "200255800589",
+  "address1": "KEKUNA THUDUWA DUWA,",
+  "address2": "KOMBALA,",
+  "address3": "IMADUWA.",
+  "fullAddress": "KEKUNA THUDUWA DUWA, KOMBALA, IMADUWA.",
+  "email": "methmalakshani2002@gmail.com",
+  "phone1": "0762252464",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 223.89,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410828"
+  },
+  "no": "046",
+  "enrolmentNo": "VS/22/046",
+  "indexNo": "5241952",
+  "name": "LUXSHIKA T.",
+  "title": "MISS",
+  "lastName": "LUXSHIKA",
+  "initials": "T.",
+  "fullName": "LUXSHIKA THIRUMARAN",
+  "alDistrict": "Jaffna",
+  "sex": "Female",
+  "zScore": 1.7297,
+  "medium": "T",
+  "nic": "200285100239",
+  "address1": "61, THUVARAKAI ROAD,",
+  "address2": "KONDAVIL NORTH, KONDAVIL, ",
+  "address3": "JAFFNA.",
+  "fullAddress": "61, THUVARAKAI ROAD, KONDAVIL NORTH, KONDAVIL, JAFFNA.",
+  "email": "luxshit0016@gmail.com",
+  "phone1": "0770071522",
+  "phone2": "",
+  "genEnglishMarks": 87,
+  "intake": "Vacancy Step-1",
+  "distance": 323.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410829"
+  },
+  "no": "047",
+  "enrolmentNo": "VS/22/047",
+  "indexNo": "4603940",
+  "name": "MADDUMAGE H.T.T.B.",
+  "title": "MR",
+  "lastName": "MADDUMAGE",
+  "initials": "H.T.T.B.",
+  "fullName": "HARITHA TATHSARA THAVINDU BANDARA MADDUMAGE",
+  "alDistrict": "Nuwara-Eliya",
+  "sex": "Male",
+  "zScore": 1.3253,
+  "medium": "S",
+  "nic": "200232600978",
+  "address1": "MAWELA,",
+  "address2": "GAMPOLA.",
+  "fullAddress": "MAWELA, GAMPOLA. ",
+  "email": "mrhariya3@gmail.com",
+  "phone1": "0785459037",
+  "phone2": "",
+  "genEnglishMarks": 47,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082a"
+  },
+  "no": "048",
+  "enrolmentNo": "VS/22/048",
+  "indexNo": "5253101",
+  "name": "MADUSHAN P.",
+  "title": "MR",
+  "lastName": "MADUSHAN",
+  "initials": "P.",
+  "fullName": "PRADEEPAN MADUSHAN",
+  "alDistrict": "Jaffna",
+  "sex": "Male",
+  "zScore": 1.8057,
+  "medium": "E",
+  "nic": "200215700350",
+  "address1": "VAKINI, SINGARAJAR ROAD,",
+  "address2": "NALLUR NORTH,",
+  "address3": "JAFFNA.",
+  "fullAddress": "VAKINI, SINGARAJAR ROAD, NALLUR NORTH, JAFFNA.",
+  "email": "pradeepanmadushan@gmail.com",
+  "phone1": "0771101666",
+  "phone2": "",
+  "genEnglishMarks": 78,
+  "intake": "Normal Intake",
+  "distance": 323.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082b"
+  },
+  "no": "049",
+  "enrolmentNo": "VS/22/049",
+  "indexNo": "2950057",
+  "name": "MADUSHANI K.P.T.",
+  "title": "MISS",
+  "lastName": "MADUSHANI",
+  "initials": "K.P.T.",
+  "fullName": "KALUTHANTHIRI PATABANDI THARUSHI MADUSHANI",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.724,
+  "medium": "S",
+  "nic": "200371410862",
+  "address1": "POLLAWWA ROAD,",
+  "address2": "THALAGASPE,",
+  "address3": "ELPITIYA.",
+  "fullAddress": "POLLAWWA ROAD, THALAGASPE, ELPITIYA.",
+  "email": "kptmadushani@gmail.com",
+  "phone1": "0764207501",
+  "phone2": "",
+  "genEnglishMarks": 20,
+  "intake": "Vacancy Step-1",
+  "distance": 185.57,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082c"
+  },
+  "no": "050",
+  "enrolmentNo": "VS/22/050",
+  "indexNo": "5021944",
+  "name": "MANOHARAN H.",
+  "title": "MISS",
+  "lastName": "MANOHARAN",
+  "initials": "H.",
+  "fullName": "HARSHANA MANOHARAN",
+  "alDistrict": "Batticaloa",
+  "sex": "Female",
+  "zScore": 1.7879,
+  "medium": "T",
+  "nic": "200373711929",
+  "address1": "21,",
+  "address2": "BEACH ROAD,",
+  "address3": "ARAYAMPATHY.",
+  "fullAddress": "21, BEACH ROAD, ARAYAMPATHY.",
+  "email": "harshanamano7@gmail.com",
+  "phone1": "0754195082",
+  "phone2": "",
+  "genEnglishMarks": 76,
+  "intake": "Normal Intake",
+  "distance": 200.9,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082d"
+  },
+  "no": "051",
+  "enrolmentNo": "VS/22/051",
+  "indexNo": "2028328",
+  "name": "MEEGAHAWATTE Y.B.",
+  "title": "MISS",
+  "lastName": "MEEGAHAWATTE",
+  "initials": "Y.B.",
+  "fullName": "YUWANI BHAGYA MEEGAHAWATTE",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7269,
+  "medium": "S",
+  "nic": "200283903453",
+  "address1": "51/4,",
+  "address2": "HENA ROAD,",
+  "address3": "MOUNT LAVINIA.",
+  "fullAddress": "51/4, HENA ROAD, MOUNT LAVINIA.",
+  "email": "yuwanimeegahawatte@gmail.com",
+  "phone1": "0718007773",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-1",
+  "distance": 121.05,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082e"
+  },
+  "no": "052",
+  "enrolmentNo": "VS/22/052",
+  "indexNo": "3659658",
+  "name": "NAVARATHNA K.D.M.",
+  "title": "MISS",
+  "lastName": "NAVARATHNA",
+  "initials": "K.D.M.",
+  "fullName": "KAVINI DILUSHIKA MARIYAN NAVARATHNA",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7392,
+  "medium": "S",
+  "nic": "200278900356",
+  "address1": "NO. 63,",
+  "address2": "RAJAPIHILLA ROAD,",
+  "address3": "KURUNEGALA.",
+  "fullAddress": "NO. 63, RAJAPIHILLA ROAD, KURUNEGALA.",
+  "email": "kavininavaratne1@gmail.com",
+  "phone1": "0762315004",
+  "phone2": "",
+  "genEnglishMarks": 87,
+  "intake": "Vacancy Step-1",
+  "distance": 43.03,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541082f"
+  },
+  "no": "053",
+  "enrolmentNo": "VS/22/053",
+  "indexNo": "3064026",
+  "name": "NETHMINI J.K.G.",
+  "title": "MISS",
+  "lastName": "NETHMINI",
+  "initials": "J.K.G.",
+  "fullName": "JASIN KANDAGE GEYASHA NETHMINI",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7848,
+  "medium": "S",
+  "nic": "200386212569",
+  "address1": "38/3B, RUKKOTUWA WATTA,",
+  "address2": "KANATHTHAGODA ROAD,",
+  "address3": "MADIHA.",
+  "fullAddress": "38/3B, RUKKOTUWA WATTA, KANATHTHAGODA ROAD, MADIHA.",
+  "email": "geyashanethmini@gmail.com",
+  "phone1": "0764971778",
+  "phone2": "",
+  "genEnglishMarks": 84,
+  "intake": "Normal Intake",
+  "distance": 246.47,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410830"
+  },
+  "no": "054",
+  "enrolmentNo": "VS/22/054",
+  "indexNo": "2720779",
+  "name": "NETHMINI S.D.K.",
+  "title": "MISS",
+  "lastName": "NETHMINI",
+  "initials": "S.D.K.",
+  "fullName": "SOORIGE DONA KAVINDYA NETHMINI",
+  "alDistrict": "Kalutara",
+  "sex": "Female",
+  "zScore": 1.755,
+  "medium": "S",
+  "nic": "200172802137",
+  "address1": "NO. 125, SATHIGA WATHTHA,",
+  "address2": "KARAPAGALA,",
+  "address3": "YAGIRALA.",
+  "fullAddress": "NO. 125, SATHIGA WATHTHA, KARAPAGALA, YAGIRALA.",
+  "email": "kavindyanethmini144@gmail.com",
+  "phone1": "0762424372",
+  "phone2": "",
+  "genEnglishMarks": 43,
+  "intake": "Normal Intake",
+  "distance": 174.39,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410831"
+  },
+  "no": "055",
+  "enrolmentNo": "VS/22/055",
+  "indexNo": "4958942",
+  "name": "NIMAAH A.N.",
+  "title": "MISS",
+  "lastName": "NIMAAH",
+  "initials": "A.N.",
+  "fullName": "ABDUL NAHIB NIMAAH",
+  "alDistrict": "Ampara",
+  "sex": "Female",
+  "zScore": 1.7268,
+  "medium": "T",
+  "nic": "200160503410",
+  "address1": "181/1, AYESHA ROAD,",
+  "address2": "PALLIKKUDIYIRUPPU 02,",
+  "address3": "AKKARAIPATTU.",
+  "fullAddress": "181/1, AYESHA ROAD, PALLIKKUDIYIRUPPU 02, AKKARAIPATTU.",
+  "email": "nimaah144@gmail.com",
+  "phone1": "0714570431",
+  "phone2": "",
+  "genEnglishMarks": 80,
+  "intake": "Normal Intake",
+  "distance": 221.44,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410832"
+  },
+  "no": "056",
+  "enrolmentNo": "VS/22/056",
+  "indexNo": "5207096",
+  "name": "NISHINTHA S.",
+  "title": "MISS",
+  "lastName": "NISHINTHA",
+  "initials": "S.",
+  "fullName": "SELVATHEVAN NISHINTHA",
+  "alDistrict": "Kilinochchi",
+  "sex": "Female",
+  "zScore": 1.647,
+  "medium": "T",
+  "nic": "200352700111",
+  "address1": "NO. 115, THIRUMURUKANDY,",
+  "address2": "A9 ROAD, IRANAIMADU,",
+  "address3": "KILINOCHCHI.",
+  "fullAddress": "NO. 115, THIRUMURUKANDY, A9 ROAD, IRANAIMADU, KILINOCHCHI.",
+  "email": "selvankavitha708@gmail.com",
+  "phone1": "0718816235",
+  "phone2": "",
+  "genEnglishMarks": 56,
+  "intake": "Normal Intake",
+  "distance": 259.16,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410833"
+  },
+  "no": "057",
+  "enrolmentNo": "VS/22/057",
+  "indexNo": "2650657",
+  "name": "PATHIRAJA P.D.S.S.",
+  "title": "MISS",
+  "lastName": "PATHIRAJA",
+  "initials": "P.D.S.S.",
+  "fullName": "PATHIRAGE DON SAPTHA SANDUNIKA PATHIRAJA",
+  "alDistrict": "Kalutara",
+  "sex": "Female",
+  "zScore": 1.7211,
+  "medium": "S",
+  "nic": "200359811240",
+  "address1": "NO. 65A1,",
+  "address2": "MAPUTUGALA,",
+  "address3": "PORUWADANDA.",
+  "fullAddress": "NO. 65A1, MAPUTUGALA, PORUWADANDA.",
+  "email": "sapthapathiraja@gmail.com",
+  "phone1": "0769077594",
+  "phone2": "",
+  "genEnglishMarks": 49,
+  "intake": "Normal Intake",
+  "distance": 140.03,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410834"
+  },
+  "no": "058",
+  "enrolmentNo": "VS/22/058",
+  "indexNo": "2461005",
+  "name": "PERERA A.A.K.N.",
+  "title": "MISS",
+  "lastName": "PERERA",
+  "initials": "A.A.K.N.",
+  "fullName": "ADIKARI ARACHCHIGE KUSHANI NETHMINI PERERA",
+  "alDistrict": "Gampaha",
+  "sex": "Female",
+  "zScore": 1.5532,
+  "medium": "S",
+  "nic": "200068302119",
+  "address1": "NO. 450/3,",
+  "address2": "BIYAGAMA.",
+  "fullAddress": "NO. 450/3, BIYAGAMA. ",
+  "email": "kushanip13@gmail.com",
+  "phone1": "0704599057",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410835"
+  },
+  "no": "059",
+  "enrolmentNo": "VS/22/059",
+  "indexNo": "2912252",
+  "name": "PERERA I.T.I.",
+  "title": "MISS",
+  "lastName": "PERERA",
+  "initials": "I.T.I.",
+  "fullName": "IRIPPUGE THILINI INDIWARI PERERA",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7458,
+  "medium": "S",
+  "nic": "200259101151",
+  "address1": "MIRISWATHTHA,",
+  "address2": "ETHKANDURA.",
+  "fullAddress": "MIRISWATHTHA, ETHKANDURA. ",
+  "email": "thiliniindiwari@gmail.com",
+  "phone1": "0717751988",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410836"
+  },
+  "no": "060",
+  "enrolmentNo": "VS/22/060",
+  "indexNo": "2096714",
+  "name": "PERERA P.B.S.",
+  "title": "MISS",
+  "lastName": "PERERA",
+  "initials": "P.B.S.",
+  "fullName": "PARANAVITHANALAGE BENASHI SANDALIKA PERERA",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7637,
+  "medium": "S",
+  "nic": "200276000897",
+  "address1": "B 1/113,",
+  "address2": "DOLAGATHA ROAD,",
+  "address3": "UDUGAMPOLA.",
+  "fullAddress": "B 1/113, DOLAGATHA ROAD, UDUGAMPOLA.",
+  "email": "benashisandalika2023@gmail.com",
+  "phone1": "0713143520",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 85.84,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410837"
+  },
+  "no": "061",
+  "enrolmentNo": "VS/22/061",
+  "indexNo": "2200961",
+  "name": "PERERA W.P.P.K.",
+  "title": "MISS",
+  "lastName": "PERERA",
+  "initials": "W.P.P.K.",
+  "fullName": "WADDUWA PATHIRAGE POORNIMA KESHANI PERERA",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7736,
+  "medium": "S",
+  "nic": "200264303318",
+  "address1": "NO. 294,",
+  "address2": "SIRINANDA JOTHIKARAMA ROAD,",
+  "address3": "THALAWATHUGODA.",
+  "fullAddress": "NO. 294, SIRINANDA JOTHIKARAMA ROAD, THALAWATHUGODA.",
+  "email": "poornimaperera294@gmail.com",
+  "phone1": "0768527721",
+  "phone2": "",
+  "genEnglishMarks": 54,
+  "intake": "Normal Intake",
+  "distance": 113.39,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410838"
+  },
+  "no": "062",
+  "enrolmentNo": "VS/22/062",
+  "indexNo": "5192510",
+  "name": "PIRUNTHAN P.",
+  "title": "MR",
+  "lastName": "PIRUNTHAN",
+  "initials": "P.",
+  "fullName": "PASKARAN PIRUNTHAN",
+  "alDistrict": "Mullaitivu",
+  "sex": "Male",
+  "zScore": 1.6464,
+  "medium": "T",
+  "nic": "200225902829",
+  "address1": "CHILAWATHTHAI SOUTH,",
+  "address2": "CHILAWATHTHAI,",
+  "address3": "MULLAITIVU.",
+  "fullAddress": "CHILAWATHTHAI SOUTH, CHILAWATHTHAI, MULLAITIVU.",
+  "email": "paskaranpirunthan1509@gmail.com",
+  "phone1": "0762270464",
+  "phone2": "",
+  "genEnglishMarks": 54,
+  "intake": "Normal Intake",
+  "distance": 258.48,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410839"
+  },
+  "no": "063",
+  "enrolmentNo": "VS/22/063",
+  "indexNo": "3897443",
+  "name": "PODDALGODA R.W.A.B.M.R.P.U.",
+  "title": "MISS",
+  "lastName": "PODDALGODA",
+  "initials": "R.W.A.B.M.R.P.U.",
+  "fullName": "RAJAPAKSHA WASALA ABESINHE BANDARA MUDIYANSE RALAHAMILLAGE PANSARANI UDARA PODDALGODA",
+  "alDistrict": "Puttalam",
+  "sex": "Female",
+  "zScore": 1.6571,
+  "medium": "S",
+  "nic": "200273002055",
+  "address1": "32/3, WASANTHA UYANA,",
+  "address2": "MADA THABBOWA,",
+  "address3": "NATHTHANDIYA.",
+  "fullAddress": "32/3, WASANTHA UYANA, MADA THABBOWA, NATHTHANDIYA.",
+  "email": "p02udara@gmail.com",
+  "phone1": "0777143416",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083a"
+  },
+  "no": "064",
+  "enrolmentNo": "VS/22/064",
+  "indexNo": "4283490",
+  "name": "PUNCHIHEWA P.A.B.",
+  "title": "MR",
+  "lastName": "PUNCHIHEWA",
+  "initials": "P.A.B.",
+  "fullName": "PUNCHIHEWAGE ANUPA BUDDHIMA PUNCHIHEWA",
+  "alDistrict": "Kandy",
+  "sex": "Male",
+  "zScore": 1.7732,
+  "medium": "S",
+  "nic": "200305712848",
+  "address1": "57/3-1,",
+  "address2": "KAHATAGASHINNA,",
+  "address3": "MENIKHINNA.",
+  "fullAddress": "57/3-1, KAHATAGASHINNA, MENIKHINNA.",
+  "email": "anupabuddhima77@gmail.com",
+  "phone1": "0703413645",
+  "phone2": "",
+  "genEnglishMarks": 51,
+  "intake": "Normal Intake",
+  "distance": 19.31,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083b"
+  },
+  "no": "065",
+  "enrolmentNo": "VS/22/065",
+  "indexNo": "3667200",
+  "name": "RAJAKARUNA R.H.M.I.B.",
+  "title": "MISS",
+  "lastName": "RAJAKARUNA",
+  "initials": "R.H.M.I.B.",
+  "fullName": "RAJAKARUNA HERATH MUDIYANSELAGE IMASHA BUDDHINI RAJAKARUNA",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7767,
+  "medium": "S",
+  "nic": "200262300417",
+  "address1": "NO. 60",
+  "address2": "PUNCHI WARIYAPOLA,",
+  "address3": "WARIYAPOLA.",
+  "fullAddress": "NO. 60 PUNCHI WARIYAPOLA, WARIYAPOLA.",
+  "email": "imashaunimail2@gmail.com",
+  "phone1": "0717658940",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 62.87,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083c"
+  },
+  "no": "066",
+  "enrolmentNo": "VS/22/066",
+  "indexNo": "3469590",
+  "name": "RAJAMANTHREE R.G.W.M.",
+  "title": "MISS",
+  "lastName": "RAJAMANTHREE",
+  "initials": "R.G.W.M.",
+  "fullName": "RAJAMANTHREE GEDARA WATHSALA MADHUBHASHANI RAJAMANTHREE",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7551,
+  "medium": "S",
+  "nic": "200161801353",
+  "address1": "NO. 105",
+  "address2": "ARANAYAKA ROAD,",
+  "address3": "MAWANELLA.",
+  "fullAddress": "NO. 105 ARANAYAKA ROAD, MAWANELLA.",
+  "email": "wathsalarajamanthree28@gmail.com",
+  "phone1": "0740939914",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 20.77,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083d"
+  },
+  "no": "067",
+  "enrolmentNo": "VS/22/067",
+  "indexNo": "4048946",
+  "name": "RANASINGHE N.R.D.B.",
+  "title": "MISS",
+  "lastName": "RANASINGHE",
+  "initials": "N.R.D.B.",
+  "fullName": "NIMAL RANASINGHAGE DINUSHI BHAGYA RANASINGHE",
+  "alDistrict": "Anuradhapura",
+  "sex": "Female",
+  "zScore": 1.4971,
+  "medium": "S",
+  "nic": "200184801737",
+  "address1": "BASE HOSPITAL,",
+  "address2": "KEKIRAWA.",
+  "fullAddress": "BASE HOSPITAL, KEKIRAWA. ",
+  "email": "dinushibhagya0@gmail.com",
+  "phone1": "0705031555",
+  "phone2": "",
+  "genEnglishMarks": 70,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083e"
+  },
+  "no": "068",
+  "enrolmentNo": "VS/22/068",
+  "indexNo": "2473291",
+  "name": "RANATHUNGA P.R.A.N.S.",
+  "title": "MISS",
+  "lastName": "RANATHUNGA",
+  "initials": "P.R.A.N.S.",
+  "fullName": "PURAWEDIWASAM RANATHUNGA ARACHCHILAGE NINURI SEMALI RANATHUNGA",
+  "alDistrict": "Gampaha",
+  "sex": "Female",
+  "zScore": 1.6011,
+  "medium": "S",
+  "nic": "200275601077",
+  "address1": "4/84 B2,",
+  "address2": "EGODAWATTA,",
+  "address3": "YAKKALA.",
+  "fullAddress": "4/84 B2, EGODAWATTA, YAKKALA.",
+  "email": "ninuriranathunga@gmail.com",
+  "phone1": "0714453201",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 81.57,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541083f"
+  },
+  "no": "069",
+  "enrolmentNo": "VS/22/069",
+  "indexNo": "3903354",
+  "name": "RATHNAYAKA R.M.H.N.",
+  "title": "MISS",
+  "lastName": "RATHNAYAKA",
+  "initials": "R.M.H.N.",
+  "fullName": "RATHNAYAKA MUDIYANSELAGE HIMASHI NIMTHARA RATHNAYAKA",
+  "alDistrict": "Puttalam",
+  "sex": "Female",
+  "zScore": 1.6577,
+  "medium": "S",
+  "nic": "200157503060",
+  "address1": "NO. 308,",
+  "address2": "PANNARE SOUTH,",
+  "address3": "WELIPANNAGAHAMULLA.",
+  "fullAddress": "NO. 308, PANNARE SOUTH, WELIPANNAGAHAMULLA.",
+  "email": "himashirathnayaka15@gmail.com",
+  "phone1": "0775132257",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 105.63,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410840"
+  },
+  "no": "070",
+  "enrolmentNo": "VS/22/070",
+  "indexNo": "4657683",
+  "name": "RATHNAYAKA R.M.I.N.",
+  "title": "MISS",
+  "lastName": "RATHNAYAKA",
+  "initials": "R.M.I.N.",
+  "fullName": "RATHNAYAKA MUDIYANSELAGE IMASHA NETHMINI RATHNAYAKA",
+  "alDistrict": "Badulla",
+  "sex": "Female",
+  "zScore": 1.5814,
+  "medium": "S",
+  "nic": "200279302865",
+  "address1": "T2/63, WELAOYA,",
+  "address2": "KANDAKETIYA,",
+  "address3": "BADULLA.",
+  "fullAddress": "T2/63, WELAOYA, KANDAKETIYA, BADULLA.",
+  "email": "imashanethmini114@gmail.com",
+  "phone1": "0743542495",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 121.57,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410841"
+  },
+  "no": "071",
+  "enrolmentNo": "VS/22/071",
+  "indexNo": "3971309",
+  "name": "RATHNAYAKA T.T.",
+  "title": "MISS",
+  "lastName": "RATHNAYAKA",
+  "initials": "T.T.",
+  "fullName": "THAMIDUNI THILOTHAMA RATHNAYAKA",
+  "alDistrict": "Anuradhapura",
+  "sex": "Female",
+  "zScore": 1.4436,
+  "medium": "S",
+  "nic": "200275502515",
+  "address1": "NO. 424/C,  1ST LANE,",
+  "address2": "MATHALE ROAD, KURUNDANKULAMA,",
+  "address3": "ANURADHAPURA.",
+  "fullAddress": "NO. 424/C,  1ST LANE, MATHALE ROAD, KURUNDANKULAMA, ANURADHAPURA.",
+  "email": "thamidunirathnayaka1@gmail.com",
+  "phone1": "0713731011",
+  "phone2": "",
+  "genEnglishMarks": 64,
+  "intake": "Vacancy Step-1",
+  "distance": 143.22,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410842"
+  },
+  "no": "072",
+  "enrolmentNo": "VS/22/072",
+  "indexNo": "2096188",
+  "name": "REGISEKARA K.D.S.K.",
+  "title": "MISS",
+  "lastName": "REGISEKARA",
+  "initials": "K.D.S.K.",
+  "fullName": "KURUPPUGE DON SANDALI KAVINDYA REGISEKARA",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7494,
+  "medium": "S",
+  "nic": "200264900664",
+  "address1": "NO. 15/12/1/1,",
+  "address2": "MAHINDARAMA ROAD,",
+  "address3": "RATHMALANA.",
+  "fullAddress": "NO. 15/12/1/1, MAHINDARAMA ROAD, RATHMALANA.",
+  "email": "sandalikavindya28@gmail.com",
+  "phone1": "0705694112",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 118.8,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410843"
+  },
+  "no": "073",
+  "enrolmentNo": "VS/22/073",
+  "indexNo": "4536606",
+  "name": "ROSHMIN A.R.F.",
+  "title": "MISS",
+  "lastName": "ROSHMIN",
+  "initials": "A.R.F.",
+  "fullName": "ANTHONY ROBERT FATRIMA ROSHMIN",
+  "alDistrict": "Nuwara-Eliya",
+  "sex": "Female",
+  "zScore": 1.315,
+  "medium": "T",
+  "nic": "200175803463",
+  "address1": "KITHISRI MEWANPURA, HOLBROOK,",
+  "address2": "AGRAPATANA,",
+  "address3": "NUWARAELIYA.",
+  "fullAddress": "KITHISRI MEWANPURA, HOLBROOK, AGRAPATANA, NUWARAELIYA.",
+  "email": "saintanne296@gmail.com",
+  "phone1": "0776441549",
+  "phone2": "",
+  "genEnglishMarks": 74,
+  "intake": "Vacancy Step-1",
+  "distance": 69.67,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410844"
+  },
+  "no": "074",
+  "enrolmentNo": "VS/22/074",
+  "indexNo": "3225313",
+  "name": "SANDARANGI J.G.T.",
+  "title": "MISS",
+  "lastName": "SANDARANGI",
+  "initials": "J.G.T.",
+  "fullName": "JOTHIRATHNA GAMAGE THARUSHI SANDARANGI",
+  "alDistrict": "Hambantota",
+  "sex": "Female",
+  "zScore": 1.7342,
+  "medium": "S",
+  "nic": "200157403374",
+  "address1": "SANDARANGI, SIYAMBALAGASWILA,",
+  "address2": "RUHUNU RIDIYAGAMA,",
+  "address3": "AMBALANTOTA.",
+  "fullAddress": "SANDARANGI, SIYAMBALAGASWILA, RUHUNU RIDIYAGAMA, AMBALANTOTA.",
+  "email": "sandarangigamage2001@gmail.com",
+  "phone1": "0718991947",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-1",
+  "distance": 212.68,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410845"
+  },
+  "no": "075",
+  "enrolmentNo": "VS/22/075",
+  "indexNo": "2097192",
+  "name": "SAPUTHANTHRI S.D.S.H.",
+  "title": "MISS",
+  "lastName": "SAPUTHANTHRI",
+  "initials": "S.D.S.H.",
+  "fullName": "SAPUTHANTHRIGE DONA SENUGI HANSALEE SAPUTHANTHRI",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7484,
+  "medium": "S",
+  "nic": "200280600446",
+  "address1": "171/4, KOTUWA WATHTHA,",
+  "address2": "KANDAPANSALA ROAD,",
+  "address3": "MAHA WASKADUWA.",
+  "fullAddress": "171/4, KOTUWA WATHTHA, KANDAPANSALA ROAD, MAHA WASKADUWA.",
+  "email": "hansaleesenugi@gmail.com",
+  "phone1": "0718791932",
+  "phone2": "",
+  "genEnglishMarks": 66,
+  "intake": "Normal Intake",
+  "distance": 143.24,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410846"
+  },
+  "no": "076",
+  "enrolmentNo": "VS/22/076",
+  "indexNo": "5020662",
+  "name": "SATKUNANATHAN K.",
+  "title": "MISS",
+  "lastName": "SATKUNANATHAN",
+  "initials": "K.",
+  "fullName": "KESHANI SATKUNANATHAN",
+  "alDistrict": "Batticaloa",
+  "sex": "Female",
+  "zScore": 1.7952,
+  "medium": "T",
+  "nic": "200257200194",
+  "address1": "NO. 24, 14TH CROSS,",
+  "address2": "IRUTHAYAPURAM WEST,",
+  "address3": "BATTICALOA.",
+  "fullAddress": "NO. 24, 14TH CROSS, IRUTHAYAPURAM WEST, BATTICALOA.",
+  "email": "keshani.satkunanathan12@gmail.com",
+  "phone1": "0761998322",
+  "phone2": "",
+  "genEnglishMarks": 73,
+  "intake": "Normal Intake",
+  "distance": 185.89,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410847"
+  },
+  "no": "077",
+  "enrolmentNo": "VS/22/077",
+  "indexNo": "2908980",
+  "name": "SEWWANDI K.S.U.",
+  "title": "MISS",
+  "lastName": "SEWWANDI",
+  "initials": "K.S.U.",
+  "fullName": "KALEHE SINGHAGE UMEGA SEWWANDI",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7523,
+  "medium": "S",
+  "nic": "200262703370",
+  "address1": "MATARA GEDARA, KAHANDA,",
+  "address2": "ANGULUGAHA,",
+  "address3": "GALLE.",
+  "fullAddress": "MATARA GEDARA, KAHANDA, ANGULUGAHA, GALLE.",
+  "email": "umegasewwandi4@gmail.com",
+  "phone1": "0770341456",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 217.12,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410848"
+  },
+  "no": "078",
+  "enrolmentNo": "VS/22/078",
+  "indexNo": "4026268",
+  "name": "SEWWANDYA W.S.",
+  "title": "MISS",
+  "lastName": "SEWWANDYA",
+  "initials": "W.S.",
+  "fullName": "WELIKUMBURALAGE SANDUNI SEWWANDYA",
+  "alDistrict": "Anuradhapura",
+  "sex": "Female",
+  "zScore": 1.4687,
+  "medium": "S",
+  "nic": "200185602281",
+  "address1": "NO. 269/A,",
+  "address2": "RAJANGANAYA YAYA 08,",
+  "address3": "ANGAMUWA.",
+  "fullAddress": "NO. 269/A, RAJANGANAYA YAYA 08, ANGAMUWA.",
+  "email": "sandunisewwandya@gmail.com",
+  "phone1": "0704680480",
+  "phone2": "",
+  "genEnglishMarks": 31,
+  "intake": "Normal Intake",
+  "distance": 138.2,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410849"
+  },
+  "no": "079",
+  "enrolmentNo": "VS/22/079",
+  "indexNo": "2695324",
+  "name": "SILVA K.N.U.",
+  "title": "MISS",
+  "lastName": "SILVA",
+  "initials": "K.N.U.",
+  "fullName": "KARUNAMUNI NETHMINI UDANKA SILVA",
+  "alDistrict": "Kalutara",
+  "sex": "Female",
+  "zScore": 1.6928,
+  "medium": "S",
+  "nic": "200256600515",
+  "address1": "DAMSIRI SEWANA,",
+  "address2": "WALPITA,",
+  "address3": "BOMBUWALA.",
+  "fullAddress": "DAMSIRI SEWANA, WALPITA, BOMBUWALA.",
+  "email": "nethminiudanka@gmail.com",
+  "phone1": "0701363823",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 146.96,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084a"
+  },
+  "no": "080",
+  "enrolmentNo": "VS/22/080",
+  "indexNo": "2097281",
+  "name": "SOORIYAARACHCHI S.R.K.",
+  "title": "MISS",
+  "lastName": "SOORIYAARACHCHI",
+  "initials": "S.R.K.",
+  "fullName": "SINALI ROVINYA KULAMI SOORIYAARACHCHI",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.7525,
+  "medium": "E",
+  "nic": "200381810434",
+  "address1": "717/4,",
+  "address2": "MADINNAGODA,",
+  "address3": "RAJAGIRIYA.",
+  "fullAddress": "717/4, MADINNAGODA, RAJAGIRIYA.",
+  "email": "sinalirovinya2003@gmail.com",
+  "phone1": "0778399396",
+  "phone2": "",
+  "genEnglishMarks": 90,
+  "intake": "Normal Intake",
+  "distance": 112.28,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084b"
+  },
+  "no": "081",
+  "enrolmentNo": "VS/22/081",
+  "indexNo": "3068285",
+  "name": "THARINDI W.G.S.",
+  "title": "MISS",
+  "lastName": "THARINDI",
+  "initials": "W.G.S.",
+  "fullName": "WIDANA GAMAGE SANDEERA THARINDI",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7599,
+  "medium": "S",
+  "nic": "200260301953",
+  "address1": "339/E/1/C, SAPUMAL UYANA,",
+  "address2": "SAPUGODA,",
+  "address3": "KAMBURUPITIYA.",
+  "fullAddress": "339/E/1/C, SAPUMAL UYANA, SAPUGODA, KAMBURUPITIYA.",
+  "email": "sandeeratharindi@gmail.com",
+  "phone1": "0718254449",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 255.24,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084c"
+  },
+  "no": "082",
+  "enrolmentNo": "VS/22/082",
+  "indexNo": "4282930",
+  "name": "THENNAKOON K.G.S.N.",
+  "title": "MR",
+  "lastName": "THENNAKOON",
+  "initials": "K.G.S.N.",
+  "fullName": "KALUHENE GEDARA SAHAN NIRODHA THENNAKOON",
+  "alDistrict": "Kandy",
+  "sex": "Male",
+  "zScore": 1.7523,
+  "medium": "S",
+  "nic": "200225703000",
+  "address1": "460/B, BALAGOLLA, ",
+  "address2": "KENGALLA,",
+  "address3": "KANDY.",
+  "fullAddress": "460/B, BALAGOLLA, KENGALLA, KANDY.",
+  "email": "drthennakoon8445@gmail.com",
+  "phone1": "0764951174",
+  "phone2": "",
+  "genEnglishMarks": 78,
+  "intake": "Normal Intake",
+  "distance": 7.19,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084d"
+  },
+  "no": "083",
+  "enrolmentNo": "VS/22/083",
+  "indexNo": "2038170",
+  "name": "THENUWARA L.C.J.",
+  "title": "MR",
+  "lastName": "THENUWARA",
+  "initials": "L.C.J.",
+  "fullName": "LUPULA CHAMAKA JAYAN THENUWARA",
+  "alDistrict": "Colombo",
+  "sex": "Male",
+  "zScore": 1.7946,
+  "medium": "S",
+  "nic": "200314912279",
+  "address1": "543/2,",
+  "address2": "IHALA HANWELLA,",
+  "address3": "HANWELLA.",
+  "fullAddress": "543/2, IHALA HANWELLA, HANWELLA.",
+  "email": "lupulathenuwara@gmail.com",
+  "phone1": "0710847407",
+  "phone2": "",
+  "genEnglishMarks": 64,
+  "intake": "Normal Intake",
+  "distance": 100.03,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084e"
+  },
+  "no": "084",
+  "enrolmentNo": "VS/22/084",
+  "indexNo": "3057941",
+  "name": "THUSANYA M.D.C.",
+  "title": "MISS",
+  "lastName": "THUSANYA",
+  "initials": "M.D.C.",
+  "fullName": "MADUGODAGE DON CHANITHI THUSANYA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.814,
+  "medium": "S",
+  "nic": "200384011180",
+  "address1": "22/1A, ABEYGUNARATHANA MAWATHA,",
+  "address2": "PAMBURNA,",
+  "address3": "MATARA.",
+  "fullAddress": "22/1A, ABEYGUNARATHANA MAWATHA, PAMBURNA, MATARA.",
+  "email": "chanithithusanya@gmail.com",
+  "phone1": "0712637197",
+  "phone2": "",
+  "genEnglishMarks": 51,
+  "intake": "Normal Intake",
+  "distance": 245.03,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541084f"
+  },
+  "no": "085",
+  "enrolmentNo": "VS/22/085",
+  "indexNo": "5180988",
+  "name": "TOMSON T.",
+  "title": "MR",
+  "lastName": "TOMSON",
+  "initials": "T.",
+  "fullName": "TENISCULAS TOMSON",
+  "alDistrict": "Mannar",
+  "sex": "Male",
+  "zScore": 1.4238,
+  "medium": "T",
+  "nic": "200309310191",
+  "address1": "KUMANAYANKULAM, ANDANKULAM,",
+  "address2": "ADAMPAN,",
+  "address3": "MANNAR.",
+  "fullAddress": "KUMANAYANKULAM, ANDANKULAM, ADAMPAN, MANNAR.",
+  "email": "thomsonthomson446@gmail.com",
+  "phone1": "0776529160",
+  "phone2": "",
+  "genEnglishMarks": 53,
+  "intake": "Vacancy Step-1",
+  "distance": 139.42,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410850"
+  },
+  "no": "086",
+  "enrolmentNo": "VS/22/086",
+  "indexNo": "3520048",
+  "name": "VIHARI D.O.",
+  "title": "MISS",
+  "lastName": "VIHARI",
+  "initials": "D.O.",
+  "fullName": "DEMUNI OSHANI VIHARI",
+  "alDistrict": "Kegalle",
+  "sex": "Female",
+  "zScore": 1.7214,
+  "medium": "S",
+  "nic": "200285300647",
+  "address1": "J1/3, THALAWATHTHA,",
+  "address2": "LEWANGAMA,",
+  "address3": "RUWANWELLA.",
+  "fullAddress": "J1/3, THALAWATHTHA, LEWANGAMA, RUWANWELLA.",
+  "email": "oshanidesoysa@gmail.com",
+  "phone1": "0719056227",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 72.32,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410851"
+  },
+  "no": "087",
+  "enrolmentNo": "VS/22/087",
+  "indexNo": "4301986",
+  "name": "WATAKATIYA A.M.W.W.D.D.",
+  "title": "MISS",
+  "lastName": "WATAKATIYA",
+  "initials": "A.M.W.W.D.D.",
+  "fullName": "ABEYSINGHE MUDIYANSELAGE WATAKATIYA WALAWWE DAHAMI DESHIKA WATAKATIYA",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.7608,
+  "medium": "S",
+  "nic": "200278402548",
+  "address1": "18/C, DARSHANI,",
+  "address2": "SIRIMALWATTA,",
+  "address3": "GUNNEPANA.",
+  "fullAddress": "18/C, DARSHANI, SIRIMALWATTA, GUNNEPANA.",
+  "email": "wataketiya24@gmail.com",
+  "phone1": "0718371069",
+  "phone2": "",
+  "genEnglishMarks": 88,
+  "intake": "Normal Intake",
+  "distance": 13.77,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410852"
+  },
+  "no": "088",
+  "enrolmentNo": "VS/22/088",
+  "indexNo": "3001024",
+  "name": "WATHSALA H.T.N.",
+  "title": "MISS",
+  "lastName": "WATHSALA",
+  "initials": "H.T.N.",
+  "fullName": "HEWA THONDILAGE NAYANI WATHSALA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7663,
+  "medium": "S",
+  "nic": "200180501740",
+  "address1": "NO. 38E/2, NIDANUYANA,",
+  "address2": "UDUKAWA,",
+  "address3": "DENIPITIYA.",
+  "fullAddress": "NO. 38E/2, NIDANUYANA, UDUKAWA, DENIPITIYA.",
+  "email": "nayaniwathsala.ht2001@gmail.com",
+  "phone1": "0743678325",
+  "phone2": "",
+  "genEnglishMarks": 54,
+  "intake": "Normal Intake",
+  "distance": 236.34,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410853"
+  },
+  "no": "089",
+  "enrolmentNo": "VS/22/089",
+  "indexNo": "3419860",
+  "name": "WEERARATHNA P.S.D.",
+  "title": "MR",
+  "lastName": "WEERARATHNA",
+  "initials": "P.S.D.",
+  "fullName": "POLGE SITHISHA DILRU WEERARATHNA",
+  "alDistrict": "Ratnapura",
+  "sex": "Male",
+  "zScore": 1.7259,
+  "medium": "S",
+  "nic": "200232201190",
+  "address1": "2/164,",
+  "address2": "HINGURAARA,",
+  "address3": "EMBILIPITIYA.",
+  "fullAddress": "2/164, HINGURAARA, EMBILIPITIYA.",
+  "email": "sithishadil2021@gmail.com",
+  "phone1": "0767208300",
+  "phone2": "",
+  "genEnglishMarks": 58,
+  "intake": "Normal Intake",
+  "distance": 178.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410854"
+  },
+  "no": "090",
+  "enrolmentNo": "VS/22/090",
+  "indexNo": "2038927",
+  "name": "WEERARATHNA R.P.",
+  "title": "MR",
+  "lastName": "WEERARATHNA",
+  "initials": "R.P.",
+  "fullName": "RAVEESHA PANSILU WEERARATHNA",
+  "alDistrict": "Colombo",
+  "sex": "Male",
+  "zScore": 1.7559,
+  "medium": "S",
+  "nic": "200232301420",
+  "address1": "453/3, HORAKANDAHENA,",
+  "address2": "WAGA-NORTH,",
+  "address3": "THUMMODARA.",
+  "fullAddress": "453/3, HORAKANDAHENA, WAGA-NORTH, THUMMODARA.",
+  "email": "raveeshaweerarathna618@gmail.com",
+  "phone1": "0716255963",
+  "phone2": "",
+  "genEnglishMarks": 74,
+  "intake": "Normal Intake",
+  "distance": 102.5,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410855"
+  },
+  "no": "091",
+  "enrolmentNo": "VS/22/091",
+  "indexNo": "4329554",
+  "name": "WEERASINGHE G.G.M.S.",
+  "title": "MR",
+  "lastName": "WEERASINGHE",
+  "initials": "G.G.M.S.",
+  "fullName": "GODAKUMBURE GEDARA MATHEESHA SACHINTHANA WEERASINGHE",
+  "alDistrict": "Kandy",
+  "sex": "Male",
+  "zScore": 1.7439,
+  "medium": "S",
+  "nic": "200223700770",
+  "address1": "153, GALWALA ROAD,",
+  "address2": "IRIYAGAMA,",
+  "address3": "PERADENIYA.",
+  "fullAddress": "153, GALWALA ROAD, IRIYAGAMA, PERADENIYA.",
+  "email": "foryt20020824@gmail.com",
+  "phone1": "0703143973",
+  "phone2": "",
+  "genEnglishMarks": 80,
+  "intake": "Vacancy Step-1",
+  "distance": 2.01,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410856"
+  },
+  "no": "092",
+  "enrolmentNo": "VS/22/092",
+  "indexNo": "2854325",
+  "name": "WEERASINGHE W.D.A.D.",
+  "title": "MISS",
+  "lastName": "WEERASINGHE",
+  "initials": "W.D.A.D.",
+  "fullName": "WEERASINGHE DISSANAYAKALAGE ANUTHTHARA DEVINDI WEERASINGHE",
+  "alDistrict": "Galle",
+  "sex": "Female",
+  "zScore": 1.7344,
+  "medium": "S",
+  "nic": "200170700164",
+  "address1": "531/3, ABALAKATIYA WATTA,",
+  "address2": "NARAWALA, PODDALA,",
+  "address3": "GALLE.",
+  "fullAddress": "531/3, ABALAKATIYA WATTA, NARAWALA, PODDALA, GALLE.",
+  "email": "anuththaraugc2001@gmail.com",
+  "phone1": "0761310725",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 217.12,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410857"
+  },
+  "no": "093",
+  "enrolmentNo": "VS/22/093",
+  "indexNo": "3316688",
+  "name": "WERAGAMA W.A.A.N.",
+  "title": "MISS",
+  "lastName": "WERAGAMA",
+  "initials": "W.A.A.N.",
+  "fullName": "WERAGAMA ARACHCHILLAGE AMA NIMSARA WERAGAMA",
+  "alDistrict": "Ratnapura",
+  "sex": "Female",
+  "zScore": 1.6986,
+  "medium": "S",
+  "nic": "200161201962",
+  "address1": "KUMUDU,",
+  "address2": "GOLUVAVILA,",
+  "address3": "RATNAPURA.",
+  "fullAddress": "KUMUDU, GOLUVAVILA, RATNAPURA.",
+  "email": "amaweragama@gmail.com",
+  "phone1": "0719904818",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-1",
+  "distance": 158.66,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410858"
+  },
+  "no": "094",
+  "enrolmentNo": "VS/22/094",
+  "indexNo": "2879336",
+  "name": "WICKRAMASINGHE K.M.S.S.",
+  "title": "MR",
+  "lastName": "WICKRAMASINGHE",
+  "initials": "K.M.S.S.",
+  "fullName": "KARIYAWASAM MASACHCHI SITHIKA SASNUKA WICKRAMASINGHE",
+  "alDistrict": "Galle",
+  "sex": "Male",
+  "zScore": 1.7552,
+  "medium": "S",
+  "nic": "200206702744",
+  "address1": "NO. 552, ",
+  "address2": "HIRIMBURA ROAD,",
+  "address3": "GALLE.",
+  "fullAddress": "NO. 552, HIRIMBURA ROAD, GALLE.",
+  "email": "sithikawickramasinghe123@gmail.com",
+  "phone1": "0766282142",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 217.12,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410859"
+  },
+  "no": "095",
+  "enrolmentNo": "VS/22/095",
+  "indexNo": "3629376",
+  "name": "WICKRAMASINGHE W.M.M.K.",
+  "title": "MISS",
+  "lastName": "WICKRAMASINGHE",
+  "initials": "W.M.M.K.",
+  "fullName": "WICKRAMASINGHE MUDIYANSELAGE MAHISHI KAUMADEE WICKRAMASINGHE",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.7427,
+  "medium": "S",
+  "nic": "200352103193",
+  "address1": "678/8, MUTTHETTUWA ESTATE,",
+  "address2": "KOONGAHAGEDARA,",
+  "address3": "KULIYAPITIYA.",
+  "fullAddress": "678/8, MUTTHETTUWA ESTATE, KOONGAHAGEDARA, KULIYAPITIYA.",
+  "email": "mahishikw2003@gmail.com",
+  "phone1": "0740532958",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": 88.06,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085a"
+  },
+  "no": "096",
+  "enrolmentNo": "VS/22/096",
+  "indexNo": "4705530",
+  "name": "WIJEKOON W.M.M.P.",
+  "title": "MISS",
+  "lastName": "WIJEKOON",
+  "initials": "W.M.M.P.",
+  "fullName": "WIJEKOON MUDIYANSELAGE MIHIKA PASANGI WIJEKOON",
+  "alDistrict": "Badulla",
+  "sex": "Female",
+  "zScore": 1.6162,
+  "medium": "S",
+  "nic": "200280001504",
+  "address1": "NO. 20, GNANAVIMALA MAWATHA,",
+  "address2": "DALADAELA ROAD, MAILAGASTHENNA,",
+  "address3": "BADULLA.",
+  "fullAddress": "NO. 20, GNANAVIMALA MAWATHA, DALADAELA ROAD, MAILAGASTHENNA, BADULLA.",
+  "email": "wijekoonmihika@gmail.com",
+  "phone1": "0758420600",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Normal Intake",
+  "distance": 121.57,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085b"
+  },
+  "no": "097",
+  "enrolmentNo": "VS/22/097",
+  "indexNo": "4548876",
+  "name": "YASARATHNA K.G.K.M.",
+  "title": "MISS",
+  "lastName": "YASARATHNA",
+  "initials": "K.G.K.M.",
+  "fullName": "KOLAWATHTHE GEDARA KANCHANA MADUSANI YASARATHNA",
+  "alDistrict": "Nuwara-Eliya",
+  "sex": "Female",
+  "zScore": 1.3694,
+  "medium": "S",
+  "nic": "200266302191",
+  "address1": "KANDEKUMBURA,",
+  "address2": "LIYANWELA,",
+  "address3": "MUNWATHTHA.",
+  "fullAddress": "KANDEKUMBURA, LIYANWELA, MUNWATHTHA.",
+  "email": "2002kgkmy@gmail.com",
+  "phone1": "0715179740",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Normal Intake",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085c"
+  },
+  "no": "098",
+  "enrolmentNo": "VS/22/098",
+  "indexNo": "5098254",
+  "name": "BRAVEEN S.",
+  "title": "MR",
+  "lastName": "BRAVEEN",
+  "initials": "S.",
+  "fullName": "SIVAKUMAR BRAVEEN",
+  "alDistrict": "Trincomalee",
+  "sex": "Male",
+  "zScore": 1.6517,
+  "medium": "T",
+  "nic": "200225101500",
+  "address1": "210, LOWER ROAD,",
+  "address2": "ORRS HILL,",
+  "address3": "TRINCOMALEE.",
+  "fullAddress": "210, LOWER ROAD, ORRS HILL, TRINCOMALEE.",
+  "email": "braveensiva007@gmail.com",
+  "phone1": "0771230246",
+  "phone2": "",
+  "genEnglishMarks": 59,
+  "intake": "Vacancy Step-2",
+  "distance": 187.91,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085d"
+  },
+  "no": "099",
+  "enrolmentNo": "VS/22/099",
+  "indexNo": "4888820",
+  "name": "DAYANANDA R.M.N.S.",
+  "title": "MISS",
+  "lastName": "DAYANANDA",
+  "initials": "R.M.N.S.",
+  "fullName": "RATHNAYAKA MUDIYANSELAGE NIROSHA SEWWANDI DAYANANDA",
+  "alDistrict": "Ampara",
+  "sex": "Female",
+  "zScore": 1.696,
+  "medium": "S",
+  "nic": "200156300863",
+  "address1": "103/1,",
+  "address2": "PALATHURUWELLA,",
+  "address3": "SERANKADA.",
+  "fullAddress": "103/1, PALATHURUWELLA, SERANKADA.",
+  "email": "sewwandiniro735@gmail.com",
+  "phone1": "0766423528",
+  "phone2": "",
+  "genEnglishMarks": 72,
+  "intake": "Vacancy Step-2",
+  "distance": 121.41,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085e"
+  },
+  "no": "100",
+  "enrolmentNo": "VS/22/100",
+  "indexNo": "2746972",
+  "name": "DE SILVA L.T.N.",
+  "title": "MISS",
+  "lastName": "DE SILVA",
+  "initials": "L.T.N.",
+  "fullName": "LADDU THAMUDI NADEESHANI DE SILVA",
+  "alDistrict": "Kalutara",
+  "sex": "Female",
+  "zScore": 1.6732,
+  "medium": "S",
+  "nic": "200176800051",
+  "address1": "NO. 8/E/1, UPOSATHARAMA ROAD,",
+  "address2": "THALPITIYA NORTH,",
+  "address3": "WADDUWA.",
+  "fullAddress": "NO. 8/E/1, UPOSATHARAMA ROAD, THALPITIYA NORTH, WADDUWA.",
+  "email": "thamudinadeeshani2@gmail.com",
+  "phone1": "0786773918",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": 141.76,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541085f"
+  },
+  "no": "101",
+  "enrolmentNo": "VS/22/101",
+  "indexNo": "3198685",
+  "name": "DILSHAN S.Y.G.",
+  "title": "MR",
+  "lastName": "DILSHAN",
+  "initials": "S.Y.G.",
+  "fullName": "SENARATH YAPA GAYAN DILSHAN",
+  "alDistrict": "Hambantota",
+  "sex": "Male",
+  "zScore": 1.7054,
+  "medium": "S",
+  "nic": "200119900466",
+  "address1": "MINIDU, TEMPLE ROAD,",
+  "address2": "KEPPITIYAWA,",
+  "address3": "WEERAKETIYA.",
+  "fullAddress": "MINIDU, TEMPLE ROAD, KEPPITIYAWA, WEERAKETIYA.",
+  "email": "gayandilshan200107@gmail.com",
+  "phone1": "0711808490",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": 278.72,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410860"
+  },
+  "no": "102",
+  "enrolmentNo": "VS/22/102",
+  "indexNo": "4310870",
+  "name": "GALAHAKUMBURA G.K.G.U.E",
+  "title": "MISS",
+  "lastName": "GALAHAKUMBURA",
+  "initials": "G.K.G.U.E",
+  "fullName": "GALAHAKUMBURE GEDARA UPEKSHA ERANDI GALAHAKUMBURA",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.6866,
+  "medium": "S",
+  "nic": "200370613264",
+  "address1": "269B, THANGAPPUWA,",
+  "address2": "THANGAPPUWA BAZZAR,",
+  "address3": "RANGALA.",
+  "fullAddress": "269B, THANGAPPUWA, THANGAPPUWA BAZZAR, RANGALA.",
+  "email": "galahakumburaupekshaerandi@gmail.com",
+  "phone1": "0710755750",
+  "phone2": "",
+  "genEnglishMarks": 42,
+  "intake": "Vacancy Step-2",
+  "distance": 2345.79,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410861"
+  },
+  "no": "103",
+  "enrolmentNo": "VS/22/103",
+  "indexNo": "3077829",
+  "name": "JAYAWARDANA K.S.S.S.",
+  "title": "MISS",
+  "lastName": "JAYAWARDANA",
+  "initials": "K.S.S.S.",
+  "fullName": "KULASINGHA SITHMA SAVINI SANDEEPANI JAYAWARDANA",
+  "alDistrict": "Matara",
+  "sex": "Female",
+  "zScore": 1.7154,
+  "medium": "S",
+  "nic": "200157200854",
+  "address1": "SAVINI, KAPUGEWATHTHA,",
+  "address2": "DEMATAPITIYA,",
+  "address3": "WALASGALA.",
+  "fullAddress": "SAVINI, KAPUGEWATHTHA, DEMATAPITIYA, WALASGALA.",
+  "email": "sandeepanijayawardana2001@gmail.com",
+  "phone1": "0740924648",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": 276.01,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410862"
+  },
+  "no": "104",
+  "enrolmentNo": "VS/22/104",
+  "indexNo": "3616592",
+  "name": "KARUNATHILAKA A.D.M.S.U.",
+  "title": "MISS",
+  "lastName": "KARUNATHILAKA",
+  "initials": "A.D.M.S.U.",
+  "fullName": "ABERATHNA DISANAYAKA MUDIYANSELAGE SANDANI UMASHA KARUNATHILAKA",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.6959,
+  "medium": "S",
+  "nic": "200156203590",
+  "address1": "PASAL WATHTHA,",
+  "address2": "HIRIPITIYA,",
+  "address3": "NIKADALUPOTHA.",
+  "fullAddress": "PASAL WATHTHA, HIRIPITIYA, NIKADALUPOTHA.",
+  "email": "sandaniumasha32@gmail.com",
+  "phone1": "0766463288",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410863"
+  },
+  "no": "105",
+  "enrolmentNo": "VS/22/105",
+  "indexNo": "4865944",
+  "name": "KAVINDA W.M.A.",
+  "title": "MR",
+  "lastName": "KAVINDA",
+  "initials": "W.M.A.",
+  "fullName": "WEERASINGHA MUDIYANSELAGE AVISHKA KAVINDA",
+  "alDistrict": "Ampara",
+  "sex": "Male",
+  "zScore": 1.696,
+  "medium": "S",
+  "nic": "200124901617",
+  "address1": "24/A/264, GALKANDA,",
+  "address2": "DEWALAHINDA,",
+  "address3": "AMPARA.",
+  "fullAddress": "24/A/264, GALKANDA, DEWALAHINDA, AMPARA.",
+  "email": "avishkauni88@gmail.com",
+  "phone1": "0759200714",
+  "phone2": "",
+  "genEnglishMarks": 18,
+  "intake": "Vacancy Step-2",
+  "distance": 240.76,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410864"
+  },
+  "no": "106",
+  "enrolmentNo": "VS/22/106",
+  "indexNo": "4164121",
+  "name": "KUMARA M.L.H.",
+  "title": "MR",
+  "lastName": "KUMARA",
+  "initials": "M.L.H.",
+  "fullName": "MUNAGAMAGE LAHIRU HARSHAPRIYA KUMARA",
+  "alDistrict": "Polonnaruwa",
+  "sex": "Male",
+  "zScore": 1.2628,
+  "medium": "S",
+  "nic": "200127100912",
+  "address1": "NO. 177,",
+  "address2": "DAMSOPURA,",
+  "address3": "MAHATHALAKOLAWEWA.",
+  "fullAddress": "NO. 177, DAMSOPURA, MAHATHALAKOLAWEWA.",
+  "email": "lahirumunagamage@gmail.com",
+  "phone1": "0762789952",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410865"
+  },
+  "no": "107",
+  "enrolmentNo": "VS/22/107",
+  "indexNo": "4779690",
+  "name": "KUMARI P.G.N.N.H.",
+  "title": "MISS",
+  "lastName": "KUMARI",
+  "initials": "P.G.N.N.H.",
+  "fullName": "PATHEGAMA GAMAGE NIPUNI NIMESHIKA HARSHANI KUMARI",
+  "alDistrict": "Moneragala",
+  "sex": "Female",
+  "zScore": 1.5401,
+  "medium": "S",
+  "nic": "200166202520",
+  "address1": "LAKSHAN SEWANA, MUDIYALA,",
+  "address2": "KOTAGAMA,",
+  "address3": "BIBILE.",
+  "fullAddress": "LAKSHAN SEWANA, MUDIYALA, KOTAGAMA, BIBILE.",
+  "email": "nipuninimeshika3@gmail.com",
+  "phone1": "0722703210",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-2",
+  "distance": 121.04,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410866"
+  },
+  "no": "108",
+  "enrolmentNo": "VS/22/108",
+  "indexNo": "2720507",
+  "name": "NAWARATHNA P.N.S.D.",
+  "title": "MISS",
+  "lastName": "NAWARATHNA",
+  "initials": "P.N.S.D.",
+  "fullName": "PALAWATHTHA NAWARATHNALAGE SEWMINI DILKI NAWARATHNA",
+  "alDistrict": "Kalutara",
+  "sex": "Female",
+  "zScore": 1.6836,
+  "medium": "S",
+  "nic": "200158403220",
+  "address1": "PITIYAWATHTHA,",
+  "address2": "MADURAWALA,",
+  "address3": "ANGURUWATHOTA.",
+  "fullAddress": "PITIYAWATHTHA, MADURAWALA, ANGURUWATHOTA.",
+  "email": "dilkinawarathna545@gmail.com",
+  "phone1": "0707856854",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": 141.91,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410867"
+  },
+  "no": "109",
+  "enrolmentNo": "VS/22/109",
+  "indexNo": "4164113",
+  "name": "PRADEEP M.L.",
+  "title": "MR",
+  "lastName": "PRADEEP",
+  "initials": "M.L.",
+  "fullName": "MILLANAGE LASITHA PRADEEP",
+  "alDistrict": "Polonnaruwa",
+  "sex": "Male",
+  "zScore": 1.2645,
+  "medium": "S",
+  "nic": "200201400548",
+  "address1": "22/1,",
+  "address2": "NADAVIRUGAMA,",
+  "address3": "DIVULANKADAWALA.",
+  "fullAddress": "22/1, NADAVIRUGAMA, DIVULANKADAWALA.",
+  "email": "lasithamgpradeep@gmail.com",
+  "phone1": "0767960185",
+  "phone2": "",
+  "genEnglishMarks": 55,
+  "intake": "Vacancy Step-2",
+  "distance": 133.51,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410868"
+  },
+  "no": "110",
+  "enrolmentNo": "VS/22/110",
+  "indexNo": "5067308",
+  "name": "PREETHIKA S.",
+  "title": "MISS",
+  "lastName": "PREETHIKA",
+  "initials": "S.",
+  "fullName": "SUGARAJA PREETHIKA",
+  "alDistrict": "Batticaloa",
+  "sex": "Female",
+  "zScore": 1.6261,
+  "medium": "T",
+  "nic": "200382512184",
+  "address1": "AGRICULTURE ROAD,",
+  "address2": "KALUWANCHIKUDY 09.",
+  "address3": "",
+  "fullAddress": "AGRICULTURE ROAD, KALUWANCHIKUDY 09. ",
+  "email": "preethikasugaraja@gmail.com",
+  "phone1": "0752928707",
+  "phone2": "",
+  "genEnglishMarks": 61,
+  "intake": "Vacancy Step-2",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410869"
+  },
+  "no": "111",
+  "enrolmentNo": "VS/22/111",
+  "indexNo": "3619885",
+  "name": "PREMASIRI B.N.",
+  "title": "MISS",
+  "lastName": "PREMASIRI",
+  "initials": "B.N.",
+  "fullName": "BIGUNI NIMSARA PREMASIRI",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.6826,
+  "medium": "S",
+  "nic": "200167804031",
+  "address1": "EGODAMULLA,",
+  "address2": "IRIYAGOLLA.",
+  "address3": "",
+  "fullAddress": "EGODAMULLA, IRIYAGOLLA. ",
+  "email": "nimalpremasiri18@gmail.com",
+  "phone1": "0779322558",
+  "phone2": "",
+  "genEnglishMarks": 61,
+  "intake": "Vacancy Step-2",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086a"
+  },
+  "no": "112",
+  "enrolmentNo": "VS/22/112",
+  "indexNo": "3439062",
+  "name": "RASINDYA K.D.",
+  "title": "MISS",
+  "lastName": "RASINDYA",
+  "initials": "K.D.",
+  "fullName": "KARANAPPULIGE DEDUNU RASINDYA",
+  "alDistrict": "Ratnapura",
+  "sex": "Female",
+  "zScore": 1.6911,
+  "medium": "S",
+  "nic": "200386400688",
+  "address1": "NO. 216/C, KUSUM NIWASA,",
+  "address2": "THAMBALAPELESSA,",
+  "address3": "KARIYAMADITHTHA.",
+  "fullAddress": "NO. 216/C, KUSUM NIWASA, THAMBALAPELESSA, KARIYAMADITHTHA.",
+  "email": "dedunurasindya@gmail.com",
+  "phone1": "0762871173",
+  "phone2": "",
+  "genEnglishMarks": 53,
+  "intake": "Vacancy Step-2",
+  "distance": 187.67,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086b"
+  },
+  "no": "113",
+  "enrolmentNo": "VS/22/113",
+  "indexNo": "3740501",
+  "name": "RASNAYAKA R.M.T.P.",
+  "title": "MISS",
+  "lastName": "RASNAYAKA",
+  "initials": "R.M.T.P.",
+  "fullName": "RASNAYAKA MUDIYANSELAGE THARUSHI PRABODHANI RASNAYAKA",
+  "alDistrict": "Kurunegala",
+  "sex": "Female",
+  "zScore": 1.6772,
+  "medium": "S",
+  "nic": "200154902916",
+  "address1": "17/1,",
+  "address2": "LEEKOLAPITIYA,",
+  "address3": "RASNAYAKAPURA.",
+  "fullAddress": "17/1, LEEKOLAPITIYA, RASNAYAKAPURA.",
+  "email": "rmtprasnayaka.12038@gmail.com",
+  "phone1": "0776810094",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-2",
+  "distance": null,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086c"
+  },
+  "no": "114",
+  "enrolmentNo": "VS/22/114",
+  "indexNo": "2036606",
+  "name": "SASMITHA A.K.C.",
+  "title": "MR",
+  "lastName": "SASMITHA",
+  "initials": "A.K.C.",
+  "fullName": "ATHUKORALA KANKANAMALAGE CHAMATH SASMITHA",
+  "alDistrict": "Colombo",
+  "sex": "Male",
+  "zScore": 1.6799,
+  "medium": "S",
+  "nic": "200311412090",
+  "address1": "NO. 187/2,",
+  "address2": "KORATHOTA,",
+  "address3": "KADUWELA.",
+  "fullAddress": "NO. 187/2, KORATHOTA, KADUWELA.",
+  "email": "chamathsasmitha98@gmail.com",
+  "phone1": "0765911603",
+  "phone2": "",
+  "genEnglishMarks": 79,
+  "intake": "Vacancy Step-2",
+  "distance": 103.58,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086d"
+  },
+  "no": "115",
+  "enrolmentNo": "VS/22/115",
+  "indexNo": "4282299",
+  "name": "SENARATHNE D.L.H.G.B.G.",
+  "title": "MR",
+  "lastName": "SENARATHNE",
+  "initials": "D.L.H.G.B.G.",
+  "fullName": "DEVANARAYANA LITHTHOLI HITHTHARA GEDARA BAWANTHA GAURAWA SENARATHNE",
+  "alDistrict": "Kandy",
+  "sex": "Male",
+  "zScore": 1.68,
+  "medium": "E",
+  "nic": "200400812474",
+  "address1": "POST OFFICE QUARTERS,",
+  "address2": "GELIOYA,",
+  "address3": "KANDY.",
+  "fullAddress": "POST OFFICE QUARTERS, GELIOYA, KANDY.",
+  "email": "devanarayanabgs@gmail.com",
+  "phone1": "0742583443",
+  "phone2": "",
+  "genEnglishMarks": 85,
+  "intake": "Vacancy Step-2",
+  "distance": 7.19,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086e"
+  },
+  "no": "116",
+  "enrolmentNo": "VS/22/116",
+  "indexNo": "3477525",
+  "name": "JAYAKODY J.A.A.I.",
+  "title": "MR",
+  "lastName": "JAYAKODY ",
+  "initials": "J.A.A.I.",
+  "fullName": "JAYAKODY ARACHCHILLAGE AKESH INDUDUNU JAYAKODY",
+  "alDistrict": "Kegalle",
+  "sex": "Male",
+  "zScore": 1.693,
+  "medium": "S",
+  "nic": "200205102194",
+  "address1": "B/119/2,",
+  "address2": "PANAKAWA,",
+  "address3": "KEGALLE.",
+  "fullAddress": "B/119/2, PANAKAWA, KEGALLE.",
+  "email": "akeshjayakody11@gmail.com",
+  "phone1": "0702218408",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-3",
+  "distance": 65.05,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b6541086f"
+  },
+  "no": "117",
+  "enrolmentNo": "VS/22/117",
+  "indexNo": "4216873",
+  "name": "WIJETHUNGA W.M.D.T.",
+  "title": "MISS",
+  "lastName": "WIJETHUNGA",
+  "initials": "W.M.D.T.",
+  "fullName": "WIJETHUNGA MUDIYANSELAGE DILMI THEEKSHANI WIJETHUNGA",
+  "alDistrict": "Matale",
+  "sex": "Female",
+  "zScore": 1.5053,
+  "medium": "S",
+  "nic": "200275601972",
+  "address1": "NO. 22, MEEGASTANNE ROAD,",
+  "address2": "UDUPIHILLA, ",
+  "address3": "MATALE.",
+  "fullAddress": "NO. 22, MEEGASTANNE ROAD, UDUPIHILLA, MATALE.",
+  "email": "wijethungadilmi16@gmail.com",
+  "phone1": "0742890714",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-3",
+  "distance": 61.66,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410870"
+  },
+  "no": "118",
+  "enrolmentNo": "VS/22/118",
+  "indexNo": "5171067",
+  "name": "A.J.D. ROCHE",
+  "title": "MR",
+  "lastName": "ROCHE",
+  "initials": "A.J.D.",
+  "fullName": "AROKKIYANATHAN JOHN DILASAL ROCHE",
+  "alDistrict": "Mannar",
+  "sex": "Male",
+  "zScore": 1.2278,
+  "medium": "T",
+  "nic": "200300500261",
+  "address1": "MANAL MODDAI,",
+  "address2": "VADDAKANDAL,",
+  "address3": "MANNAR.",
+  "fullAddress": "MANAL MODDAI, VADDAKANDAL, MANNAR.",
+  "email": "johndilasal91@gmail.com",
+  "phone1": "0768575785",
+  "phone2": "",
+  "genEnglishMarks": 41,
+  "intake": "Vacancy Step-3",
+  "distance": 139.42,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410871"
+  },
+  "no": "119",
+  "enrolmentNo": "VS/22/119",
+  "indexNo": "3606104",
+  "name": "ATHAPATHTHU A.M.D.D.",
+  "title": "MR",
+  "lastName": "ATHAPATHTHU",
+  "initials": "A.M.D.D.",
+  "fullName": "ATHAPATHTHU MUDIYANSELAGE DILAN DANANJAYA ATHAPATHTHU",
+  "alDistrict": "Kurunegala",
+  "sex": "Male",
+  "zScore": 1.6575,
+  "medium": "S",
+  "nic": "200318500482",
+  "address1": "DANANJAYA,",
+  "address2": "DALUPATHYAYA WATTA,",
+  "address3": "MASPOTHA.",
+  "fullAddress": "DANANJAYA, DALUPATHYAYA WATTA, MASPOTHA.",
+  "email": "dathapaththu631@gmail.com",
+  "phone1": "0782043481",
+  "phone2": "",
+  "genEnglishMarks": 83,
+  "intake": "Vacancy Step-3",
+  "distance": 52.21,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410872"
+  },
+  "no": "120",
+  "enrolmentNo": "VS/22/120",
+  "indexNo": "5271657",
+  "name": "BABASHANTH B.",
+  "title": "MR",
+  "lastName": "BABASHANTH",
+  "initials": "B.",
+  "fullName": "BALACHANDRAN BABASHANTH",
+  "alDistrict": "Jaffna",
+  "sex": "Male",
+  "zScore": 1.6759,
+  "medium": "T",
+  "nic": "200222500987",
+  "address1": "ARALY SOUTH,",
+  "address2": "VADDUKODDAI,",
+  "address3": "JAFFNA.",
+  "fullAddress": "ARALY SOUTH, VADDUKODDAI, JAFFNA.",
+  "email": "babashanth1208@gmail.com",
+  "phone1": "0756680631",
+  "phone2": "",
+  "genEnglishMarks": 46,
+  "intake": "Vacancy Step-3",
+  "distance": 323.17,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410873"
+  },
+  "no": "121",
+  "enrolmentNo": "VS/22/121",
+  "indexNo": "2095050",
+  "name": "EDIRISURIYA E.A.P.P.",
+  "title": "MISS",
+  "lastName": "EDIRISURIYA",
+  "initials": "E.A.P.P.",
+  "fullName": "EDIRISURIYA ARACHCHIGE PABODHYA PUNYANJALEE EDIRISURIYA",
+  "alDistrict": "Colombo",
+  "sex": "Female",
+  "zScore": 1.6629,
+  "medium": "S",
+  "nic": "200264300491",
+  "address1": "72 D,",
+  "address2": "AMUHENA,",
+  "address3": "PEPILIYAWALA.",
+  "fullAddress": "72 D, AMUHENA, PEPILIYAWALA.",
+  "email": "punyanjalee2002@gmail.com",
+  "phone1": "0759432249",
+  "phone2": "",
+  "genEnglishMarks": null,
+  "intake": "Vacancy Step-3",
+  "distance": 87.14,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410874"
+  },
+  "no": "122",
+  "enrolmentNo": "VS/22/122",
+  "indexNo": "4271440",
+  "name": "JAYASINGHE W.R.S.N.",
+  "title": "MISS",
+  "lastName": "JAYASINGHE",
+  "initials": "W.R.S.N.",
+  "fullName": "WIDANA RALALAGE SAWMI NETHUPULA JAYASINGHE",
+  "alDistrict": "Kandy",
+  "sex": "Female",
+  "zScore": 1.6667,
+  "medium": "S",
+  "nic": "200353001971",
+  "address1": "1/B, AMUNUGAMA JUNCTION,",
+  "address2": "YAKGAHAPITIYA,",
+  "address3": "GUNNEPANA",
+  "fullAddress": "1/B, AMUNUGAMA JUNCTION, YAKGAHAPITIYA, GUNNEPANA.",
+  "email": "nethupulajay@gmail.com",
+  "phone1": "0712805262",
+  "phone2": "",
+  "genEnglishMarks": 84,
+  "intake": "Vacancy Step-3",
+  "distance": 13.77,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410875"
+  },
+  "no": "123",
+  "enrolmentNo": "VS/22/123",
+  "indexNo": "3175065",
+  "name": "JAYATHUNGA S.P.",
+  "title": "MR",
+  "lastName": "JAYATHUNGA",
+  "initials": "S.P.",
+  "fullName": "SACHIRA PABASARA JAYATHUNGA",
+  "alDistrict": "Hambantota",
+  "sex": "Male",
+  "zScore": 1.6858,
+  "medium": "S",
+  "nic": "200200500328",
+  "address1": "MAHAGEDARA,",
+  "address2": "BOWALA,",
+  "address3": "WALASMULLA.",
+  "fullAddress": "MAHAGEDARA, BOWALA, WALASMULLA.",
+  "email": "sachirapabasara50@gmail.com",
+  "phone1": "0714753014",
+  "phone2": "",
+  "genEnglishMarks": 0,
+  "intake": "Vacancy Step-3",
+  "distance": 277.98,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683b39ada13f9e9b65410876"
+  },
+  "no": "124",
+  "enrolmentNo": "VS/22/124",
+  "indexNo": "5034957",
+  "name": "VARNAKULASINGAM D.",
+  "title": "MISS",
+  "lastName": "VARNAKULASINGAM",
+  "initials": "D.",
+  "fullName": "DANIKA VARNAKULASINGAM",
+  "alDistrict": "Batticaloa",
+  "sex": "Female",
+  "zScore": 1.6208,
+  "medium": "T",
+  "nic": "200274802142",
+  "address1": "43/1, ",
+  "address2": "TRINCO ROAD,",
+  "address3": "BATTICALOA.",
+  "fullAddress": "43/1, TRINCO ROAD, BATTICALOA.",
+  "email": "danikavarnam@gmail.com",
+  "phone1": "0770025066",
+  "phone2": "",
+  "genEnglishMarks": 72,
+  "intake": "Vacancy Step-3",
+  "distance": 185.89,
+  "isAssign": false,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-31T17:17:33.652Z"
+  }
+}]

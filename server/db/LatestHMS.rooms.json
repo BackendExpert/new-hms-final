@@ -1,0 +1,1700 @@
+[{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20af"
+  },
+  "roomID": "UOP/M/NE/1",
+  "currentOccupants": 4,
+  "capasity": 4,
+  "students": [
+    {
+      "$oid": "683b39ada13f9e9b65410802"
+    },
+    {
+      "$oid": "683b39ada13f9e9b65410802"
+    },
+    {
+      "$oid": "683b39ada13f9e9b65410809"
+    }
+  ],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Full",
+  "__v": 3,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.368Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T14:23:07.617Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b0"
+  },
+  "roomID": "UOP/M/NE/2",
+  "currentOccupants": 3,
+  "capasity": 6,
+  "students": [
+    {
+      "$oid": "683b39ada13f9e9b6541080d"
+    },
+    {
+      "$oid": "683b39ada13f9e9b6541080e"
+    },
+    {
+      "$oid": "683b39ada13f9e9b65410812"
+    }
+  ],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 3,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-23T01:40:29.111Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b1"
+  },
+  "roomID": "UOP/M/NE/3",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b2"
+  },
+  "roomID": "UOP/M/NE/4",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b3"
+  },
+  "roomID": "UOP/M/NE/5",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b4"
+  },
+  "roomID": "UOP/M/NE/6",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b5"
+  },
+  "roomID": "UOP/M/NE/7",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b6"
+  },
+  "roomID": "UOP/M/NE/8",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b7"
+  },
+  "roomID": "UOP/M/NE/9",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b8"
+  },
+  "roomID": "UOP/M/NE/10",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20b9"
+  },
+  "roomID": "UOP/M/NE/11",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20ba"
+  },
+  "roomID": "UOP/M/NE/12",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20bb"
+  },
+  "roomID": "UOP/M/NE/13",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20bc"
+  },
+  "roomID": "UOP/M/NE/14",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20bd"
+  },
+  "roomID": "UOP/M/NE/15",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20be"
+  },
+  "roomID": "UOP/M/NE/16",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20bf"
+  },
+  "roomID": "UOP/M/NE/17",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c0"
+  },
+  "roomID": "UOP/M/NE/18",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c1"
+  },
+  "roomID": "UOP/M/NE/19",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c2"
+  },
+  "roomID": "UOP/M/NE/20",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c3"
+  },
+  "roomID": "UOP/M/NE/21",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c4"
+  },
+  "roomID": "UOP/M/NE/22",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c5"
+  },
+  "roomID": "UOP/M/NE/23",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c6"
+  },
+  "roomID": "UOP/M/NE/24",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c7"
+  },
+  "roomID": "UOP/M/NE/25",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c8"
+  },
+  "roomID": "UOP/M/NE/26",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20c9"
+  },
+  "roomID": "UOP/M/NE/27",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20ca"
+  },
+  "roomID": "UOP/M/NE/28",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20cb"
+  },
+  "roomID": "UOP/M/NE/29",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20cc"
+  },
+  "roomID": "UOP/M/NE/30",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20cd"
+  },
+  "roomID": "UOP/M/NE/31",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20ce"
+  },
+  "roomID": "UOP/M/NE/32",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20cf"
+  },
+  "roomID": "UOP/M/NE/33",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20d0"
+  },
+  "roomID": "UOP/M/NE/34",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20d1"
+  },
+  "roomID": "UOP/M/NE/35",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20d2"
+  },
+  "roomID": "UOP/M/NE/36",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20d3"
+  },
+  "roomID": "UOP/M/NE/37",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf32cebeb3d51706b20d4"
+  },
+  "roomID": "UOP/M/NE/38",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:16.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf336ebeb3d51706b20ff"
+  },
+  "roomID": "UOP/M/NE/39",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:26.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:26.453Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683cf336ebeb3d51706b2100"
+  },
+  "roomID": "UOP/M/NE/40",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Male",
+  "hostelID": {
+    "$oid": "683cf32cebeb3d51706b20ad"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T00:41:26.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T00:41:26.453Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bed"
+  },
+  "roomID": "UOP/F/NE/1",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.976Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.976Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bee"
+  },
+  "roomID": "UOP/F/NE/2",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bef"
+  },
+  "roomID": "UOP/F/NE/3",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf0"
+  },
+  "roomID": "UOP/F/NE/4",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf1"
+  },
+  "roomID": "UOP/F/NE/5",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf2"
+  },
+  "roomID": "UOP/F/NE/6",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf3"
+  },
+  "roomID": "UOP/F/NE/7",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf4"
+  },
+  "roomID": "UOP/F/NE/8",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf5"
+  },
+  "roomID": "UOP/F/NE/9",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf6"
+  },
+  "roomID": "UOP/F/NE/10",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf7"
+  },
+  "roomID": "UOP/F/NE/11",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf8"
+  },
+  "roomID": "UOP/F/NE/12",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bf9"
+  },
+  "roomID": "UOP/F/NE/13",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bfa"
+  },
+  "roomID": "UOP/F/NE/14",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bfb"
+  },
+  "roomID": "UOP/F/NE/15",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bfc"
+  },
+  "roomID": "UOP/F/NE/16",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bfd"
+  },
+  "roomID": "UOP/F/NE/17",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bfe"
+  },
+  "roomID": "UOP/F/NE/18",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389bff"
+  },
+  "roomID": "UOP/F/NE/19",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c00"
+  },
+  "roomID": "UOP/F/NE/20",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c01"
+  },
+  "roomID": "UOP/F/NE/21",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c02"
+  },
+  "roomID": "UOP/F/NE/22",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c03"
+  },
+  "roomID": "UOP/F/NE/23",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c04"
+  },
+  "roomID": "UOP/F/NE/24",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c05"
+  },
+  "roomID": "UOP/F/NE/25",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c06"
+  },
+  "roomID": "UOP/F/NE/26",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c07"
+  },
+  "roomID": "UOP/F/NE/27",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c08"
+  },
+  "roomID": "UOP/F/NE/28",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c09"
+  },
+  "roomID": "UOP/F/NE/29",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0a"
+  },
+  "roomID": "UOP/F/NE/30",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0b"
+  },
+  "roomID": "UOP/F/NE/31",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0c"
+  },
+  "roomID": "UOP/F/NE/32",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0d"
+  },
+  "roomID": "UOP/F/NE/33",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0e"
+  },
+  "roomID": "UOP/F/NE/34",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c0f"
+  },
+  "roomID": "UOP/F/NE/35",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c10"
+  },
+  "roomID": "UOP/F/NE/36",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c11"
+  },
+  "roomID": "UOP/F/NE/37",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c12"
+  },
+  "roomID": "UOP/F/NE/38",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c13"
+  },
+  "roomID": "UOP/F/NE/39",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "683d09526761a22e5a389c14"
+  },
+  "roomID": "UOP/F/NE/40",
+  "currentOccupants": 0,
+  "capasity": 4,
+  "students": [],
+  "gender": "Female",
+  "hostelID": {
+    "$oid": "683d09526761a22e5a389beb"
+  },
+  "status": "Availabe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-02T02:15:46.979Z"
+  }
+}]
