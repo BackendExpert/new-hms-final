@@ -2,9 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
-const path = require('path'); 
+const path = require('path');
 const bodyParser = require('body-parser');
-
 
 // routes
 const ConnectDB = require('./config/DB');
@@ -19,8 +18,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 ConnectDB();
-  
-app.use(cors());
+
+// ✅ CORS fix: allow frontend + credentials
+app.use(cors({
+  origin: 'http://localhost:5173', // frontend URL
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,9 +39,8 @@ app.use('/room', roomRoute)
 app.use('/warden', wardenRoute)
 
 app.get('/', (req, res) => {
-    res.send(`Server running on port ${PORT}`);
+  res.send(`Server running on port ${PORT}`);
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
